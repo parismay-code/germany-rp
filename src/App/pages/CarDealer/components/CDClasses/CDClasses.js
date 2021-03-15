@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import CDClass from "./CDClass";
 
 import jeep from '../../../../assets/images/carDealer/jeep.svg';

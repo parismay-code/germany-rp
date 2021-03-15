@@ -47,12 +47,12 @@ const CarDealer = () => {
             <CDColor color={color} setColor={setColor} palette={testPalette} />
             <CDPrice autoClass={autoClass} model={model}/>
         </div>
-        <img className='character-creator__exit' src={close} alt='#' onClick={() => {
+        <img className='car-dealer__exit' src={close} alt='#' onClick={() => {
             if ('alt' in window) {
                 alt.emit('cef::component:close');
             }
         }}/>
-        <div className='character-creator__create' onClick={() => {
+        <div className='car-dealer__create' onClick={() => {
             if ('alt' in window) {
                 alt.emit('cef::carDealer:buy', JSON.stringify({autoClass, model, color}));
             }

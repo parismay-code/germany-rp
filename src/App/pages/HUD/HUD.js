@@ -1,9 +1,7 @@
 /* global alt */
-
 import {useState} from 'react';
-import useForceUpdate from "../../utils/hooks/useForceUpdate";
 
-import Inventory2 from './Inventory2';
+import Inventory from './Inventory';
 import ATM from "./ATM";
 import FuelStation from "./FuelStation";
 import House from "./House";
@@ -20,12 +18,10 @@ const HUD = () => {
     const [_houseData, setHouseData] = useState(houseData);
     const [_hotelData, setHotelData] = useState(hotelData);
 
-    const forceUpdate = useForceUpdate();
-
     const renderHudComponent = () => {
         switch (currentComponent) {
             case 'inventory':
-                return (<Inventory2
+                return (<Inventory
                     inventoryData={_inventoryData}
                     quickSlots={quick}
                 />);
@@ -75,10 +71,6 @@ const HUD = () => {
 
         alt.on('client::hud:sendHotelData', (obj) => {
             setHotelData(obj);
-        })
-
-        alt.on('client::hud:update', () => {
-            forceUpdate();
         })
     }
 

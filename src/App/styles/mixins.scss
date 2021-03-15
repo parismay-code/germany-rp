@@ -1,0 +1,11 @@
+@mixin exitButton() {
+  &__exit {
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}

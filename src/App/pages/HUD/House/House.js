@@ -1,5 +1,4 @@
 /* global alt */
-
 import {useState} from 'react';
 
 import HouseInfo from "./components/HouseInfo";

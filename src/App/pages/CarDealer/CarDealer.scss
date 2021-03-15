@@ -1,34 +1,28 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
 .car-dealer {
   position: relative;
   width: 100vw;
   height: 100vh;
 
-  color: #ffffff;
-  font-family: 'TT Norms Medium', sans-serif;
+  color: $color-white;
+  font-family: 'TTNorms-MediumItalic', sans-serif;
   font-style: italic;
-  font-size: .9vw;
 
   background: radial-gradient(closest-side at 50% 50%, #FFFFFF20 30%, #001B2Dd0 115%);
 
-  @media (min-width: 3440px) {
-    font-size: .75vw;
-  }
-
   &-menu {
     position: relative;
-    width: 25%;
+    width: 450px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    border-right: solid .1em #D8D8D8;
+    border-right: 1px solid $color-gray;
 
     overflow: auto;
-
-    @media (min-width: 3440px) {
-      width: 20%;
-    }
 
     &__header {
       width: 100%;
@@ -39,22 +33,12 @@
 
       text-transform: uppercase;
       font-style: normal;
-      font-size: 1.4em;
+      font-size: 1.4rem;
 
-      border-bottom: .1em solid #D8D8D8;
+      border-bottom: 1px solid $color-gray;
 
-      text-shadow: 0 0 .5em #ffffff;
+      text-shadow: 0 0 10px $color-white;
     }
-  }
-
-  &__exit {
-    width: 1%;
-    position: absolute;
-    right: 1.5%;
-    top: 1.5%;
-
-    pointer-events: auto;
-    cursor: pointer;
   }
 
   &__create {
@@ -62,9 +46,8 @@
     right: 0;
     bottom: 0;
 
-    width: 15%;
-    height: 10%;
-    max-height: 6vw;
+    width: 300px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,9 +55,11 @@
     font-style: normal;
     text-transform: uppercase;
 
-    background-color: rgba(0, 0, 0, .5);
+    background-color: $color-black-opacity;
 
     pointer-events: auto;
     cursor: pointer;
   }
+
+  @include exitButton;
 }

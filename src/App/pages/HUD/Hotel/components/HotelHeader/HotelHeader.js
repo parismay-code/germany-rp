@@ -1,5 +1,4 @@
 /* global alt */
-
 import close from '../../../../../assets/images/close.svg';
 import locked from '../../../../../assets/images/house/locked.svg'
 import opened from '../../../../../assets/images/house/opened.svg'
