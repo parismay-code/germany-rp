@@ -1,0 +1,224 @@
+.fuel-station {
+  width: 100vw;
+  height: 100vh;
+
+  background: radial-gradient(closest-side at 50% 50%, #FFFFFF40 0%, #001B2D70 100%);
+
+  backdrop-filter: blur(1em);
+
+  color: #ffffff;
+
+  font-family: 'TTNorms-Bold', sans-serif;
+  font-weight: 700;
+  font-size: .85vw;
+
+  &-content {
+    background: url('../../../assets/images/fuelStation/fuelStation.svg') no-repeat center;
+    background-size: contain;
+
+    position: absolute;
+    bottom: -1%;
+    right: 10%;
+
+    height: 27%;
+    width: 15%;
+
+    @media (max-width: 800px) {
+      bottom: -4%;
+    }
+
+    @media (max-width: 1280px) {
+      bottom: -4.5%;
+    }
+
+    @media (min-width: 3440px) {
+      width: 12%;
+    }
+
+    &__title {
+      position: absolute;
+      left: 11%;
+      top: 1%;
+
+      font-family: 'TTNorms-Black', sans-serif;
+      color: #000000;
+      opacity: .63;
+
+      @media (max-width: 800px) {
+        top: 12%;
+      }
+
+      @media (max-width: 1280px) {
+        top: 14.5%;
+      }
+
+      @media (min-width: 3440px) {
+        left: 11%;
+
+        font-size: .85em;
+      }
+    }
+
+    &-screen {
+      position: absolute;
+      top: 8.5%;
+      left: 7%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      height: 28%;
+      width: 42%;
+
+      background-color: rgba(0, 0, 0, .74);
+
+      @media (max-width: 800px) {
+        top: 16.2%;
+
+        height: 23%;
+      }
+
+      @media (max-width: 1280px) {
+        top: 19%;
+
+        height: 22%;
+      }
+
+      @media (min-width: 3440px) {
+        height: 28%;
+        width: 39%;
+
+        top: 9%;
+        left: 9.5%;
+      }
+
+      & input {
+        outline: none;
+        border: none;
+        border-radius: .8vw;
+
+        font-size: 1.7em;
+        font-weight: 700;
+        color: #ffffff;
+        text-align: center;
+
+        background-color: rgba(0, 0, 0, .81);
+
+        width: 85%;
+        margin-top: 20%;
+
+        @media (min-width: 3440px) {
+          margin-top: 10%;
+        }
+
+        &::placeholder {
+          color: #ffffff;
+          font-weight: 700;
+        }
+      }
+
+      & span {
+        font-family: 'TTNorms-Regular', sans-serif;
+        font-weight: 500;
+
+        margin-top: 0.2em;
+
+        @media (min-width: 3440px) {
+          margin-top: 0.1em;
+        }
+      }
+    }
+
+    &-info {
+      position: absolute;
+      top: 38%;
+      left: 7%;
+
+      text-align: center;
+
+      width: 42%;
+
+      @media (max-width: 1280px) {
+        top: 41%;
+      }
+
+      @media (min-width: 3440px) {
+        left: 9%;
+      }
+
+      & span {
+        font-family: 'TTNorms-ExtraLight', sans-serif;
+        font-weight: 100;
+        font-size: .8em;
+      }
+
+      &-options {
+        width: 100%;
+        margin-top: .7em;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (min-width: 3440px) {
+          width: 95%;
+
+          margin-top: .3em;
+        }
+
+        &__element,
+        &__element_exit {
+          position: relative;
+
+          width: 3em;
+          height: 3em;
+          margin-bottom: 1.3em;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          background-color: rgba(0, 0, 0, .52);
+
+          border: .1em solid rgba(0, 15, 112, .52);
+          border-radius: .4vw;
+          box-shadow: 0 0 .2em #FFFFFFB3;
+
+          cursor: pointer;
+
+          @media (min-width: 3440px) {
+            width: 2.2em;
+            height: 2.2em;
+
+            margin-bottom: 1em;
+          }
+
+          & img {
+            width: 50%;
+            height: 50%;
+          }
+
+          & span {
+            position: absolute;
+            bottom: -35%;
+
+            text-transform: uppercase;
+            font-size: .5em;
+            font-weight: 700;
+
+            @media (min-width: 3440px) {
+              font-size: .4em;
+            }
+          }
+        }
+
+        &__element_exit {
+          border-color: rgba(246, 45, 47, .52);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

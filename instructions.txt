@@ -1,0 +1,239 @@
+all pages by default will be disabled, on browser ready event you should send new page to manager event and
+is registered boolean on auth render
+
+// cef events //
+alt.emit('cef::browser:ready') - when app is ready to render
+
+alt.emit('cef::hud:closeComponent') - event on click 'exit' in any hud component
+
+alt.emit('cef::auth:rememberMe', bool) - event on click 'remember me' checkbox in login component
+
+alt.emit('cef::auth:login', string) - event on click 'login' button, string is JSON.stringify of login and password value
+
+alt.emit('cef::auth:register', string) - event on click 'create account' button, string is JSON.stringify of login, email and password value
+
+alt.emit('cef::fuelStation:close') - event on click 'exit' in fuel station
+
+alt.emit('cef::house:toggleHouse', houseID, state) - event on click Open/Lock house in house menu
+state: true / false
+
+alt.emit('cef::house:toggleGarage', houseID, state) - event on click Open/Lock garage in house menu
+state: true / false
+
+alt.emit('cef::house:buy', houseID) - event on click 'buy' button in house menu
+
+alt.emit('cef::hotel:rent', hotelId, roomType) - event on click 'rent' button in hotel menu
+
+alt.emit('cef::component:close') - event on click 'close' button in full component (like creator)
+
+alt.emit('cef::carDealer:preview', json) - event on changing any car parameter in car dealer
+JSON: "{autoClass: int, model: int, color: int}"
+
+alt.emit('cef::carDealer:buy', json) - event on click 'buy' button in car dealer
+JSON: "{autoClass: int, model: int, color: int}"
+
+alt.emit('cef::tuning:buy', json) - event on click 'buy' button in tuning salon
+JSON: "{engine: int, muffler: int, color: int, wheels: int, turbo: int, sound: int}"
+
+alt.emit('cef::shop:buy', item) - event on click 'buy' button in 24/7 shop
+item - id of item
+
+alt.emit('cef::characterCreator:preview', creatorData) - event on changing any property in creator, using to set character params to preview
+
+alt.emit('cef::characterCreator:create', creatorData) - event on click 'create' button in character creator component
+creatorData placeholder object:
+const creatorData = {
+    player: {
+        nickname: {
+            firstname: 'Paris',
+            lastname: 'May'
+        },
+        gender: 0
+    },
+    parents: {
+        father: 0,
+        mother: 5,
+        mixBlend: 50,
+    },
+    appearance: {
+        hair: [
+            {
+                title: 'Hairstyle',
+                value: 0
+            },
+            {
+                title: 'eyebrows',
+                value: 0
+            },
+            {
+                title: 'Chest hair',
+                value: 0
+            },
+            {
+                title: 'Beard and mustache',
+                value: 0
+            }
+        ],
+        color: {
+            body: 0,
+            headHair: 0,
+            eyebrows: 0,
+            chestHair: 0,
+            beard: 0,
+            eyes: 0,
+        }
+    },
+    faceFeatures: [
+        {
+            title: 'Nose width',
+            value: 0
+        },
+        {
+            title: 'Nose height',
+            value: 0
+        },
+        {
+            title: 'Nose length',
+            value: 0
+        },
+        {
+            title: 'Nose bridge',
+            value: 0
+        },
+        {
+            title: 'Nose bridge shaft',
+            value: 0
+        },
+        {
+            title: 'Nose tip',
+            value: 0
+        },
+        {
+            title: 'Eyebrows width',
+            value: 0
+        },
+        {
+            title: 'Eyebrows height',
+            value: 0
+        },
+        {
+            title: 'Eyebrows deep',
+            value: 0
+        },
+        {
+            title: 'Cheekbone width',
+            value: 0
+        },
+        {
+            title: 'Cheekbone height',
+            value: 0
+        },
+        {
+            title: 'Cheek deep',
+            value: 0
+        },
+        {
+            title: 'Eyes width',
+            value: 0
+        },
+        {
+            title: 'Lips width',
+            value: 0
+        },
+        {
+            title: 'Jaw width',
+            value: 0
+        },
+        {
+            title: 'Jaw height',
+            value: 0
+        },
+        {
+            title: 'Jaw deep',
+            value: 0
+        },
+        {
+            title: 'Jaw indent',
+            value: 0
+        },
+        {
+            title: 'Chin width',
+            value: 0
+        },
+        {
+            title: 'Chin height',
+            value: 0
+        },
+        {
+            title: 'Chin length',
+            value: 0
+        },
+        {
+            title: 'Chin shape',
+            value: 0
+        },
+        {
+            title: 'Neck width',
+            value: 0
+        }
+    ],
+    limitations: [
+        {
+            title: 'Blemishes',
+            value: 0
+        },
+        {
+            title: 'Ageing',
+            value: 0
+        },
+        {
+            title: 'Moles and freckles',
+            value: 0
+        }
+    ]
+}
+
+// client events //
+alt.on('client::manager:setNewPage', integer) - use to render new component
+integers:
+0 - auth
+1 - car dealer
+2 - character creator
+3 - hud
+4 - tuning
+5 - shop
+6 - clothes shop
+other integers will return blank page
+
+alt.on('client::hud:update') - use to rerender hud component, send on every slot changing for dynamic update
+
+alt.on('client::hud:setNewComponent', string) - use to render new component on hud
+strings:
+'inventory',
+'atm',
+'fuelStation',
+'house',
+'hotel'
+
+alt.on('client::auth:isRegistered', bool) - use on render auth page to render login / registration component
+bool - is current social club have account in db, true will render 'login', false will render 'registration'
+
+alt.on('client::hud:sendHouseData', obj) - use to send house data, when rendering house component
+placeholder object:
+houseData = {
+    id: 87,
+    houseLocked: true,
+    garageLocked: true,
+    price: 999999999,
+    family: 'Garcia',
+    garage: 10,
+    garden: 999999999,
+    daysPaid: 31
+}
+
+alt.on('client::hud:sendHotelData', obj) - use to send hotel data, when rendering hotel component
+placeholder object:
+hotelData = {
+    id: 87,
+    price: 999999999,
+}

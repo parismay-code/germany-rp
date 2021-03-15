@@ -1,0 +1,26 @@
+.main-inventory {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin-bottom: 5%;
+
+  overflow: hidden;
+
+  &__slots {
+    position: relative;
+    width: 100%;
+    height: 90%;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (min-width: 3440px) {
+      height: 85%;
+    }
+
+    & .cell {
+      margin: 0 3% 3% 0;
+    }
+  }
+}

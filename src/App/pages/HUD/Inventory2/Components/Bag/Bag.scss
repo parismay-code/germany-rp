@@ -1,0 +1,21 @@
+.bag {
+  position: relative;
+  width: 22%;
+  height: 90%;
+  margin-bottom: 5%;
+
+  overflow: hidden;
+
+  &__slots {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & .cell {
+      margin: 0 6% 6% 0;
+    }
+  }
+}

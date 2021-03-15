@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+.atm {
+  width: 54.5vw;
+  max-width: 1480px;
+  height: 80vh;
+  max-height: 42.4vw;
+
+  background: url('../../../assets/images/atm/atm2x.png') no-repeat;
+  background-size: contain;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  filter: drop-shadow(0 0 2vw #000000ee);
+
+  &-screen {
+    position: absolute;
+    top: 33.3%;
+    left: 37.55%;
+    transform: translate(-50%, -50%);
+
+    width: 39.5%;
+    height: 42%;
+
+    font-size: .85vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: #ffffff;
+
+    &-options {
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      &__balance {
+        position: absolute;
+        top: 0;
+
+        font-weight: 600;
+        color: #59D962;
+
+        & span {
+          font-weight: 500;
+        }
+      }
+
+      &__exit {
+        position: absolute;
+        right: 0;
+
+        font-weight: 600;
+        text-align: center;
+
+        background-color: rgba(0, 0, 0, .28);
+        border: 0.05em solid rgba(112, 112, 112, .28);
+
+        width: 20%;
+        padding: 2.25%;
+        margin: .5% 0;
+      }
+
+      &__element,
+      &__balance {
+        background-color: rgba(0, 0, 0, .28);
+        border: 0.05em solid rgba(112, 112, 112, .28);
+
+        width: 70%;
+        padding: 2.25%;
+        margin: .5% 0;
+      }
+
+      &__element,
+      &__exit {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-user-info {
+    position: absolute;
+    top: 17%;
+    right: .3%;
+    transform: translate(-50%, -50%);
+
+    height: 23%;
+    width: 17.8%;
+
+    font-size: .85vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: 3440px) {
+      font-size: .75vw;
+    }
+
+    &__owner,
+    &__account {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & span:first-of-type {
+        margin-bottom: 15%;
+      }
+
+      & span:last-of-type {
+        margin-top: 3%;
+      }
+    }
+  }
+}

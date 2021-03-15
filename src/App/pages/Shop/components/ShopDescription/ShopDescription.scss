@@ -1,0 +1,39 @@
+.shop-description {
+  position: relative;
+  width: 100%;
+
+  &-header {
+    position: relative;
+    padding: 5% 5% 3% 5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    border-bottom: .1em solid #ffffff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: .1em;
+      background: linear-gradient(to right, #D8D8D8, #D8D8D800);
+    }
+
+    &__units {
+      width: 100%;
+      text-align: center;
+      font-size: 1.2em;
+      text-shadow: 0 0 .3em #ffffff;
+      font-style: normal;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    padding: 10% 5%;
+  }
+}

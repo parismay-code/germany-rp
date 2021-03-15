@@ -1,0 +1,51 @@
+.cell {
+  position: relative;
+
+  width: 3vw;
+  max-width: 76.8px;
+  height: 3vw;
+  max-height: 76.8px;
+
+  background-size: 85% 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border: 0.1em solid rgba(255, 255, 255, .5);
+
+  &__item {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: auto;
+
+    & img {
+      width: 85%;
+      height: 85%;
+    }
+  }
+
+  &__hotkey {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 30%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, .35);
+
+    line-height: 100%;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .85em;
+    font-weight: 700;
+    text-align: center;
+  }
+}

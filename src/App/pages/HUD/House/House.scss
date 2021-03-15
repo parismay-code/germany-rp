@@ -1,0 +1,29 @@
+.house {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: #ffffff;
+  font-family: "TT Norms Medium", sans-serif;
+  font-size: .85vw;
+
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 3440px) {
+    font-size: 24px;
+  }
+
+  &__main {
+    position: relative;
+    width: 23vw;
+    height: 39vh;
+    max-height: 22vw;
+    background-color: rgba(0, 0, 0, .8);
+
+    @media (min-width: 3440px) {
+      max-height: 590px;
+    }
+  }
+}

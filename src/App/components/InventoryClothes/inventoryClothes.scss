@@ -1,0 +1,72 @@
+.inventory-clothes {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 30%;
+  height: 100%;
+
+  &__man {
+    height: 90%;
+  }
+
+  &-top-icons {
+    position: absolute;
+    top: 4%;
+    left: 48.5%;
+    transform: translateX(-50%);
+  }
+
+  &-right-icons {
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+  }
+
+  &-left-icons {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+  }
+
+  &-top-icons,
+  &-right-icons,
+  &-left-icons {
+    display: flex;
+    flex-direction: column;
+
+    & div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 3.5em;
+      height: 3.5em;
+      margin-bottom: 1.5em;
+
+      border: .1em solid rgba(255, 255, 255, .5);
+
+      & img {
+        width: 75%;
+        height: 75%;
+      }
+    }
+  }
+
+  &__bottom-platform {
+    position: absolute;
+    bottom: 0;
+    left: 54%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    height: 8%;
+
+    background: radial-gradient(closest-side at 50% 50%, #3498DB 0%, #3498DB00 100%);
+    opacity: .33;
+  }
+}

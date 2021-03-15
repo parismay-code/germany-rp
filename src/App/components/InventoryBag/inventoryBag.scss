@@ -1,0 +1,73 @@
+.inventory-bag {
+  position: relative;
+
+  width: 23%;
+  height: 100%;
+
+  &-slots {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    &__slot {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 4em;
+      height: 4em;
+      margin: 0 1.5em 1.5em 0;
+
+      border: .1em solid rgba(255, 255, 255, .5);
+
+      & div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        font-family: 'Montserrat', sans-serif;
+        font-size: .85em;
+
+        width: 1.3em;
+        height: 1.3em;
+
+        background-color: rgba(255, 255, 255, .34);
+
+        & span {
+          position: absolute;
+          left: 45%;
+          top: 55%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      & img {
+        width: 75%;
+        height: 75%;
+      }
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'TTNorms-Italic', sans-serif;
+    font-style: italic;
+    font-size: 1.3em;
+
+    padding: .5em 1.5em .5em 0;
+    margin-bottom: 1em;
+
+    background: linear-gradient(270deg, rgba(52, 152, 219, .20) 0%, #3498DB00 100%);
+
+    &__title {
+      width: 60%;
+    }
+  }
+}

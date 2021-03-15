@@ -1,0 +1,35 @@
+.character-creator-parent-block {
+  position: relative;
+  width: 45%;
+
+  font-style: normal;
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    font-size: 1.2em;
+
+    &__leftArrow,
+    &__rightArrow {
+      width: 1.4em;
+      height: 1.4em;
+
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    &__rightArrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__name {
+    margin-top: 8%;
+
+    font-weight: 700;
+    color: rgba(0, 0, 0, .5)
+  }
+}

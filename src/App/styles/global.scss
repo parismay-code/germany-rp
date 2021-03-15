@@ -1,0 +1,77 @@
+@import '../styles/vars';
+
+@font-face {
+  font-family: 'TTNorms-Black', sans-serif;
+  src: url('../assets/fonts/TTNorms-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TTNorms-Bold', sans-serif;
+  font-weight: 700;
+  src: url('../assets/fonts/TTNorms-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TTNorms-ExtraLight', sans-serif;
+  font-weight: 100;
+  src: url('../assets/fonts/TTNorms-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TTNorms-Italic', sans-serif;
+  font-style: italic;
+  src: url('../assets/fonts/TTNorms-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TTNorms-Light', sans-serif;
+  font-weight: 200;
+  src: url('../assets/fonts/TTNorms-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TTNorms-Medium', sans-serif;
+  font-weight: 200;
+  src: url('../assets/fonts/TTNorms-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TTNorms-MediumItalic', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  src: url('../assets/fonts/TTNorms-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TTNorms-Regular', sans-serif;
+  font-weight: 500;
+  src: url('../assets/fonts/TTNorms-Regular.ttf') format('truetype');
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html {
+  font-size: $font-size-default;
+  user-select: none;
+
+  @media (max-width: 1000px) {
+    font-size: $font-size-min;
+  }
+
+  @media (min-width: 2000px) {
+    font-size: $font-size-max;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
