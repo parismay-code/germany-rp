@@ -61,9 +61,6 @@ const Inventory = (props) => {
         {bagStatus && <Bag
             inventoryData={props.inventoryData[8].data.inventory}
         />}
-        {contextStatus && <Context
-            draggedCell={draggedCell}
-        />}
     </div>
 }
 

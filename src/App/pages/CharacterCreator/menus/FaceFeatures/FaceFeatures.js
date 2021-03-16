@@ -1,14 +1,17 @@
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
+
 import CCOption from "../../components/CCOption";
 
-const FaceFeatures = (props) => {
+const FaceFeatures = ({ store }) => {
     return <>
-        {props.creatorData.faceFeatures.map((el, key) => {
-            return <CCOption key={key} title={el.title} el={el} data={props.creatorData}/>
+        {store.creatorData.faceFeatures.map((el, key) => {
+            return <CCOption key={key} el={el}/>
         })}
-        {props.creatorData.limitations.map((el, key) => {
-            return <CCOption key={key} title={el.title} el={el} data={props.creatorData}/>
+        {store.creatorData.limitations.map((el, key) => {
+            return <CCOption key={key} el={el}/>
         })}
     </>
 }
 
-export default FaceFeatures;
+export default observer(FaceFeatures);

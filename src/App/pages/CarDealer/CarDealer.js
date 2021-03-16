@@ -1,5 +1,6 @@
 /* global alt */
 import * as React from 'react';
+import {observer} from "mobx-react-lite";
 
 import CDClasses from "./components/CDClasses";
 import CDModels from "./components/CDModels";
@@ -7,24 +8,47 @@ import CDParameters from "./components/CDParameters";
 import CDColor from "./components/CDColor";
 import CDPrice from "./components/CDPrice";
 
-import close from "../../assets/images/close.svg";
+import close from "@assets/images/close.svg";
 
 import './CarDealer.scss';
 
-const CarDealer = () => {
+const CarDealer = ({ store }) => {
     const [autoClass, setAutoClass] = React.useState(0);
     const [model, setModel] = React.useState(0);
     const [color, setColor] = React.useState(0);
 
-    React.useEffect(() => {
-        if ('alt' in window) {
-            alt.emit('cef::carDealer:preview', JSON.stringify({autoClass, model, color}));
+    const fetchCarsEvent = React.useCallback((json) => {
+        try {
+            const carsList = JSON.parse(json);
+
+            return {
+                isError: false,
+                data: carsList
+            }
+        } catch (e) {
+            console.log(e);
+            return {
+                isError: true,
+                data: null
+            }
         }
-    }, [autoClass, model, color])
+    }, [])
+
+    const carsList = React.useMemo(() => store.carDealerList, [store.carDealerList]);
 
     React.useEffect(() => {
-        setModel(0);
-    }, [autoClass])
+        if ('alt' in window) {
+            alt.emit('client::carDealer:preview', JSON.stringify({autoClass, model, color}));
+        }
+    }, [autoClass, model, color]);
+
+    React.useEffect(() => {
+        if ('alt' in window) {
+            alt.on('cef::carDealer:sendCarsData', (data) => {
+                store.fetchCarDealerList(fetchCarsEvent(data));
+            })
+        }
+    }, [store, fetchCarsEvent]);
 
     const testPalette = React.useMemo(() => [
         '#121212',
@@ -41,11 +65,32 @@ const CarDealer = () => {
     return <div className='car-dealer'>
         <div className='car-dealer-menu'>
             <div className='car-dealer-menu__header'>CarDealer</div>
-            <CDClasses autoClass={autoClass} setAutoClass={setAutoClass}/>
-            <CDModels autoClass={autoClass} model={model} setModel={setModel}/>
-            <CDParameters autoClass={autoClass} model={model} />
-            <CDColor color={color} setColor={setColor} palette={testPalette} />
-            <CDPrice autoClass={autoClass} model={model}/>
+            <CDClasses
+                autoClass={autoClass}
+                setAutoClass={setAutoClass}
+                setModel={setModel}
+            />
+            <CDModels
+                autoClass={autoClass}
+                model={model}
+                setModel={setModel}
+                carsList={carsList}
+            />
+            <CDParameters
+                autoClass={autoClass}
+                model={model}
+                carsList={carsList}
+            />
+            <CDColor
+                color={color}
+                setColor={setColor}
+                palette={testPalette}
+            />
+            <CDPrice
+                autoClass={autoClass}
+                model={model}
+                carsList={carsList}
+            />
         </div>
         <img className='car-dealer__exit' src={close} alt='#' onClick={() => {
             if ('alt' in window) {
@@ -61,4 +106,4 @@ const CarDealer = () => {
     </div>
 }
 
-export default React.memo(CarDealer);
+export default observer(CarDealer);

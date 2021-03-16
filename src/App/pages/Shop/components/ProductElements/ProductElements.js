@@ -1,14 +1,14 @@
-import CDModel from "./CDModel";
+import ShopProduct from "./ShopProduct";
 
 import shopData from "../../../../store/shop/shopData";
 
-import './CDModels.scss';
+import './ProductElements.scss';
 
-const CDModels = (props) => {
+const ProductElements = (props) => {
     return <div className='shop-options'>
         <div className='shop-options__title'>Select product</div>
         {shopData.map((el, key) => {
-            return <CDModel
+            return <ShopProduct
                 item={props.item}
                 setItem={props.setItem}
                 key={key}
@@ -19,4 +19,4 @@ const CDModels = (props) => {
     </div>
 }
 
-export default CDModels;
+export default ProductElements;

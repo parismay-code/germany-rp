@@ -1,22 +1,24 @@
-import CDModel from "./CDModel";
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
 
-import carsData from "../../../../store/carDealer/carsData";
+import CDModel from "./CDModel";
 
 import './CDModels.scss';
 
-const CDModels = (props) => {
+const CDModels = ({ autoClass, model, setModel, carsList }) => {
     return <div className='car-dealer-models'>
         <div className='car-dealer-models__title'>Select model car</div>
-        {carsData[props.autoClass].cars.map((el, key) => {
-            return <CDModel
-                model={props.model}
-                setModel={props.setModel}
-                key={key}
-                name={el.name}
-                id={el.id}
-            />
-        })}
+        <div className='car-dealer-models-content'>
+            {carsList[autoClass].cars.map((el, key) => {
+                return <CDModel
+                    key={key}
+                    model={model}
+                    setModel={setModel}
+                    el={el}
+                />
+            })}
+        </div>
     </div>
 }
 
-export default CDModels;
+export default observer(CDModels);

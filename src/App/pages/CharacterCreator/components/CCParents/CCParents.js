@@ -1,24 +1,27 @@
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
+
 import ParentBlock from "./components/ParentBlock";
 
 import './CCParents.scss';
 
-const CCParents = (props) => {
-    const fatherNames = ['Test Father #1', 'Test Father #2', 'Test Father #3', 'Test Father #4'];
-    const motherNames = ['Test Mother #1', 'Test Mother #2', 'Test Mother #3', 'Test Mother #4'];
+const CCParents = ({ mother, father, mix }) => {
+    const fatherNames = React.useMemo(() =>
+        ['Test Father #1', 'Test Father #2', 'Test Father #3', 'Test Father #4'], []);
+    const motherNames = React.useMemo(() =>
+        ['Test Mother #1', 'Test Mother #2', 'Test Mother #3', 'Test Mother #4'], []);
 
     return <div className='character-creator-parents'>
         <div className='character-creator-parents__title'>Parents</div>
         <div className='character-creator-parents-block'>
             <ParentBlock
                 title='Mother'
-                parent={props.mother}
-                setParent={props.setMother}
+                parent={mother}
                 names={motherNames}
             />
             <ParentBlock
                 title='Father'
-                parent={props.father}
-                setParent={props.setFather}
+                parent={father}
                 names={fatherNames}
             />
         </div>
@@ -28,10 +31,10 @@ const CCParents = (props) => {
             min='-100'
             max='100'
             name='n_creatorParentsMix'
-            defaultValue={props.parentsMix}
-            onChange={(e) => props.setParentsMix(e.target.value)}
+            defaultValue={mix}
+            onChange={(e) => mix = Number(e.target.value)}
         />
     </div>
 }
 
-export default CCParents;
+export default observer(CCParents);

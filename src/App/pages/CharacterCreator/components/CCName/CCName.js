@@ -1,27 +1,26 @@
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
+
 import './CCName.scss';
 
-const CCName = (props) => {
+const CCName = ({ nickname }) => {
     return <div className='character-creator-name'>
         <div className='character-creator-name__title'>User Name</div>
         <div className='character-creator-name__form'>
             <input
                 type='text'
                 name='n_creatorFirstname'
-                defaultValue={props.creatorData.player.nickname.firstname}
+                defaultValue={nickname.firstname}
                 placeholder='Firstname'
-                onChange={(e) => {
-                    props.creatorData.player.nickname.firstname = e.target.value;
-                }}/>
+                onChange={(e) => nickname.firstname = e.target.value}/>
             <input
                 type='text'
                 name='n_creatorLastname'
-                defaultValue={props.creatorData.player.nickname.lastname}
+                defaultValue={nickname.lastname}
                 placeholder='Lastname'
-                onChange={(e) => {
-                    props.creatorData.player.nickname.lastname = e.target.value;
-                }}/>
+                onChange={(e) => nickname.lastname = e.target.value}/>
         </div>
     </div>
 }
 
-export default CCName;
+export default observer(CCName);

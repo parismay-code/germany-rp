@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-const CDModel = (props) => {
+const ShopProduct = (props) => {
     return <div
         className={cn('shop-options__option', props.item === props.id && 'car-dealer-models__option_active')}
         onClick={() => props.setItem(props.id)}
@@ -9,4 +9,4 @@ const CDModel = (props) => {
     </div>
 }
 
-export default CDModel;
+export default ShopProduct;

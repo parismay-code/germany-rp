@@ -1,8 +1,8 @@
 /* global alt */
 import {useState} from 'react';
 
-import CDClasses from "./components/CDClasses";
-import CDModels from "./components/CDModels";
+import ProductType from "./components/ProductType";
+import ProductElements from "./components/ProductElements";
 import ShopDescription from "./components/ShopDescription";
 import TuningPrice from "./components/Price";
 
@@ -17,8 +17,8 @@ const Shop = () => {
     return <div className='shop'>
         <div className='shop-menu'>
             <div className='shop-menu__header'>Shop</div>
-            <CDClasses type={type} setType={setType} />
-            <CDModels item={item} setItem={setItem} />
+            <ProductType type={type} setType={setType} />
+            <ProductElements item={item} setItem={setItem} />
             <ShopDescription item={item} />
             <TuningPrice item={item} />
         </div>

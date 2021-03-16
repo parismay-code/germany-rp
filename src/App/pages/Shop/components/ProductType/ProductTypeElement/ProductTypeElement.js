@@ -1,8 +1,8 @@
 import cn from 'classnames';
 
-const CDClass = (props) => {
+const ProductTypeElement = (props) => {
     return <div
-        className={cn('car-dealer-class__option', props.type === props.currentType && 'car-dealer-class__option_active')}
+        className={cn('product-type__option', props.type === props.currentType && 'product-type__option_active')}
         onClick={() => {
             props.setType(props.currentType);
         }}
@@ -11,4 +11,4 @@ const CDClass = (props) => {
     </div>
 }
 
-export default CDClass;
+export default ProductTypeElement;
