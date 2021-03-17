@@ -10,17 +10,23 @@ const PlayerInfo = ({ store, palette }) => {
     return <>
         <CCGender
             gender={store.creatorData.player.gender}
+            changeGender={store.changeGender}
         />
-        <CCName nickname={store.creatorData.player.nickname}/>
+        <CCName
+            nickname={store.creatorData.player.nickname}
+            changeNickname={store.changeNickname}
+        />
         <CCParents
-            mother={store.creatorData.parents.mother}
-            father={store.creatorData.parents.father}
-            mix={store.creatorData.parents.mix}
+            parents={store.creatorData.parents}
+            changeParents={store.changeParents}
+            changeParentsMix={store.changeParentsMix}
         />
         <CCColor
             title='Body Color'
             palette={palette}
-            color={store.creatorData.appearance.color.body}
+            type='body'
+            color={store.creatorData.appearance.color}
+            changeColor={store.changeColor}
         />
     </>
 }

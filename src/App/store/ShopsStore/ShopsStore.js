@@ -168,13 +168,27 @@ export default class ShopsStore {
         },
     ];
 
+    tuning = {
+        engine: 0,
+        muffler: 0,
+        color: {
+            first: 0,
+            second: 0
+        },
+        wheels: 0,
+        turbo: 0,
+        sound: 0
+    }
+
     constructor() {
         makeObservable(this, {
             meta: observable,
 
             carDealerList: observable,
+            tuning: observable,
 
             fetchCarDealerList: action.bound,
+            fetchCarTuning: action.bound,
         })
     }
 
@@ -190,6 +204,21 @@ export default class ShopsStore {
         runInAction(() => {
             this.carDealerList = data;
             this.meta.carDealer = Meta.success;
+        })
+    }
+
+    async fetchCarTuning(event) {
+        this.meta.tuning = Meta.loading;
+        this.tuning = [];
+
+        const {isError, data} = await event;
+        if (isError) {
+            return this.meta.tuning = Meta.error;
+        }
+
+        runInAction(() => {
+            this.tuning = data;
+            this.meta.tuning = Meta.success;
         })
     }
 

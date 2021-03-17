@@ -1,13 +1,13 @@
 import cn from 'classnames';
 
-const ProductTypeElement = (props) => {
+const ProductTypeElement = ({ type, setType }) => {
     return <div
-        className={cn('product-type__option', props.type === props.currentType && 'product-type__option_active')}
+        className={cn('product-type__option', type === 'food' && 'product-type__option_active')}
         onClick={() => {
-            props.setType(props.currentType);
+            setType('food');
         }}
     >
-        <img src={props.image} alt='#'/>
+        <img src='#' alt='#'/>
     </div>
 }
 

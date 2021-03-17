@@ -10,7 +10,7 @@
   font-family: 'TTNorms-MediumItalic', sans-serif;
   font-style: italic;
 
-  background: radial-gradient(closest-side at 50% 50%, #FFFFFF20 30%, #001B2Dd0 115%);
+  @include backgroundVignette;
 
   &-menu {
     position: relative;

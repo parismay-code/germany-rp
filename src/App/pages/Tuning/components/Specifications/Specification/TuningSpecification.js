@@ -1,10 +1,12 @@
-const TuningSpecification = (props) => {
+import * as React from 'react';
+
+const TuningSpecification = ({ thumb, maxValue, value }) => {
     return <div className='tuning-specification'>
-        <img src={props.thumb}/>
+        <img src={thumb}/>
         <div className='tuning-specification__bar'>
-            <div style={{width: `${props.value / props.maxValue * 100}%`}} />
+            <div style={{width: `${value / maxValue * 100}%`}} />
         </div>
     </div>
 }
 
-export default TuningSpecification;
+export default React.memo(TuningSpecification);

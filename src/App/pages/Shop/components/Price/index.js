@@ -1,1 +1,1 @@
-export { default } from './TuningPrice';
+export { default } from './ShopPrice';

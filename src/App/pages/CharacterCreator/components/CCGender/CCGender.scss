@@ -1,16 +1,26 @@
+@import '../../../../styles/vars';
+
 .character-creator-gender {
   position: relative;
   width: 100%;
-  min-height: 15%;
+  padding: 15px 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1280px) {
+    padding: 5px 0;
+  }
+
+  @media (max-width: 800px) {
+    padding: 0;
+  }
 
   &__male,
   &__female {
     position: relative;
     width: 40%;
-    height: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,8 +29,15 @@
     cursor: pointer;
 
     & svg {
-      width: 3vw;
-      height: 2.5vw;
+      width: 50px;
+
+      @media (max-width: 1280px) {
+        width: 30px;
+      }
+
+      @media (max-width: 800px) {
+        width: 22px;
+      }
 
       transition: filter .2s ease;
 
@@ -35,21 +52,29 @@
       content: '';
 
       position: absolute;
-      left: 10vw;
+      left: 100%;
 
-      width: .08em;
-      height: 90%;
+      width: 1px;
+      height: 80%;
 
-      background-color: rgba(0, 0, 0, .5);
+      background-color: $color-black-opacity;
+
+      @media (max-width: 800px) {
+        height: 50%;
+      }
     }
 
     &:hover,
     &_active {
       & svg {
-        filter: drop-shadow(0 0 0.3vw #3498DB);
+        filter: drop-shadow(0 0 5px $color-blue-active);
+
+        @media (max-width: 800px) {
+          filter: drop-shadow(0 0 2px $color-blue-active);
+        }
 
         & path {
-          fill: #ffffff;
+          fill: $color-white;
           opacity: 1;
         }
       }
@@ -58,17 +83,28 @@
 
   &__female {
     & svg {
-      width: 4vw;
-      height: 3.5vw;
+      width: 65px;
+
+      @media (max-width: 1280px) {
+        width: 45px;
+      }
+
+      @media (max-width: 800px) {
+        width: 30px;
+      }
     }
 
     &:hover,
     &_active {
       & svg {
-        filter: drop-shadow(0 0 0.3vw #cc3ae7);
+        filter: drop-shadow(0 0 5px $color-pink-active);
+
+        @media (max-width: 800px) {
+          filter: drop-shadow(0 0 2px $color-pink-active);
+        }
 
         & path {
-          fill: #ffffff;
+          fill: $color-white;
           opacity: 1;
         }
       }
@@ -77,14 +113,23 @@
 
   &__slider {
     position: absolute;
-    bottom: 20%;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
 
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), #00000000);
+    background: linear-gradient(to bottom, $color-black-opacity, $color-blank);
 
     width: 75%;
-    height: .5em;
+    height: 8px;
+
+    @media (max-width: 1280px) {
+      height: 6px;
+    }
+
+    @media (max-width: 800px) {
+      height: 4px;
+      bottom: 12px;
+    }
 
     &::before {
       content: '';
@@ -96,7 +141,7 @@
       width: 50%;
       height: 100%;
 
-      background: linear-gradient(to bottom, #D8D8D8dd, #D8D8D800);
+      background: linear-gradient(to bottom, $color-gray-opacity, $color-blank);
 
       transition: left .2s ease;
     }

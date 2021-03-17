@@ -17,7 +17,7 @@ const Manager = () => {
     const globalStore = useLocalStore(() => new GlobalStore());
     const shopStore = useLocalStore(() => new ShopsStore())
 
-    const [currentPage, setCurrentPage] = React.useState('characterCreator');
+    const [currentPage, setCurrentPage] = React.useState('shop');
 
     React.useEffect(() => {
         if ('alt' in window) {

@@ -1,14 +1,13 @@
 import * as React from 'react';
-import {observer} from "mobx-react-lite";
 import cn from 'classnames';
 
 import './CCGender.scss';
 
-const CCGender = ({ gender }) => {
+const CCGender = ({ gender, changeGender }) => {
     return <div className='character-creator-gender'>
         <div
             className={cn('character-creator-gender__male', gender === 0 && 'character-creator-gender__male_active')}
-            onClick={() => gender = 0}
+            onClick={() => changeGender(0)}
         >
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                 <path id="svg_male"
@@ -18,7 +17,7 @@ const CCGender = ({ gender }) => {
         </div>
         <div
             className={cn('character-creator-gender__female', gender === 1 && 'character-creator-gender__female_active')}
-            onClick={() => gender = 1}
+            onClick={() => changeGender(1)}
         >
             <svg xmlns="http://www.w3.org/2000/svg" width="65.545" height="65.545" viewBox="0 0 65.545 65.545">
                 <path id="svg_female"
@@ -30,4 +29,4 @@ const CCGender = ({ gender }) => {
     </div>
 }
 
-export default observer(CCGender);
+export default React.memo(CCGender);

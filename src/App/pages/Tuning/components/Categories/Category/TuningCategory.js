@@ -1,8 +1,10 @@
-const TuningCategory = (props) => {
+import * as React from 'react';
+
+const TuningCategory = ({ id, type, image}) => {
     return <div className='tuning-categories-option'>
-        <img src={props.image} alt='#' />
-        <span>{props.type}</span>
+        <img src={image} alt='#' />
+        <span>{type}</span>
     </div>
 }
 
-export default TuningCategory;
+export default React.memo(TuningCategory);

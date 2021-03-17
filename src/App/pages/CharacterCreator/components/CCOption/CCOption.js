@@ -1,4 +1,3 @@
-/* global alt */
 import * as React from 'react';
 import {observer} from "mobx-react-lite";
 
@@ -6,7 +5,7 @@ import circleArrow from '../../../../assets/images/cCreator/circleArrow.svg';
 
 import './CCOption.scss';
 
-const CCOption = ({ el }) => {
+const CCOption = ({ el, changeOption }) => {
     return <div className='character-creator-option'>
         <span className='character-creator-option__title'>{el.title}</span>
         <div className='character-creator-option-input'>
@@ -15,8 +14,8 @@ const CCOption = ({ el }) => {
                 src={circleArrow}
                 alt='#'
                 onClick={() => {
-                    el.value -= 10;
-                    if (el.value < -100) el.value = 100;
+                    if (el.value - 10 < -100) changeOption(el.type, 100);
+                    else changeOption(el.type, el.value - 10);
                 }}
             />
             <input
@@ -26,7 +25,7 @@ const CCOption = ({ el }) => {
                 min='-100'
                 max='100'
                 onChange={(e) => {
-                    el.value = Number(e.target.value);
+                    changeOption(el.type, Number(e.target.value));
                 }}
             />
             <img
@@ -34,8 +33,8 @@ const CCOption = ({ el }) => {
                 src={circleArrow}
                 alt='#'
                 onClick={() => {
-                    el.value += 10;
-                    if (el.value > 100) el.value = -100;
+                    if (el.value + 10 > 100) changeOption(el.type, -100);
+                    else changeOption(el.type, el.value + 10);
                 }}
             />
         </div>

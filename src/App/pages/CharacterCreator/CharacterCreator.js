@@ -54,21 +54,24 @@ const CharacterCreator = () => {
             <CCNavigation
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
-                gender={store.player.gender}
+                gender={store.creatorData.player.gender}
                 icon={currentPage === 0 ? gendersIcon : currentPage === 1 ? faceFeaturesIcon : hairIcon}
             />
+            {currentPage === 0 && <PlayerInfo
+                store={store}
+                palette={testPalette}
+            />}
+            {currentPage === 1 && <FaceFeatures
+                store={store}
+            />}
+            {currentPage === 2 && <Hair
+                store={store}
+                palette={testPalette}
+            />}
         </div>
-        {currentPage === 0 && <PlayerInfo
-            store={store}
-            palette={testPalette}
-        />}
-        {currentPage === 1 && <FaceFeatures
-            store={store}
-        />}
-        {currentPage === 2 && <Hair/>}
         <img className='character-creator__exit' src={close} alt='#' onClick={() => {
             if ('alt' in window) {
-                alt.emit('cef::component:close');
+                alt.emit('client::component:close');
             }
         }}/>
         <div className='character-creator__create'>Create</div>

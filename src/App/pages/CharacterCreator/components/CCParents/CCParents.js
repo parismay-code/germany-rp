@@ -5,7 +5,7 @@ import ParentBlock from "./components/ParentBlock";
 
 import './CCParents.scss';
 
-const CCParents = ({ mother, father, mix }) => {
+const CCParents = ({ parents, changeParents, changeParentsMix }) => {
     const fatherNames = React.useMemo(() =>
         ['Test Father #1', 'Test Father #2', 'Test Father #3', 'Test Father #4'], []);
     const motherNames = React.useMemo(() =>
@@ -16,12 +16,16 @@ const CCParents = ({ mother, father, mix }) => {
         <div className='character-creator-parents-block'>
             <ParentBlock
                 title='Mother'
-                parent={mother}
+                type={0}
+                parent={parents.mother}
+                changeParents={changeParents}
                 names={motherNames}
             />
             <ParentBlock
                 title='Father'
-                parent={father}
+                type={1}
+                parent={parents.father}
+                changeParents={changeParents}
                 names={fatherNames}
             />
         </div>
@@ -31,8 +35,8 @@ const CCParents = ({ mother, father, mix }) => {
             min='-100'
             max='100'
             name='n_creatorParentsMix'
-            defaultValue={mix}
-            onChange={(e) => mix = Number(e.target.value)}
+            defaultValue={parents.mix}
+            onChange={(e) => changeParentsMix(Number(e.target.value))}
         />
     </div>
 }
