@@ -1,48 +1,31 @@
-/* global alt */
-
-import {useState, useEffect, useRef} from 'react';
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
 
 import circleArrow from '../../../../assets/images/cCreator/circleArrow.svg';
 
 import './CCOption.scss';
 
-const CCOption = (props) => {
-    const [value, setValue] = useState(props.el.value);
-
-    const input = useRef(null);
-
-    useEffect(() => {
-        props.el.value = value;
-
-        if ('alt' in window) {
-            alt.emit('cef::characterCreator:preview', props.data);
-        }
-    }, [value])
-
+const CCOption = ({ el, changeOption }) => {
     return <div className='character-creator-option'>
-        <span className='character-creator-option__title'>{props.title}</span>
+        <span className='character-creator-option__title'>{el.title}</span>
         <div className='character-creator-option-input'>
             <img
                 className='character-creator-option-input__leftArrow'
                 src={circleArrow}
                 alt='#'
                 onClick={() => {
-                    props.el.value -= 10;
-                    if (props.el.value < -100) props.el.value = 100;
-
-                    setValue(props.el.value);
-                    input.current.value = props.el.value;
+                    if (el.value - 10 < -100) changeOption(el.type, 100);
+                    else changeOption(el.type, el.value - 10);
                 }}
             />
             <input
-                ref={input}
                 type='range'
-                defaultValue={props.el.value}
+                value={el.value}
                 name='n_characterCreatorOptInput'
                 min='-100'
                 max='100'
                 onChange={(e) => {
-                    setValue(e.target.value);
+                    changeOption(el.type, Number(e.target.value));
                 }}
             />
             <img
@@ -50,11 +33,8 @@ const CCOption = (props) => {
                 src={circleArrow}
                 alt='#'
                 onClick={() => {
-                    props.el.value += 10;
-                    if (props.el.value > 100) props.el.value = -100;
-
-                    setValue(props.el.value);
-                    input.current.value = props.el.value;
+                    if (el.value + 10 > 100) changeOption(el.type, -100);
+                    else changeOption(el.type, el.value + 10);
                 }}
             />
         </div>
@@ -62,4 +42,4 @@ const CCOption = (props) => {
     </div>
 }
 
-export default CCOption;
+export default observer(CCOption);

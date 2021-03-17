@@ -1,14 +1,22 @@
+import * as React from 'react';
+
 import CDColorOption from "./CDColoOption";
 
 import './CDColor.scss';
 
-const CDColor = (props) => {
+const CDColor = ({ palette, color, setColor }) => {
     return <div className='car-dealer-color'>
-        {props.palette.map((el, key) => {
-            return <CDColorOption key={key} el={el} id={key} color={props.color} setColor={props.setColor}/>
+        {palette.map((el, key) => {
+            return <CDColorOption
+                key={key}
+                el={el}
+                id={key}
+                color={color}
+                setColor={setColor}
+            />
         })}
-        <span>Select color car</span>
+        <span className='car-dealer-color__title'>Select color car</span>
     </div>
 }
 
-export default CDColor;
+export default React.memo(CDColor);

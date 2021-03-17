@@ -1,0 +1,15 @@
+.face-features {
+  width: 100%;
+  height: calc(100% - 80px);
+
+  @media (max-height: 800px) {
+    height: calc(100% - 40px);
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto
+  }
+}

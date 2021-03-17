@@ -1,12 +1,15 @@
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
+
 import cn from 'classnames';
 
-const CDModel = (props) => {
+const CDModel = ({ model, setModel, el }) => {
     return <div
-        className={cn('car-dealer-models__option', props.model === props.id && 'car-dealer-models__option_active')}
-        onClick={() => props.setModel(props.id)}
+        className={cn('car-dealer-models-content__option', model === el.id && 'car-dealer-models-content__option_active')}
+        onClick={() => setModel(el.id)}
     >
-        {`${props.name} #${props.id}`}
+        {`${el.name} #${el.id}`}
     </div>
 }
 
-export default CDModel;
+export default observer(CDModel);

@@ -1,30 +1,34 @@
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
+
 import CCGender from "../../components/CCGender";
 import CCName from "../../components/CCName";
 import CCParents from "../../components/CCParents";
 import CCColor from "../../components/CCColor";
 
-const PlayerInfo = (props) => {
+const PlayerInfo = ({ store, palette }) => {
     return <>
         <CCGender
-            gender={props.gender}
-            setGender={props.setGender}
+            gender={store.creatorData.player.gender}
+            changeGender={store.changeGender}
         />
-        <CCName creatorData={props.creatorData}/>
+        <CCName
+            nickname={store.creatorData.player.nickname}
+            changeNickname={store.changeNickname}
+        />
         <CCParents
-            mother={props.mother}
-            setMother={props.setMother}
-            father={props.father}
-            setFather={props.setFather}
-            parentsMix={props.parentsMix}
-            setParentsMix={props.setParentsMix}
+            parents={store.creatorData.parents}
+            changeParents={store.changeParents}
+            changeParentsMix={store.changeParentsMix}
         />
         <CCColor
             title='Body Color'
-            palette={props.palette}
-            color={props.bodyColor}
-            setColor={props.setBodyColor}
+            palette={palette}
+            type='body'
+            color={store.creatorData.appearance.color}
+            changeColor={store.changeColor}
         />
     </>
 }
 
-export default PlayerInfo;
+export default observer(PlayerInfo);

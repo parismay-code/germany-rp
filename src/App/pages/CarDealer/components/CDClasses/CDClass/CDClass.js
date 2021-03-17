@@ -1,14 +1,16 @@
+import * as React from 'react';
 import cn from 'classnames';
 
-const CDClass = (props) => {
+const CDClass = ({ id, image, autoClass, setAutoClass, setModel }) => {
     return <div
-        className={cn('car-dealer-class__option', props.autoClass === props.id && 'car-dealer-class__option_active')}
+        className={cn('car-dealer-class__option', autoClass === id && 'car-dealer-class__option_active')}
         onClick={() => {
-            props.setAutoClass(props.id);
+            setAutoClass(id);
+            setModel(0);
         }}
     >
-        <img src={props.image} alt='#'/>
+        <img src={image} alt='#'/>
     </div>
 }
 
-export default CDClass;
+export default React.memo(CDClass);

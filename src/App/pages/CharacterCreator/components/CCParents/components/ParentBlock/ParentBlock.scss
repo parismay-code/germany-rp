@@ -1,3 +1,5 @@
+@import '../../../../../../styles/vars';
+
 .character-creator-parent-block {
   position: relative;
   width: 45%;
@@ -10,15 +12,20 @@
     justify-content: space-between;
     width: 100%;
 
-    font-size: 1.2em;
-
+    font-size: 1.2rem;
+    
     &__leftArrow,
     &__rightArrow {
-      width: 1.4em;
-      height: 1.4em;
+      width: 25px;
+      height: 25px;
 
       pointer-events: auto;
       cursor: pointer;
+
+      @media (max-width: 800px) {
+        width: 15px;
+        height: 15px;
+      }
     }
 
     &__rightArrow {
@@ -27,9 +34,9 @@
   }
 
   &__name {
-    margin-top: 8%;
+    margin-top: 10px;
 
     font-weight: 700;
-    color: rgba(0, 0, 0, .5)
+    color: $color-black-opacity;
   }
 }

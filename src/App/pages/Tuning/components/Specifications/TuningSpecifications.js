@@ -1,9 +1,11 @@
+import * as React from 'react';
+
 import TuningSpecification from "./Specification";
 
-import maxSpeedIcon from '../../../../assets/images/tuning/maxSpeed.svg';
-import accelerationIcon from '../../../../assets/images/tuning/acceleration.svg';
-import brakesIcon from '../../../../assets/images/tuning/brakes.svg';
-import clutchIcon from '../../../../assets/images/tuning/clutch.svg';
+import maxSpeedIcon from '@assets/images/tuning/maxSpeed.svg';
+import accelerationIcon from '@assets/images/tuning/acceleration.svg';
+import brakesIcon from '@assets/images/tuning/brakes.svg';
+import clutchIcon from '@assets/images/tuning/clutch.svg';
 
 import './TuningSpecifications.scss';
 
@@ -22,4 +24,4 @@ const TuningSpecifications = () => {
     </div>
 }
 
-export default TuningSpecifications;
+export default React.memo(TuningSpecifications);

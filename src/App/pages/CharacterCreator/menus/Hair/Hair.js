@@ -1,62 +1,59 @@
-import {useState} from 'react';
+import * as React from 'react';
+import {observer} from 'mobx-react-lite';
 
 import CCHairOption from "../../components/CCHairOption";
 import CCColor from "../../components/CCColor";
 
-import hairData from "../../../../store/cCreator/hairData";
+const Hair = ({ store, palette }) => {
+    const [currentHair, setCurrentHair] = React.useState(0);
 
-const Hair = (props) => {
-    const [currentHair, setCurrentHair] = useState(0);
-
-    const colorManager = () => {
-        switch (currentHair) {
-            case 0:
-                return <CCColor
-                    title='Color'
-                    palette={props.palette}
-                    color={props.headHairColor}
-                    setColor={props.setHeadHairColor}
-                />
-            case 1:
-                return <CCColor
-                    title='Color'
-                    palette={props.palette}
-                    color={props.eyebrowsColor}
-                    setColor={props.setEyebrowsColor}
-                />
-            case 2:
-                return <CCColor
-                    title='Color'
-                    palette={props.palette}
-                    color={props.chestHairColor}
-                    setColor={props.setChestHairColor}
-                />
-            case 3:
-                return <CCColor
-                    title='Color'
-                    palette={props.palette}
-                    color={props.beardColor}
-                    setColor={props.setBeardColor}
-                />
-            default:
-                return <></>;
-        }
-    }
+    const hairData = React.useMemo(() => [
+        ['1', '2', '3', '4'], // head
+        ['1', '2', '3', '4', '5'], // eyebrows
+        ['1', '2', '3', '4', '5', '6'], // chest
+        ['1', '2', '3', '4', '5', '6', '7'], // beard
+    ], []);
 
     return <>
-        {props.creatorData.appearance.hair.map((el, key) => {
+        {store.creatorData.appearance.hair.map((el, key) => {
             return <CCHairOption
                 key={key}
-                title={el.title}
                 el={el}
                 id={key}
-                data={hairData[key].types}
-                event={setCurrentHair}
-                creatorData={props.creatorData}
+                data={hairData[key]}
+                setCurrentHair={setCurrentHair}
+                changeHair={store.changeHair}
             />
         })}
-        {colorManager()}
+        {currentHair === 0 && <CCColor
+            title='Color'
+            palette={palette}
+            type='headHair'
+            color={store.creatorData.appearance.color}
+            changeColor={store.changeColor}
+        />}
+        {currentHair === 1 && <CCColor
+            title='Color'
+            palette={palette}
+            type='eyebrows'
+            color={store.creatorData.appearance.color}
+            changeColor={store.changeColor}
+        />}
+        {currentHair === 2 && <CCColor
+            title='Color'
+            palette={palette}
+            type='chestHair'
+            color={store.creatorData.appearance.color}
+            changeColor={store.changeColor}
+        />}
+        {currentHair === 3 && <CCColor
+            title='Color'
+            palette={palette}
+            type='beard'
+            color={store.creatorData.appearance.color}
+            changeColor={store.changeColor}
+        />}
     </>
 }
 
-export default Hair;
+export default observer(Hair);

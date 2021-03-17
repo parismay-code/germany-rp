@@ -1,5 +1,4 @@
 /* global alt */
-
 import {useState} from 'react';
 
 import HotelInfo from "./components/HotelInfo";

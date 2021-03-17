@@ -1,0 +1,29 @@
+.inventory {
+  width: 80vw;
+  max-width: 2048px;
+  height: 77vh;
+  max-height: 43vw;
+  padding: 3vw 1.5vw 1.5vw 1.5vw;
+
+  font-size: .8vw;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, .9);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @media (min-width: 3440px) {
+    font-size: 24px;
+  }
+
+  &__main {
+    width: 35%;
+    height: 100%;
+  }
+}

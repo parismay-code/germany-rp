@@ -1,70 +1,67 @@
-// eslint-disable-next-line no-unused-vars
 /* global alt */
+import * as React from 'react';
 
-import InventoryClothes from "../../../components/InventoryClothes";
-import InventoryMain from "../../../components/InventoryMain";
-import InventoryBag from "../../../components/InventoryBag";
+import Clothes from "./components/Clothes";
+import MainInventory from "./components/MainInventory";
+import Weapons from "./components/Weapons";
+import Quick from "./components/Quick";
+import Bag from "./components/Bag";
+import Context from "./components/Context";
 
-import clothesSlots from "../../../store/inventory/clothesSlots";
-import mainSlots from "../../../store/inventory/mainSlots";
-import bagSlots from "../../../store/inventory/bagSlots";
+import './Inventory.scss';
 
-import './inventory.scss';
+const Inventory = (props) => {
+    const [bagStatus, setBagStatus] = React.useState(false);
 
-const Inventory = () => {
+    const [isDragging, setIsDragging] = React.useState(false);
+    const [draggedCell, setDraggedCell] = React.useState();
+    const [targetCell, setTargetCell] = React.useState();
 
-    let inventoryWeight = 0,
-        inventoryCount = 0,
-        bagWeight = 0,
-        bagCount = 0,
-        weaponWeight = 0,
-        weaponCount = 0;
+    React.useEffect(() => {
+        if (props.inventoryData[8].data.count > 0) setBagStatus(true);
+        else setBagStatus(false);
+    }, [props.inventoryData])
 
-    mainSlots.inventory.map((el) => {
-        inventoryWeight += el.weight;
-        if (el.item !== undefined) inventoryCount++;
-    });
-    mainSlots.weapons.map((el) => {
-        weaponWeight += el.weight;
-        if (el.item !== undefined) weaponCount++;
-    });
-    bagSlots.map((el) => {
-        bagWeight += el.weight;
-        if (el.item !== undefined) bagCount++;
-    });
-
-    if (clothesSlots[8].item !== undefined) {
-        return (
-            <div className='inventory'>
-                <InventoryClothes clothesSlots={clothesSlots}/>
-                <InventoryMain
-                    mainSlots={mainSlots}
-                    inventoryWeight={inventoryWeight}
-                    weaponWeight={weaponWeight}
-                    inventoryCount={inventoryCount}
-                    weaponCount={weaponCount}
-                />
-            </div>
-        )
-    } else {
-        return (
-            <div className='inventory'>
-                <InventoryClothes clothesSlots={clothesSlots}/>
-                <InventoryMain
-                    mainSlots={mainSlots}
-                    inventoryWeight={inventoryWeight}
-                    weaponWeight={weaponWeight}
-                    inventoryCount={inventoryCount}
-                    weaponCount={weaponCount}
-                />
-                <InventoryBag
-                    bagSlots={bagSlots}
-                    bagWeight={bagWeight}
-                    bagCount={bagCount}
-                />
-            </div>
-        )
-    }
+    return <div
+        className='inventory'
+        onMouseUp={() => {
+            setIsDragging(false);
+        }}
+    >
+        <Clothes
+            inventoryData={props.inventoryData}
+            draggedCell={draggedCell}
+            setDraggedCell={setDraggedCell}
+            targetCell={targetCell}
+            setTargetCell={setTargetCell}
+            isDragging={isDragging}
+            setIsDragging={setIsDragging}
+        />
+        <div className='inventory__main'>
+            <MainInventory
+                inventoryData={props.inventoryData.filter(el => el.data.type !== 'weapon' && el.position > 10)}
+                draggedCell={draggedCell}
+                setDraggedCell={setDraggedCell}
+                targetCell={targetCell}
+                setTargetCell={setTargetCell}
+                isDragging={isDragging}
+                setIsDragging={setIsDragging}/>
+            <Weapons
+                inventoryData={props.inventoryData.filter(el => el.data.type === 'weapon')}
+                draggedCell={draggedCell}
+                setDraggedCell={setDraggedCell}
+                targetCell={targetCell}
+                setTargetCell={setTargetCell}
+                isDragging={isDragging}
+                setIsDragging={setIsDragging}/>
+            <Quick
+                quickSlots={props.quickSlots}
+            />
+        </div>
+        {bagStatus && <Bag
+            inventoryData={props.inventoryData[8].data.inventory}
+        />}
+    </div>
 }
 
 export default Inventory;

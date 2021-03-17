@@ -11,11 +11,13 @@ import Tuning from "./Tuning";
 import Shop from "./Shop";
 
 import GlobalStore from "@store/GlobalStore";
+import ShopsStore from "@store/ShopsStore";
 
 const Manager = () => {
     const globalStore = useLocalStore(() => new GlobalStore());
+    const shopStore = useLocalStore(() => new ShopsStore())
 
-    const [currentPage, setCurrentPage] = React.useState('carDealer');
+    const [currentPage, setCurrentPage] = React.useState('shop');
 
     React.useEffect(() => {
         if ('alt' in window) {
@@ -25,11 +27,11 @@ const Manager = () => {
 
     return <>
         {currentPage === 'auth' && <Auth/>}
-        {currentPage === 'carDealer' && <CarDealer/>}
+        {currentPage === 'carDealer' && <CarDealer store={shopStore}/>}
         {currentPage === 'characterCreator' && <CharacterCreator/>}
         {currentPage === 'hud' && <HUD/>}
-        {currentPage === 'tuning' && <Tuning/>}
-        {currentPage === 'shop' && <Shop/>}
+        {currentPage === 'tuning' && <Tuning store={shopStore}/>}
+        {currentPage === 'shop' && <Shop store={shopStore}/>}
     </>
 }
 

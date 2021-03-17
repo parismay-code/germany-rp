@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import './TuningPrice.scss';
 
 const TuningPrice = () => {
@@ -6,4 +8,4 @@ const TuningPrice = () => {
     </div>
 }
 
-export default TuningPrice;
+export default React.memo(TuningPrice);

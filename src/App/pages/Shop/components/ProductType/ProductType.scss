@@ -1,0 +1,49 @@
+.product-type {
+  position: relative;
+  width: 100%;
+  height: 8%;
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 3440px) {
+    height: 10%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    background: linear-gradient(to right, #D8D8D8, #D8D8D800);
+
+    width: 100%;
+    height: .1em;
+  }
+
+  &__option {
+    position: relative;
+    width: 2.7em;
+    height: 2.7em;
+    margin: 3% 5% 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: .1em solid #ffffff;
+
+    pointer-events: auto;
+    cursor: pointer;
+
+    &:hover,
+    &_active {
+      border: .1em solid #3498DB;
+    }
+
+    & img {
+      width: 80%;
+      height: 50%;
+    }
+  }
+}
