@@ -1,1 +1,1 @@
-export { default } from './ProductTypeElement';
+export { default } from './ProductType';

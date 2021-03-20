@@ -13,7 +13,7 @@ import close from "@assets/images/close.svg";
 import './CarDealer.scss';
 
 const CarDealer = ({ store }) => {
-    const [autoClass, setAutoClass] = React.useState(0);
+    const [autoClass, setAutoClass] = React.useState('default');
     const [model, setModel] = React.useState(0);
     const [color, setColor] = React.useState(0);
 
@@ -68,7 +68,6 @@ const CarDealer = ({ store }) => {
             <CDClasses
                 autoClass={autoClass}
                 setAutoClass={setAutoClass}
-                setModel={setModel}
             />
             <CDModels
                 autoClass={autoClass}
@@ -77,7 +76,6 @@ const CarDealer = ({ store }) => {
                 carsList={carsList}
             />
             <CDParameters
-                autoClass={autoClass}
                 model={model}
                 carsList={carsList}
             />
@@ -87,7 +85,6 @@ const CarDealer = ({ store }) => {
                 palette={testPalette}
             />
             <CDPrice
-                autoClass={autoClass}
                 model={model}
                 carsList={carsList}
             />

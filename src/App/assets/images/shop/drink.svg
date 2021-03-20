@@ -1,14 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59.654" height="59.654" viewBox="0 0 59.654 59.654">
-  <defs>
-    <filter id="Icon_awesome-wine-bottle" x="0" y="0" width="59.654" height="59.654" filterUnits="userSpaceOnUse">
-      <feOffset input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-color="#fff" flood-opacity="0.38"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_awesome-wine-bottle)">
-    <path id="Icon_awesome-wine-bottle-2" data-name="Icon awesome-wine-bottle" d="M28.031,4.01,24.28.259a.884.884,0,0,0-1.25,0L21.78,1.51a.884.884,0,0,0,0,1.25L17.543,7A7.068,7.068,0,0,0,9.787,8.5L1.036,17.252a3.537,3.537,0,0,0,0,5l5,5a3.537,3.537,0,0,0,5,0L19.79,18.5a7.067,7.067,0,0,0,1.5-7.756L25.531,6.51a.884.884,0,0,0,1.25,0l1.25-1.25A.884.884,0,0,0,28.031,4.01ZM9.9,23.388l-5-5,6.743-6.743,5,5L9.9,23.388Z" transform="translate(9.94 29.77) rotate(-45)" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59.654" height="59.654"
+     viewBox="0 0 59.654 59.654">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)">
+        <path id="Icon_awesome-wine-bottle-2" data-name="Icon awesome-wine-bottle"
+              d="M28.031,4.01,24.28.259a.884.884,0,0,0-1.25,0L21.78,1.51a.884.884,0,0,0,0,1.25L17.543,7A7.068,7.068,0,0,0,9.787,8.5L1.036,17.252a3.537,3.537,0,0,0,0,5l5,5a3.537,3.537,0,0,0,5,0L19.79,18.5a7.067,7.067,0,0,0,1.5-7.756L25.531,6.51a.884.884,0,0,0,1.25,0l1.25-1.25A.884.884,0,0,0,28.031,4.01ZM9.9,23.388l-5-5,6.743-6.743,5,5L9.9,23.388Z"
+              transform="translate(9.94 29.77) rotate(-45)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
 </svg>

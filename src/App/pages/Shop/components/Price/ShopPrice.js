@@ -1,18 +1,16 @@
+import * as React from 'react';
+
+import {regExp} from "@utils/regExp";
+
 import './ShopPrice.scss';
-import shopData from "../../../../store/shop/shopData";
 
-const ShopPrice = (props) => {
-    const regExp = {
-        money: /(\d)(?=(\d{3})+(\D|$))/g
-    }
+const ShopPrice = ({ price }) => {
 
-    let price = String(shopData[props.item].price);
-
-    price = `$${price.replace(regExp.money, '$1 ')}`
+    const _price = React.useMemo(() => `$${String(price).replace(regExp.money, '$1 ')}`, [price]);
 
     return <div className='shop-price'>
-        Price<br/>{price}
+        Price<br/>{_price}
     </div>
 }
 
-export default ShopPrice;
+export default React.memo(ShopPrice);

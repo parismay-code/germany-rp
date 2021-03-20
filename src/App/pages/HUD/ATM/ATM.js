@@ -1,6 +1,7 @@
 /* global alt */
+import * as React from 'react';
 
-import './atm.scss'
+import './atm.scss';
 
 const ATM = () => {
     return (
@@ -15,11 +16,16 @@ const ATM = () => {
                     <div className='atm-screen-options__element'>Pay house tax</div>
                     <div className='atm-screen-options__element'>Pay business tax</div>
                     <div className='atm-screen-options__element'>Transfer money</div>
-                    <div className='atm-screen-options__exit' onClick={() => {
-                        if ('alt' in window) {
-                            alt.emit('cef::hud:closeComponent');
-                        }
-                    }}>Exit</div>
+                    <div
+                        className='atm-screen-options__exit'
+                        onClick={() => {
+                            if ('alt' in window) {
+                                alt.emit('client::hud:closeComponent');
+                            }
+                        }}
+                    >
+                        Exit
+                    </div>
                 </div>
             </div>
             <div className='atm-user-info'>
@@ -36,4 +42,4 @@ const ATM = () => {
     )
 }
 
-export default ATM;
+export default React.memo(ATM);

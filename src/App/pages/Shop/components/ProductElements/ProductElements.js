@@ -1,22 +1,25 @@
-import ShopProduct from "./ShopProduct";
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
 
-import shopData from "../../../../store/shop/shopData";
+import ShopProduct from "./ShopProduct";
 
 import './ProductElements.scss';
 
-const ProductElements = (props) => {
+const ProductElements = ({ item, setItem, type, store }) => {
     return <div className='shop-options'>
         <div className='shop-options__title'>Select product</div>
-        {shopData.map((el, key) => {
-            return <ShopProduct
-                item={props.item}
-                setItem={props.setItem}
-                key={key}
-                name={el.name}
-                id={el.id}
-            />
-        })}
+        <div className='shop-options-content'>
+            {store.shopData.filter(el => el.type === type).map((el, key) => {
+                return <ShopProduct
+                    key={key}
+                    item={item}
+                    setItem={setItem}
+                    name={el.name}
+                    id={el.id}
+                />
+            })}
+        </div>
     </div>
 }
 
-export default ProductElements;
+export default observer(ProductElements);
