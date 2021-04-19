@@ -1,10 +1,9 @@
+@import '../../../styles/vars';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
 .atm {
-  width: 54.5vw;
-  max-width: 1480px;
-  height: 80vh;
-  max-height: 42.4vw;
+  width: 1000px;
+  height: 780px;
 
   background: url('../../../assets/images/atm/atm2x.png') no-repeat;
   background-size: contain;
@@ -14,25 +13,42 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  filter: drop-shadow(0 0 2vw #000000ee);
+  filter: drop-shadow(0 0 50px $color-black);
+
+  @media (max-width: 800px) {
+    width: 500px;
+    height: 390px;
+
+    filter: drop-shadow(0 0 25px $color-black);
+  }
+
+  @media (min-width: 2000px) {
+    font-size: .8rem;
+  }
 
   &-screen {
     position: absolute;
-    top: 33.3%;
-    left: 37.55%;
+    top: 260px;
+    left: 375px;
     transform: translate(-50%, -50%);
 
-    width: 39.5%;
-    height: 42%;
+    width: 400px;
+    height: 330px;
 
-    font-size: .85vw;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    color: #ffffff;
+    font-weight: 100;
+    color: $color-white;
+
+    @media (max-width: 800px) {
+      top: 130px;
+      left: 187.5px;
+
+      width: 200px;
+      height: 165px;
+    }
 
     &-options {
       height: 100%;
-      width: 100%;
 
       display: flex;
       flex-direction: column;
@@ -42,8 +58,8 @@
         position: absolute;
         top: 0;
 
-        font-weight: 600;
-        color: #59D962;
+        font-weight: 700;
+        color: $color-green;
 
         & span {
           font-weight: 500;
@@ -54,25 +70,35 @@
         position: absolute;
         right: 0;
 
-        font-weight: 600;
+        font-weight: 700;
         text-align: center;
 
-        background-color: rgba(0, 0, 0, .28);
-        border: 0.05em solid rgba(112, 112, 112, .28);
+        background-color: $color-black-atm;
+        border: 1px solid rgba(112, 112, 112, .28);
 
         width: 20%;
-        padding: 2.25%;
-        margin: .5% 0;
+        padding: 10px;
+        margin: 2px 0;
+
+        @media (max-width: 800px) {
+          padding: 4px;
+          margin: 1px 0;
+        }
       }
 
       &__element,
       &__balance {
-        background-color: rgba(0, 0, 0, .28);
-        border: 0.05em solid rgba(112, 112, 112, .28);
+        background-color: $color-black-atm;
+        border: 1px solid rgba(112, 112, 112, .25);
 
         width: 70%;
-        padding: 2.25%;
-        margin: .5% 0;
+        padding: 10px;
+        margin: 2px 0;
+
+        @media (max-width: 800px) {
+          padding: 4px;
+          margin: 1px 0;
+        }
       }
 
       &__element,
@@ -84,23 +110,25 @@
 
   &-user-info {
     position: absolute;
-    top: 17%;
-    right: .3%;
+    top: 130px;
+    right: 0;
     transform: translate(-50%, -50%);
 
-    height: 23%;
-    width: 17.8%;
+    height: 170px;
+    width: 180px;
 
-    font-size: .85vw;
     font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
+    color: $color-white;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    @media (min-width: 3440px) {
-      font-size: .75vw;
+    @media (max-width: 800px) {
+      top: 65px;
+
+      height: 85px;
+      width: 90px;
     }
 
     &__owner,
@@ -110,11 +138,11 @@
       align-items: center;
 
       & span:first-of-type {
-        margin-bottom: 15%;
-      }
+        margin-bottom: 25px;
 
-      & span:last-of-type {
-        margin-top: 3%;
+        @media (max-width: 800px) {
+          margin-bottom: 12.5px;
+        }
       }
     }
   }

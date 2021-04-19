@@ -1,23 +1,25 @@
 /* global alt */
-import close from '../../../../../assets/images/close.svg';
-import locked from '../../../../../assets/images/house/locked.svg'
-import opened from '../../../../../assets/images/house/opened.svg'
+import * as React from 'react';
+
+import close from '@assets/images/close.svg';
+import lockedImg from '@assets/images/house/locked.svg'
+import openedImg from '@assets/images/house/opened.svg'
 
 import './HouseHeader.scss';
 
-const HouseHeader = (props) => {
+const HouseHeader = ({ id, locked }) => {
     return <div className='house-header'>
-        <span className='house-header__id'>House<br/>№{props.id}</span>
+        <span className='house-header__id'>House<br/>№{id}</span>
         <div className='house-header__lock'>
-            <span>{props.locked ? 'Locked' : 'Opened'}</span>
-            <img src={props.locked ? locked : opened} alt='#'/>
+            <span>{locked ? 'Locked' : 'Opened'}</span>
+            <img src={locked ? lockedImg : openedImg} alt='#'/>
         </div>
         <img className='house-header__close' src={close} alt='#' onClick={() => {
             if ('alt' in window) {
-                alt.emit('cef::hud:closeComponent');
+                alt.emit('client::hud:closeComponent');
             }
         }}/>
     </div>
 }
 
-export default HouseHeader;
+export default React.memo(HouseHeader);

@@ -1,3 +1,4 @@
+/* global alt */
 import {
     action,
     makeObservable,
@@ -15,7 +16,9 @@ export default class CreatorStore {
                 firstname: undefined,
                 lastname: undefined
             },
-            gender: 0
+            gender: 0,
+            birthday: undefined,
+            birthPlace: undefined
         },
         parents: {
             father: 0,
@@ -192,6 +195,7 @@ export default class CreatorStore {
             creatorData: observable,
 
             changeNickname: action.bound,
+            changeBirthInfo: action.bound,
             changeGender: action.bound,
             changeParents: action.bound,
             changeParentsMix: action.bound,
@@ -206,70 +210,171 @@ export default class CreatorStore {
         else this.creatorData.player.nickname.lastname = text;
     }
 
+    changeBirthInfo(type, text) {
+        if (type === 0) this.creatorData.player.birthday = text;
+        else this.creatorData.player.birthPlace = text;
+    }
+
     changeGender(gender) {
         this.creatorData.player.gender = gender;
+
+        if ('alt' in window) {
+            alt.emit('client::characterCreator:preview', this.creatorData);
+        }
     }
 
     changeParents(parent, number) {
         if (parent === 0) this.creatorData.parents.mother = number;
         else this.creatorData.parents.father = number;
+
+        if ('alt' in window) {
+            alt.emit('client::characterCreator:preview', this.creatorData);
+        }
     }
 
     changeParentsMix(value) {
         this.creatorData.parents.mix = value;
+
+        if ('alt' in window) {
+            alt.emit('client::characterCreator:preview', this.creatorData);
+        }
     }
 
     changeColor(type, value) {
         switch (type) {
-            case 'body': return this.creatorData.appearance.color.body = value;
-            case 'headHair': return this.creatorData.appearance.color.headHair = value;
-            case 'eyebrows': return this.creatorData.appearance.color.eyebrows = value;
-            case 'chestHair': return this.creatorData.appearance.color.chestHair = value;
-            case 'beard': return this.creatorData.appearance.color.beard = value;
-            case 'eyes': return this.creatorData.appearance.color.eyes = value;
-            default: return;
+            case 'body':
+                this.creatorData.appearance.color.body = value;
+                break;
+            case 'headHair':
+                this.creatorData.appearance.color.headHair = value;
+            break;
+            case 'eyebrows':
+                this.creatorData.appearance.color.eyebrows = value;
+                break;
+            case 'chestHair':
+                this.creatorData.appearance.color.chestHair = value;
+                break;
+            case 'beard':
+                this.creatorData.appearance.color.beard = value;
+                break;
+            case 'eyes':
+                this.creatorData.appearance.color.eyes = value;
+                break;
+            default: break;
+        }
+
+        if ('alt' in window) {
+            alt.emit('client::characterCreator:preview', this.creatorData);
         }
     }
 
     changeFaceFeatures(type, value) {
         switch (type) {
-            case 'noseWidth': return this.creatorData.faceFeatures[0].value = value;
-            case 'noseHeight': return this.creatorData.faceFeatures[1].value = value;
-            case 'noseLength': return this.creatorData.faceFeatures[2].value = value;
-            case 'noseBridge': return this.creatorData.faceFeatures[3].value = value;
-            case 'noseBridgeShaft': return this.creatorData.faceFeatures[4].value = value;
-            case 'noseTip': return this.creatorData.faceFeatures[5].value = value;
-            case 'eyebrowsWidth': return this.creatorData.faceFeatures[6].value = value;
-            case 'eyebrowsHeight': return this.creatorData.faceFeatures[7].value = value;
-            case 'eyebrowsDeep': return this.creatorData.faceFeatures[8].value = value;
-            case 'cheekboneWidth': return this.creatorData.faceFeatures[9].value = value;
-            case 'cheekboneHeight': return this.creatorData.faceFeatures[10].value = value;
-            case 'cheekDeep': return this.creatorData.faceFeatures[11].value = value;
-            case 'eyesWidth': return this.creatorData.faceFeatures[12].value = value;
-            case 'lipsWidth': return this.creatorData.faceFeatures[13].value = value;
-            case 'jawWidth': return this.creatorData.faceFeatures[14].value = value;
-            case 'jawHeight': return this.creatorData.faceFeatures[15].value = value;
-            case 'jawDeep': return this.creatorData.faceFeatures[16].value = value;
-            case 'jawIndent': return this.creatorData.faceFeatures[17].value = value;
-            case 'chinWidth': return this.creatorData.faceFeatures[18].value = value;
-            case 'chinHeight': return this.creatorData.faceFeatures[19].value = value;
-            case 'chinLength': return this.creatorData.faceFeatures[20].value = value;
-            case 'chinShape': return this.creatorData.faceFeatures[21].value = value;
-            case 'neckWidth': return this.creatorData.faceFeatures[22].value = value;
-            case 'blemishes': return this.creatorData.limitations[0].value = value;
-            case 'ageing': return this.creatorData.limitations[1].value = value;
-            case 'molesFreckles': return this.creatorData.limitations[2].value = value;
-            default: return;
+            case 'noseWidth':
+                this.creatorData.faceFeatures[0].value = value;
+                break;
+            case 'noseHeight':
+                this.creatorData.faceFeatures[1].value = value;
+                break;
+            case 'noseLength':
+                this.creatorData.faceFeatures[2].value = value;
+                break;
+            case 'noseBridge':
+                this.creatorData.faceFeatures[3].value = value;
+                break;
+            case 'noseBridgeShaft':
+                this.creatorData.faceFeatures[4].value = value;
+                break;
+            case 'noseTip':
+                this.creatorData.faceFeatures[5].value = value;
+                break;
+            case 'eyebrowsWidth':
+                this.creatorData.faceFeatures[6].value = value;
+                break;
+            case 'eyebrowsHeight':
+                this.creatorData.faceFeatures[7].value = value;
+                break;
+            case 'eyebrowsDeep':
+                this.creatorData.faceFeatures[8].value = value;
+                break;
+            case 'cheekboneWidth':
+                this.creatorData.faceFeatures[9].value = value;
+                break;
+            case 'cheekboneHeight':
+                this.creatorData.faceFeatures[10].value = value;
+                break;
+            case 'cheekDeep':
+                this.creatorData.faceFeatures[11].value = value;
+                break;
+            case 'eyesWidth':
+                this.creatorData.faceFeatures[12].value = value;
+                break;
+            case 'lipsWidth':
+                this.creatorData.faceFeatures[13].value = value;
+                break;
+            case 'jawWidth':
+                this.creatorData.faceFeatures[14].value = value;
+                break;
+            case 'jawHeight':
+                this.creatorData.faceFeatures[15].value = value;
+                break;
+            case 'jawDeep':
+                this.creatorData.faceFeatures[16].value = value;
+                break;
+            case 'jawIndent':
+                this.creatorData.faceFeatures[17].value = value;
+                break;
+            case 'chinWidth':
+                this.creatorData.faceFeatures[18].value = value;
+                break;
+            case 'chinHeight':
+                this.creatorData.faceFeatures[19].value = value;
+                break;
+            case 'chinLength':
+                this.creatorData.faceFeatures[20].value = value;
+                break;
+            case 'chinShape':
+                this.creatorData.faceFeatures[21].value = value;
+                break;
+            case 'neckWidth':
+                this.creatorData.faceFeatures[22].value = value;
+                break;
+            case 'blemishes':
+                this.creatorData.limitations[0].value = value;
+                break;
+            case 'ageing':
+                this.creatorData.limitations[1].value = value;
+                break;
+            case 'molesFreckles':
+                this.creatorData.limitations[2].value = value;
+                break;
+            default: break;
+        }
+
+        if ('alt' in window) {
+            alt.emit('client::characterCreator:preview', this.creatorData);
         }
     }
 
     changeHair(type, value) {
         switch (type) {
-            case 0: return this.creatorData.appearance.hair[0].value = value;
-            case 1: return this.creatorData.appearance.hair[1].value = value;
-            case 2: return this.creatorData.appearance.hair[2].value = value;
-            case 3: return this.creatorData.appearance.hair[3].value = value;
-            default: return;
+            case 0:
+                this.creatorData.appearance.hair[0].value = value;
+                break;
+            case 1:
+                this.creatorData.appearance.hair[1].value = value;
+                break;
+            case 2:
+                this.creatorData.appearance.hair[2].value = value;
+                break;
+            case 3:
+                this.creatorData.appearance.hair[3].value = value;
+                break;
+            default: break
+        }
+
+        if ('alt' in window) {
+            alt.emit('client::characterCreator:preview', this.creatorData);
         }
     }
 

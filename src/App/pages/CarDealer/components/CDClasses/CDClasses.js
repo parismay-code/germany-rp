@@ -8,28 +8,25 @@ import sport from '@assets/images/carDealer/sport.svg';
 
 import './CDClasses.scss';
 
-const CDClasses = ({ autoClass, setAutoClass, setModel }) => {
+const CDClasses = ({ autoClass, setAutoClass }) => {
     return <div className='car-dealer-class'>
         <CDClass
             image={jeep}
-            id={0}
+            select='default'
             autoClass={autoClass}
             setAutoClass={setAutoClass}
-            setModel={setModel}
         />
         <CDClass
             image={coupe}
-            id={1}
+            select='premium'
             autoClass={autoClass}
             setAutoClass={setAutoClass}
-            setModel={setModel}
         />
         <CDClass
             image={sport}
-            id={2}
+            select='luxury'
             autoClass={autoClass}
             setAutoClass={setAutoClass}
-            setModel={setModel}
         />
     </div>
 }

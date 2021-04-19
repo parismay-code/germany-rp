@@ -1,3 +1,5 @@
+@import '../../../../../styles/vars';
+
 .hotel-option {
   width: 100%;
   height: 10%;
@@ -6,13 +8,17 @@
   align-items: center;
   justify-content: flex-start;
 
-  padding: 1.5vw;
+  padding: 25px;
 
   pointer-events: auto;
   cursor: pointer;
 
   &:hover,
   &_active {
-    background: linear-gradient(to right, rgba(149, 149, 149, .9), #95959500);
+    background: linear-gradient(to right, rgba(149, 149, 149, .9), $color-blank);
+  }
+
+  @media (max-width: 800px) {
+    padding: 15px;
   }
 }

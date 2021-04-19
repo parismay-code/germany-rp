@@ -1,11 +1,11 @@
-import shopData from "../../../../store/shop/shopData";
+import * as React from 'react';
 
 import './ShopDescription.scss';
 
-const ShopDescription = (props) => {
+const ShopDescription = ({ satiety }) => {
     return <div className='shop-description'>
         <div className='shop-description-header'>
-            <div className='shop-description-header__units'>{`${shopData[props.item].satiety} units`}</div>
+            <div className='shop-description-header__units'>{`${satiety} units`}</div>
             <span>Satiety</span>
             <span>Food</span>
         </div>
@@ -17,4 +17,4 @@ const ShopDescription = (props) => {
     </div>
 }
 
-export default ShopDescription;
+export default React.memo(ShopDescription);

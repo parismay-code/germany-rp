@@ -1,12 +1,13 @@
+import * as React from 'react';
 import cn from 'classnames';
 
-const ShopProduct = (props) => {
+const ShopProduct = ({ item, setItem, id, name }) => {
     return <div
-        className={cn('shop-options__option', props.item === props.id && 'car-dealer-models__option_active')}
-        onClick={() => props.setItem(props.id)}
+        className={cn('shop-options-content__option', item === id && 'shop-options-content__option_active')}
+        onClick={() => setItem(id)}
     >
-        {`${props.name} #${props.id}`}
+        {`${name} #${id}`}
     </div>
 }
 
-export default ShopProduct;
+export default React.memo(ShopProduct);

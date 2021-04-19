@@ -1,15 +1,16 @@
+import * as React from 'react';
 import cn from 'classnames';
 
 import './HotelOption.scss';
 
-const HotelOption = (props) => {
-    const types = ['standard', 'premium', 'platinum'];
+const HotelOption = ({currentOption, type, event}) => {
+    const types = React.useMemo(() => ['standard', 'premium', 'platinum'], []);
 
-    return <div className={cn('hotel-option', props.currentOption === props.type && 'hotel-option_active')} onClick={props.event}>
+    return <div className={cn('hotel-option', currentOption === type && 'hotel-option_active')} onClick={event}>
         <span className='hotel-option__text'>
-            {`Rent ${types[props.type]} room`}
+            {`Rent ${types[type]} room`}
         </span>
     </div>
 }
 
-export default HotelOption;
+export default React.memo(HotelOption);

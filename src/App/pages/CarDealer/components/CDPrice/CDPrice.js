@@ -5,10 +5,10 @@ import {regExp} from "@utils/regExp";
 
 import './CDPrice.scss';
 
-const CDPrice = ({ autoClass, model, carsList }) => {
+const CDPrice = ({ model, carsList }) => {
 
     const price = React.useMemo(() =>
-        `$${String(carsList[autoClass].cars[model].price).replace(regExp.money, '$1 ')}`, [autoClass, carsList, model])
+        `$${String(carsList[model].price).replace(regExp.money, '$1 ')}`, [carsList, model])
 
     return <div className='car-dealer-price'>
         Price<br/>{price}

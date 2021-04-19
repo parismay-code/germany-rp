@@ -1,76 +1,66 @@
 /* global alt */
-import {useState} from 'react';
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
 
 import HouseInfo from "./components/HouseInfo";
 import HouseHeader from "./components/HouseHeader";
 import HouseOption from "./components/HouseOption";
 import HouseBuy from "./components/HouseBuy";
 
+import {regExp} from "@utils/regExp";
 
 import './House.scss';
 
-const House = (props) => {
-    const [isHouseLocked, setIsHouseLocked] = useState(props.houseData.houseLocked);
-    const [isGarageLocked, setIsGarageLocked] = useState(props.houseData.garageLocked);
-
-    const toggleHouse = () => {
-        setIsHouseLocked(!isHouseLocked);
+const House = ({ store }) => {
+    const toggleHouse = React.useCallback(() => {
+        store.toggleHouseLock(0);
 
         if ('alt' in window) {
-            alt.emit('cef::house:toggleHouse', props.houseData.id, isHouseLocked);
+            alt.emit('client::house:toggleHouse', store.houseData.id, store.houseData.houseLocked);
         }
-    }
-    const toggleGarage = () => {
-        setIsGarageLocked(!isGarageLocked);
+    }, [store])
+
+    const toggleGarage = React.useCallback(() => {
+        store.toggleHouseLock(1);
 
         if ('alt' in window) {
-            alt.emit('cef::house:toggleGarage', props.houseData.id, isGarageLocked);
+            alt.emit('client::house:toggleGarage', store.houseData.id, store.houseData.garageLocked);
         }
-    }
-    const buyHouse = () => {
-        if ('alt' in window) {
-            alt.emit('cef::house:buy', props.houseData.id);
-        }
-    }
+    }, [store])
 
-    const regExp = {
-        money: /(\d)(?=(\d{3})+(\D|$))/g
-    }
+    const price = React.useMemo(() =>
+        `$${String(store.houseData.price).replace(regExp.money, '$1 ')}`, [store.houseData.price]);
 
-    let housePrice = String(props.houseData.price),
-        gardenPrice = String(props.houseData.garden);
-
-    housePrice = `$${housePrice.replace(regExp.money, '$1 ')}`
-    gardenPrice = `$${gardenPrice.replace(regExp.money, '$1 ')}`
+    const garden = React.useMemo(() =>
+        `$${String(store.houseData.garden).replace(regExp.money, '$1 ')}`, [store.houseData.garden]);
 
     return <div className='house'>
         <HouseInfo
-            price={housePrice}
-            family={props.houseData.family}
-            garage={props.houseData.garage}
-            garden={gardenPrice}
-            daysPaid={props.houseData.daysPaid}
+            price={price}
+            family={store.houseData.family}
+            garage={store.houseData.garage}
+            garden={garden}
+            daysPaid={store.houseData.daysPaid}
         />
         <div className='house__main'>
             <HouseHeader
-                id={props.houseData.id}
-                locked={isHouseLocked}
+                id={store.houseData.id}
+                locked={store.houseData.houseLocked}
             />
             <HouseOption
                 target='house'
                 event={() => toggleHouse()}
-                locked={isHouseLocked}
+                locked={store.houseData.houseLocked}
             />
             <HouseOption
                 target='garage'
                 event={() => toggleGarage()}
-                locked={isGarageLocked}
+                locked={store.houseData.garageLocked}
             />
             <HouseBuy
-                price={housePrice}
-                event={() => buyHouse()}
+                price={price}
             />
         </div>
     </div>
 }
-export default House;
+export default observer(House);

@@ -1,0 +1,45 @@
+@import '../../../../../../../styles/vars';
+
+.inventory-weapons {
+  width: 70%;
+  margin-bottom: 25px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+    padding: 10px 25px 10px 10px;
+
+    font-size: 1.2rem;
+
+    background: linear-gradient(to right, $color-blank, $color-blue-active-high-opacity);
+
+    &__title {
+      width: 40%;
+      font-weight: 700;
+    }
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+
+    &__element {
+      width: 60px;
+      height: 60px;
+      margin-right: 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid $color-white;
+
+      &_taser {
+        margin: 0 25px 0 auto;
+      }
+    }
+  }
+}

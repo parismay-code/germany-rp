@@ -1,70 +1,51 @@
-.clothes {
+@import '../../../../../styles/vars';
+
+.inventory-clothes {
   position: relative;
-  width: 25%;
+  width: 30%;
   height: 100%;
-  margin-top: 5%;
+  margin-right: 50px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 52%;
+    transform: translateX(-50%);
 
-  &-content {
-    position: relative;
-    height: 100%;
-    width: 80%;
+    width: 100%;
+    height: 7%;
+
+    background: radial-gradient(closest-side at 50% 50%, $color-blue-active-opacity, $color-blank);
   }
 
   &__man {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    left: 47%;
+    top: 55%;
     transform: translate(-50%, -50%);
 
     height: 95%;
   }
 
-  &__top,
-  &__right,
-  &__left {
+  &__top {
     position: absolute;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    & .cell {
-      margin-bottom: 20%;
-    }
+    top: 0;
+    left: 49%;
+    transform: translateX(-50%);
   }
 
-  &__top {
-    top: -3%;
-    left: 48%;
-    transform: translateX(-50%);
+  &__left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &__right {
-    right: -15%;
-    top: 45%;
-    transform: translateY(-50%);
-  }
-
-  &__left {
-    left: -15%;
-    top: 45%;
-    transform: translateY(-50%);
-  }
-
-  &__bottom-platform {
     position: absolute;
-    bottom: 3%;
-    left: 54%;
-    transform: translateX(-50%);
-
-    width: 150%;
-    height: 7%;
-
-    background: radial-gradient(closest-side at 50% 50%, #3498DB 0%, #3498DB00 100%);
-    opacity: .33;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

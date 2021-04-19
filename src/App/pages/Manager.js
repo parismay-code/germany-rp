@@ -10,18 +10,16 @@ import CarDealer from "./CarDealer";
 import Tuning from "./Tuning";
 import Shop from "./Shop";
 
-import GlobalStore from "@store/GlobalStore";
 import ShopsStore from "@store/ShopsStore";
 
 const Manager = () => {
-    const globalStore = useLocalStore(() => new GlobalStore());
     const shopStore = useLocalStore(() => new ShopsStore())
 
-    const [currentPage, setCurrentPage] = React.useState('shop');
+    const [currentPage, setCurrentPage] = React.useState('auth');
 
     React.useEffect(() => {
         if ('alt' in window) {
-            alt.on('cef::manager:setNewPage', (page) => setCurrentPage(page))
+            alt.on('cef::manager:setNewPage', (page) => setCurrentPage(page));
         }
     }, [])
 

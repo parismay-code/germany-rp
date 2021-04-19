@@ -1,12 +1,14 @@
+import * as React from 'react';
+
 import './HotelBuy.scss';
 
-const HotelBuy = (props) => {
+const HotelBuy = ({price, event}) => {
     return <div className='hotel-buy'>
         <div className='hotel-buy__price'>
-            Price<br/>{props.price}
+            Price<br/>{price}
         </div>
-        <div className='hotel-buy__button' onClick={props.event}>Rent</div>
+        <div className='hotel-buy__button' onClick={event}>Rent</div>
     </div>
 }
 
-export default HotelBuy;
+export default React.memo(HotelBuy);

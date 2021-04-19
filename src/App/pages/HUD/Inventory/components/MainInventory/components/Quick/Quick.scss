@@ -1,0 +1,53 @@
+@import '../../../../../../../styles/vars';
+
+.inventory-quick {
+  &__title {
+    margin: 0 0 10px 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+
+    &__element {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      margin-right: 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid $color-white;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 35%;
+        height: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-style: normal;
+        font-weight: 700;
+
+        background-color: $color-white-opacity;
+      }
+    }
+
+    &__element:nth-child(1)::before {content:'0';}
+    &__element:nth-child(2)::before {content:'1';}
+    &__element:nth-child(3)::before {content:'2';}
+    &__element:nth-child(4)::before {content:'3';}
+    &__element:nth-child(5)::before {content:'4';}
+    &__element:nth-child(6)::before {content:'5';}
+    &__element:nth-child(7)::before {content:'6';}
+  }
+}

@@ -11,10 +11,10 @@ import defaultTShirt from '../assets/images/inventory/icons/tShirt.svg';
 import defaultGlasses from '../assets/images/inventory/icons/glasses.svg';
 
 import itemPants from '../assets/images/inventory/items/pants.svg';
-import weapon from '../assets/images/inventory/items/weapon.svg';
+import itemWeapon from '../assets/images/inventory/items/weapon.svg';
 import itemBag from '../assets/images/inventory/items/bag.svg'
 
-const images = {
+export const images = {
     'defaultHat': defaultHat,
     'defaultTop': defaultTop,
     'defaultArmour': defaultArmour,
@@ -27,8 +27,6 @@ const images = {
     'defaultTShirt': defaultTShirt,
     'defaultGlasses': defaultGlasses,
     'itemPants': itemPants,
-    'weapon': weapon,
+    'itemWeapon': itemWeapon,
     'itemBag': itemBag
 }
-
-export default images;

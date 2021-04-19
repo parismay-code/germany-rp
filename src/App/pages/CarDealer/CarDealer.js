@@ -13,7 +13,7 @@ import close from "@assets/images/close.svg";
 import './CarDealer.scss';
 
 const CarDealer = ({ store }) => {
-    const [autoClass, setAutoClass] = React.useState(0);
+    const [autoClass, setAutoClass] = React.useState('default');
     const [model, setModel] = React.useState(0);
     const [color, setColor] = React.useState(0);
 
@@ -32,7 +32,7 @@ const CarDealer = ({ store }) => {
                 data: null
             }
         }
-    }, [])
+    }, []);
 
     const carsList = React.useMemo(() => store.carDealerList, [store.carDealerList]);
 
@@ -68,7 +68,6 @@ const CarDealer = ({ store }) => {
             <CDClasses
                 autoClass={autoClass}
                 setAutoClass={setAutoClass}
-                setModel={setModel}
             />
             <CDModels
                 autoClass={autoClass}
@@ -77,7 +76,6 @@ const CarDealer = ({ store }) => {
                 carsList={carsList}
             />
             <CDParameters
-                autoClass={autoClass}
                 model={model}
                 carsList={carsList}
             />
@@ -87,19 +85,18 @@ const CarDealer = ({ store }) => {
                 palette={testPalette}
             />
             <CDPrice
-                autoClass={autoClass}
                 model={model}
                 carsList={carsList}
             />
         </div>
         <img className='car-dealer__exit' src={close} alt='#' onClick={() => {
             if ('alt' in window) {
-                alt.emit('cef::component:close');
+                alt.emit('client::component:close');
             }
         }}/>
         <div className='car-dealer__create' onClick={() => {
             if ('alt' in window) {
-                alt.emit('cef::carDealer:buy', JSON.stringify({autoClass, model, color}));
+                alt.emit('client::carDealer:buy', JSON.stringify({autoClass, model, color}));
             }
         }}>Buy
         </div>

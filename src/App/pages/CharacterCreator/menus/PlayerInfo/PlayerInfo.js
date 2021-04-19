@@ -13,8 +13,9 @@ const PlayerInfo = ({ store, palette }) => {
             changeGender={store.changeGender}
         />
         <CCName
-            nickname={store.creatorData.player.nickname}
+            player={store.creatorData.player}
             changeNickname={store.changeNickname}
+            changeBirthInfo={store.changeBirthInfo}
         />
         <CCParents
             parents={store.creatorData.parents}

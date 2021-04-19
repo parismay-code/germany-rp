@@ -72,6 +72,10 @@ body {
   display: none;
 }
 
+::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

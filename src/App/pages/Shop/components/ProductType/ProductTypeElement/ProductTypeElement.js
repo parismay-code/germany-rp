@@ -1,14 +1,13 @@
+import * as React from 'react';
 import cn from 'classnames';
 
-const ProductTypeElement = ({ type, setType }) => {
+const ProductTypeElement = ({ image, type, currentType, setType }) => {
     return <div
-        className={cn('product-type__option', type === 'food' && 'product-type__option_active')}
-        onClick={() => {
-            setType('food');
-        }}
+        className={cn('product-type__option', type === currentType && 'product-type__option_active')}
+        onClick={() => setType(currentType)}
     >
-        <img src='#' alt='#'/>
+        <img src={image} alt='#'/>
     </div>
 }
 
-export default ProductTypeElement;
+export default React.memo(ProductTypeElement);

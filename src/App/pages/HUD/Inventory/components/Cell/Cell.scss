@@ -1,51 +1,24 @@
-.cell {
-  position: relative;
+@import '../../../../../styles/vars';
 
-  width: 3vw;
-  max-width: 76.8px;
-  height: 3vw;
-  max-height: 76.8px;
+.inventory-cell {
+  width: 60px;
+  height: 60px;
+  margin: 0 25px 25px 0;
 
-  background-size: 85% 85%;
-  background-repeat: no-repeat;
-  background-position: center;
+  border: 1px solid $color-white;
 
-  border: 0.1em solid rgba(255, 255, 255, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &__item {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    pointer-events: auto;
-
-    & img {
-      width: 85%;
-      height: 85%;
-    }
+  @media (max-width: 1280px) {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 10px 0;
   }
 
-  &__hotkey {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    width: 30%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: rgba(255, 255, 255, .35);
-
-    line-height: 100%;
-    vertical-align: middle;
-    font-family: 'Montserrat', sans-serif;
-    font-size: .85em;
-    font-weight: 700;
-    text-align: center;
+  &__img {
+    width: 80%;
+    max-height: 70%;
   }
 }

@@ -1,16 +1,22 @@
 /* global alt */
 import * as React from 'react';
+import {useLocalStore} from "@utils/hooks/useLocal";
+import {observer} from "mobx-react-lite";
 
 import ProductType from "./components/ProductType";
 import ProductElements from "./components/ProductElements";
 import ShopDescription from "./components/ShopDescription";
 import ShopPrice from "./components/Price";
 
+import ShopsStore from "@store/ShopsStore";
+
 import close from "@assets/images/close.svg";
 
 import './Shop.scss';
 
 const Shop = () => {
+    const store = useLocalStore(() => new ShopsStore());
+
     const [type, setType] = React.useState('food');
     const [item, setItem] = React.useState(0);
 
@@ -18,9 +24,9 @@ const Shop = () => {
         <div className='shop-menu'>
             <div className='shop-menu__header'>Shop</div>
             <ProductType type={type} setType={setType}/>
-            <ProductElements item={item} setItem={setItem}/>
-            <ShopDescription item={item}/>
-            <ShopPrice item={item}/>
+            <ProductElements item={item} setItem={setItem} type={type} store={store}/>
+            <ShopDescription satiety={store.shopData[item].satiety}/>
+            <ShopPrice price={store.shopData[item].price}/>
         </div>
         <img
             className='shop__exit'
@@ -44,4 +50,4 @@ const Shop = () => {
     </div>
 }
 
-export default Shop;
+export default observer(Shop);

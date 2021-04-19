@@ -1,14 +1,16 @@
 /* global alt */
+import * as React from 'react';
 
-
-import couponIcon from '../../../assets/images/fuelStation/couponIcon.svg';
-import fullIcon from '../../../assets/images/fuelStation/fullIcon.svg';
-import byLiterIcon from '../../../assets/images/fuelStation/byLiterIcon.svg';
-import exitIcon from '../../../assets/images/fuelStation/exitIcon.svg';
+import couponIcon from '@assets/images/fuelStation/couponIcon.svg';
+import fullIcon from '@assets/images/fuelStation/fullIcon.svg';
+import byLiterIcon from '@assets/images/fuelStation/byLiterIcon.svg';
+import exitIcon from '@assets/images/fuelStation/exitIcon.svg';
 
 import './fuelStation.scss';
 
 const FuelStation = () => {
+    const input = React.useRef(null);
+
     return (
         <div className='fuel-station'>
             <div className='fuel-station-content'>
@@ -16,9 +18,14 @@ const FuelStation = () => {
                 <div className='fuel-station-content-screen'>
                     <input
                         type='number'
+                        ref={input}
                         name='n_fuelStationFuel'
-                        id='id_fuelStationFuel'
                         placeholder='000'
+                        onInput={(e) => {
+                            if (e.currentTarget.value.length > 3) {
+                                e.currentTarget.value = e.currentTarget.value.slice(0, 3);
+                            }
+                        }}
                     />
                     <span>L.</span>
                 </div>
@@ -41,7 +48,7 @@ const FuelStation = () => {
                             className='fuel-station-content-info-options__element_exit'
                             onClick={() => {
                                 if ('alt' in window) {
-                                    alt.emit('cef::fuelStation:close');
+                                    alt.emit('client::hud:closeComponent');
                                 }
                             }}
                         >
@@ -55,4 +62,4 @@ const FuelStation = () => {
     )
 }
 
-export default FuelStation;
+export default React.memo(FuelStation);

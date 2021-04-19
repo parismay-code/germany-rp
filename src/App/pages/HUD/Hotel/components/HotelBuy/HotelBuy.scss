@@ -9,8 +9,12 @@
 
   &__price {
     width: 55%;
-    padding: 1.5vw;
+    padding: 25px;
     background-color: rgba(255, 255, 255, .15);
+
+    @media (max-width: 800px) {
+      padding: 15px;
+    }
   }
 
   &__button {
@@ -35,8 +39,8 @@
     align-items: center;
     height: 100%;
 
-    font-size: 1.4em;
+    font-size: 1.4rem;
     font-weight: 700;
-    font-family: 'TT Norms Bold', sans-serif;
+    font-family: 'TTNorms-Bold', sans-serif;
   }
 }
