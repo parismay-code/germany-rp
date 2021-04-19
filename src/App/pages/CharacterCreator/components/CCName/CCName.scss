@@ -59,6 +59,18 @@
       &:last-of-type {
         margin-bottom: 0;
       }
+
+      &[type='date'] {
+        text-transform: none;
+        font-size: 1.2rem;
+        text-indent: 25px;
+
+        color: $color-white-opacity;
+
+        @media (max-width: 1000px) {
+          text-indent: 12px;
+        }
+      }
     }
   }
 

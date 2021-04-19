@@ -2,6 +2,7 @@ $color-white: #ffffff;
 $color-white-opacity: rgba(255, 255, 255, .5);
 $color-black: #000000;
 $color-black-opacity: rgba(0, 0, 0, .5);
+$color-black-low-opacity: rgba(0, 0, 0, .9);
 $color-black-atm: rgba(0, 0, 0, .25);
 $color-gray: #D8D8D8;
 $color-gray-opacity: #D8D8D890;
@@ -9,6 +10,8 @@ $color-green: #59D962;
 
 $color-pink-active: #cc3ae7;
 $color-blue-active: #3498DB;
+$color-blue-active-opacity: #3498DB80;
+$color-blue-active-high-opacity: #3498DB30;
 
 $color-blank: #00000000;
 

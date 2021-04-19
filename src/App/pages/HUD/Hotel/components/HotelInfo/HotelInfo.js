@@ -1,6 +1,8 @@
+import * as React from 'react';
+
 import './HotelInfo.scss';
 
-const HotelInfo = (props) => {
+const HotelInfo = () => {
     return <div className='hotel-info'>
         <div className='hotel-info__title'>Name filter</div>
         <div className='hotel-info__subtitle'>Name</div>
@@ -15,4 +17,4 @@ const HotelInfo = (props) => {
     </div>
 }
 
-export default HotelInfo;
+export default React.memo(HotelInfo);

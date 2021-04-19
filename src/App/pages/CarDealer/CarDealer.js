@@ -32,7 +32,7 @@ const CarDealer = ({ store }) => {
                 data: null
             }
         }
-    }, [])
+    }, []);
 
     const carsList = React.useMemo(() => store.carDealerList, [store.carDealerList]);
 
@@ -91,12 +91,12 @@ const CarDealer = ({ store }) => {
         </div>
         <img className='car-dealer__exit' src={close} alt='#' onClick={() => {
             if ('alt' in window) {
-                alt.emit('cef::component:close');
+                alt.emit('client::component:close');
             }
         }}/>
         <div className='car-dealer__create' onClick={() => {
             if ('alt' in window) {
-                alt.emit('cef::carDealer:buy', JSON.stringify({autoClass, model, color}));
+                alt.emit('client::carDealer:buy', JSON.stringify({autoClass, model, color}));
             }
         }}>Buy
         </div>

@@ -1,34 +1,31 @@
 /* global alt */
-import {useState} from 'react';
+import * as React from 'react';
+import {observer} from "mobx-react-lite";
 
 import HotelInfo from "./components/HotelInfo";
 import HotelHeader from "./components/HotelHeader";
 import HotelOption from "./components/HotelOption";
 import HotelBuy from "./components/HotelBuy";
 
+import {regExp} from "@utils/regExp";
+
 import './Hotel.scss';
 
-const Hotel = (props) => {
-    const [roomType, setRoomType] = useState(0);
+const Hotel = ({ store }) => {
+    const [roomType, setRoomType] = React.useState(0);
 
-    const rentRoom = () => {
+    const rentRoom = React.useCallback(() => {
         if ('alt' in window) {
-            alt.emit('cef::hotel:rent', props.hotelData.id, roomType);
+            alt.emit('client::hotel:rent', store.hotelData.id, roomType);
         }
-    }
+    }, [store.hotelData.id, roomType]);
 
-    const regExp = {
-        money: /(\d)(?=(\d{3})+(\D|$))/g
-    }
+    const hotelPrice = React.useMemo(() => `$${String(store.hotelData.price).replace(regExp.money, '$1 ')}`, [store.hotelData.price]);
 
-    let hotelPrice = String(props.hotelData.price);
-
-    hotelPrice = `$${hotelPrice.replace(regExp.money, '$1 ')}`
-
-    return <div className='house'>
+    return <div className='hotel'>
         <HotelInfo />
-        <div className='house__main'>
-            <HotelHeader id={props.hotelData.id}/>
+        <div className='hotel__main'>
+            <HotelHeader id={store.hotelData.id}/>
             <HotelOption
                 currentOption={roomType}
                 type={0}
@@ -51,4 +48,5 @@ const Hotel = (props) => {
         </div>
     </div>
 }
-export default Hotel;
+
+export default observer(Hotel);

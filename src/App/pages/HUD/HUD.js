@@ -9,13 +9,11 @@ import House from "./House";
 import Hotel from "./Hotel";
 
 import HUDStore from "@store/HUDStore";
-import inventoryData from '../../store/inventory2/inventory2';
-import quick from "../../store/inventory2/quick";
 
 const HUD = () => {
     const store = useLocalStore(() => new HUDStore());
 
-    const [currentComponent, setCurrentComponent] = React.useState('house');
+    const [currentComponent, setCurrentComponent] = React.useState('inventory');
 
     React.useEffect(() => {
         if ('alt' in window) {
@@ -40,7 +38,7 @@ const HUD = () => {
 
     return (
         <div className='hud'>
-            {currentComponent === 'inventory' && <Inventory inventoryData={inventoryData} quickSlots={quick}/>}
+            {currentComponent === 'inventory' && <Inventory/>}
             {currentComponent === 'atm' && <ATM/>}
             {currentComponent === 'fuelStation' && <FuelStation/>}
             {currentComponent === 'house' && <House store={store}/>}

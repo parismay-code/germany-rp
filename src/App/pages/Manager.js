@@ -15,11 +15,11 @@ import ShopsStore from "@store/ShopsStore";
 const Manager = () => {
     const shopStore = useLocalStore(() => new ShopsStore())
 
-    const [currentPage, setCurrentPage] = React.useState('hud');
+    const [currentPage, setCurrentPage] = React.useState('auth');
 
     React.useEffect(() => {
         if ('alt' in window) {
-            alt.on('cef::manager:setNewPage', (page) => setCurrentPage(page))
+            alt.on('cef::manager:setNewPage', (page) => setCurrentPage(page));
         }
     }, [])
 
