@@ -3,29 +3,55 @@ import * as React from 'react';
 import {useLocalStore} from "@utils/hooks/useLocal";
 import {observer} from "mobx-react-lite";
 
-import ProductType from "./components/ProductType";
 import ProductElements from "./components/ProductElements";
-import ShopDescription from "./components/ShopDescription";
+import ShopValue from "./components/ShopValue";
 import ShopPrice from "./components/Price";
 
 import ShopsStore from "@store/ShopsStore";
 
 import close from "@assets/images/close.svg";
+import creditCard from "@assets/images/creditCard.svg";
+import geld from "@assets/images/geld.svg";
 
 import './Shop.scss';
 
 const Shop = () => {
     const store = useLocalStore(() => new ShopsStore());
 
-    const [type, setType] = React.useState('food');
-    const [item, setItem] = React.useState(0);
+    const [item, setItem] = React.useState(0),
+        [value, setValue] = React.useState(0);
+
+    const fetchShopDataEvent = React.useCallback((json) => {
+        try {
+            const shopData = JSON.parse(json);
+
+            return {
+                isError: false,
+                data: shopData
+            }
+        } catch (e) {
+            console.log(e);
+            return {
+                isError: true,
+                data: null
+            }
+        }
+    }, []);
+
+    React.useEffect(() => setValue(0), [item]);
+
+    React.useEffect(() => {
+        if ('alt' in window) {
+            alt.on('cef::shop:setData', json => store.fetchShopData(fetchShopDataEvent(json)));
+            alt.on('cef::shop:setData', (id, data) => store.changeShopData(id, data));
+        }
+    }, [fetchShopDataEvent, store]);
 
     return <div className='shop'>
         <div className='shop-menu'>
             <div className='shop-menu__header'>Shop</div>
-            <ProductType type={type} setType={setType}/>
-            <ProductElements item={item} setItem={setItem} type={type} store={store}/>
-            <ShopDescription satiety={store.shopData[item].satiety}/>
+            <ProductElements item={item} setItem={setItem} store={store}/>
+            <ShopValue count={store.shopData[item].count} imageName={store.shopData[item].imageName} value={value} setValue={setValue}/>
             <ShopPrice price={store.shopData[item].price}/>
         </div>
         <img
@@ -38,14 +64,27 @@ const Shop = () => {
                 }
             }}
         />
-        <div
-            className='shop__buy'
-            onClick={() => {
-                if ('alt' in window) {
-                    alt.emit('client:shop:buy', item);
-                }
-            }}>
-            Buy
+        <div className='shop-buy'>
+            <div
+                className='shop-buy-element shop-buy-element_card'
+                onClick={() => {
+                    if ('alt' in window) {
+                        alt.emit('client:shop:buy', item, value, 0);
+                    }
+                }}>
+                <span className='shop-buy-element__text'>Mit karte bezahlen</span>
+                <img className='shop-buy-element__image' src={creditCard} alt='#'/>
+            </div>
+            <div
+                className='shop-buy-element shop-buy-element_geld'
+                onClick={() => {
+                    if ('alt' in window) {
+                        alt.emit('client:shop:buy', item, value, 1);
+                    }
+                }}>
+                <span className='shop-buy-element__text'>Bar bezahlen</span>
+                <img className='shop-buy-element__image' src={geld} alt='#'/>
+            </div>
         </div>
     </div>
 }

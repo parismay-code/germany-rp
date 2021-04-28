@@ -9,6 +9,8 @@ import CDColor from "./components/CDColor";
 import CDPrice from "./components/CDPrice";
 
 import close from "@assets/images/close.svg";
+import creditCard from "@assets/images/creditCard.svg";
+import geld from "@assets/images/geld.svg";
 
 import './CarDealer.scss';
 
@@ -94,11 +96,27 @@ const CarDealer = ({ store }) => {
                 alt.emit('client::component:close');
             }
         }}/>
-        <div className='car-dealer__create' onClick={() => {
-            if ('alt' in window) {
-                alt.emit('client::carDealer:buy', JSON.stringify({autoClass, model, color}));
-            }
-        }}>Buy
+        <div className='car-dealer-buy'>
+            <div
+                className='car-dealer-buy-element car-dealer-buy-element_card'
+                onClick={() => {
+                    if ('alt' in window) {
+                        alt.emit('client::carDealer:buy', autoClass, model, color, 0);
+                    }
+                }}>
+                <span className='car-dealer-buy-element__text'>Mit karte bezahlen</span>
+                <img className='car-dealer-buy-element__image' src={creditCard} alt='#'/>
+            </div>
+            <div
+                className='car-dealer-buy-element car-dealer-buy-element_geld'
+                onClick={() => {
+                    if ('alt' in window) {
+                        alt.emit('client::carDealer:buy', autoClass, model, color, 1);
+                    }
+                }}>
+                <span className='car-dealer-buy-element__text'>Bar bezahlen</span>
+                <img className='car-dealer-buy-element__image' src={geld} alt='#'/>
+            </div>
         </div>
     </div>
 }

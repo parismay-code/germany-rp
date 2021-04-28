@@ -9,6 +9,7 @@ import {Meta} from '@utils/meta';
 
 export default class ShopsStore {
     meta = {
+        shop: Meta.initial,
         carDealer: Meta.initial,
         tuning: Meta.initial,
     };
@@ -191,101 +192,45 @@ export default class ShopsStore {
     shopData = [
         {
             id: 0,
-            name: 'Test name',
+            name: 'Donut',
             price: 123490,
-            type: 'food',
-            satiety: 100
+            count: 100,
+            imageName: 'Donut'
         },
         {
             id: 1,
-            name: 'Test name',
+            name: 'Energy Drink',
             price: 5435,
-            type: 'food',
-            satiety: 20
+            count: 100,
+            imageName: 'EnergyDrink'
         },
         {
             id: 2,
-            name: 'Test name',
-            price: 43761356,
-            type: 'food',
-            satiety: 34
+            name: 'Ausweis',
+            price: 123490,
+            count: 100,
+            imageName: 'Ausweis'
         },
         {
             id: 3,
-            name: 'Test name',
-            price: 123123,
-            type: 'food',
-            satiety: 12
+            name: 'Bankkarte',
+            price: 5435,
+            count: 100,
+            imageName: 'Bankkarte'
         },
         {
             id: 4,
-            name: 'Test name',
-            price: 4343,
-            type: 'food',
-            satiety: 21
+            name: 'Bargeld',
+            price: 123490,
+            count: 100,
+            imageName: 'Bargeld'
         },
         {
             id: 5,
-            name: 'Test name',
-            price: 2355,
-            type: 'food',
-            satiety: 30
-        },
-        {
-            id: 6,
-            name: 'Test name',
-            price: 555555,
-            type: 'food',
-            satiety: 123
-        },
-        {
-            id: 7,
-            name: 'Test name',
-            price: 616,
-            type: 'food',
-            satiety: 15
-        },
-        {
-            id: 8,
-            name: 'Test name',
-            price: 616,
-            type: 'food',
-            satiety: 15
-        },
-        {
-            id: 9,
-            name: 'Test name',
-            price: 616,
-            type: 'food',
-            satiety: 15
-        },
-        {
-            id: 10,
-            name: 'Test name',
-            price: 616,
-            type: 'food',
-            satiety: 15
-        },
-        {
-            id: 11,
-            name: 'Test name',
-            price: 616,
-            type: 'food',
-            satiety: 15
-        },
-        {
-            id: 12,
-            name: 'Test name',
-            price: 616,
-            type: 'food',
-            satiety: 15
-        },
-        {
-            id: 13,
-            name: 'Test name',
-            price: 616,
-            type: 'food',
-            satiety: 15
+            name: 'Cola',
+            price: 5435,
+            count: 100,
+            imageName: 'Cola'
         },
     ];
 
@@ -297,9 +242,29 @@ export default class ShopsStore {
             tuning: observable,
             shopData: observable,
 
+            fetchShopData: action.bound,
+            changeShopData: action.bound,
             fetchCarDealerList: action.bound,
             fetchCarTuning: action.bound,
         })
+    }
+
+    async fetchShopData(event) {
+        this.meta.shop = Meta.loading;
+        this.shopData = [];
+
+        const {isError, data} = await event;
+        if (isError) return this.meta.shop = Meta.error;
+
+        runInAction(() => {
+            this.shopData = data;
+            this.meta.shop = Meta.success;
+        })
+    }
+
+    changeShopData(id, data) {
+        const index = this.shopData.findIndex(e => e.id === id);
+        this.shopData[index] = data;
     }
 
     async fetchCarDealerList(event) {

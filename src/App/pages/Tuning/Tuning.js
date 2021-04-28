@@ -6,6 +6,8 @@ import TuningSpecifications from "./components/Specifications";
 import TuningPrice from "./components/Price";
 
 import close from '@assets/images/close.svg';
+import creditCard from "@assets/images/creditCard.svg";
+import geld from "@assets/images/geld.svg";
 
 import './Tuning.scss';
 
@@ -52,15 +54,27 @@ const Tuning = ({ store }) => {
                 }
             }}
         />
-        <div
-            className='tuning__buy'
-            onClick={() => {
-                if ('alt' in window) {
-                    alt.emit('client::tuning:buy', JSON.stringify(store.tuning));
-                }
-            }}
-        >
-            Buy
+        <div className='tuning-buy'>
+            <div
+                className='tuning-buy-element tuning-buy-element_card'
+                onClick={() => {
+                    if ('alt' in window) {
+                        alt.emit('client::tuning:buy', store.tuning, 0);
+                    }
+                }}>
+                <span className='tuning-buy-element__text'>Mit karte bezahlen</span>
+                <img className='tuning-buy-element__image' src={creditCard} alt='#'/>
+            </div>
+            <div
+                className='tuning-buy-element tuning-buy-element_geld'
+                onClick={() => {
+                    if ('alt' in window) {
+                        alt.emit('client::tuning:buy', store.tuning, 0);
+                    }
+                }}>
+                <span className='tuning-buy-element__text'>Bar bezahlen</span>
+                <img className='tuning-buy-element__image' src={geld} alt='#'/>
+            </div>
         </div>
     </div>
 }

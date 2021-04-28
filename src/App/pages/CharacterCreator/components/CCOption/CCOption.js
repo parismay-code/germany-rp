@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {observer} from "mobx-react-lite";
 
-import circleArrow from '../../../../assets/images/cCreator/circleArrow.svg';
+import circleArrow from '@assets/images/cCreator/circleArrow.svg';
 
 import './CCOption.scss';
 

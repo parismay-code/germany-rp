@@ -1,0 +1,120 @@
+@import '../../../../styles/vars';
+
+.shop-value {
+  position: relative;
+  width: 100%;
+
+  &-header {
+    position: relative;
+    padding: 25px 25px 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    border-bottom: 1px solid $color-white;
+
+    @media (max-width: 800px) {
+      padding: 15px 15px 10px 15px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, $color-gray, $color-blank);
+    }
+
+    &__count {
+      width: 100%;
+      margin-bottom: 10px;
+
+      text-align: center;
+      font-size: 1.2rem;
+      text-shadow: 0 0 5px $color-white;
+      font-style: normal;
+    }
+
+    &-input {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      & input {
+        appearance: none;
+
+        position: relative;
+        width: 100%;
+        height: 2px;
+        padding: 0 20px;
+
+        outline: none;
+        border: none;
+        background: linear-gradient(to right, $color-blank, $color-gray-opacity, $color-blank);
+
+        @media (max-width: 800px) {
+          padding: 0 10px;
+        }
+
+        &::-webkit-slider-thumb {
+          appearance: none;
+
+          width: 25px;
+          height: 25px;
+
+          border-radius: 50%;
+
+          background-color: $color-white-opacity;
+
+          cursor: pointer;
+          outline: none;
+
+          @media (max-width: 800px) {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+
+      &__leftArrow,
+      &__rightArrow {
+        width: 25px;
+        height: 25px;
+
+        pointer-events: auto;
+        cursor: pointer;
+
+        @media (max-width: 800px) {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      &__rightArrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 230px;
+    padding: 15px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1000px) {
+      height: 115px;
+      padding: 10px 0;
+    }
+
+    & img {
+      height: 100%;
+    }
+  }
+}
