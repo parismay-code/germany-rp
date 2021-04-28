@@ -15,7 +15,7 @@ import ShopsStore from "@store/ShopsStore";
 const Manager = () => {
     const shopStore = useLocalStore(() => new ShopsStore())
 
-    const [currentPage, setCurrentPage] = React.useState(null);
+    const [currentPage, setCurrentPage] = React.useState();
 
     React.useEffect(() => {
         if ('alt' in window) {

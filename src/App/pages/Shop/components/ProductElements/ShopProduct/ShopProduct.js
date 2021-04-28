@@ -5,9 +5,7 @@ const ShopProduct = ({ item, setItem, id, name }) => {
     return <div
         className={cn('shop-options-content__option', item === id && 'shop-options-content__option_active')}
         onClick={() => setItem(id)}
-    >
-        {`${name} #${id}`}
-    </div>
+    >{name}</div>
 }
 
 export default React.memo(ShopProduct);

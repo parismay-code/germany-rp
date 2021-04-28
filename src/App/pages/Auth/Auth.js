@@ -5,7 +5,7 @@ import cn from 'classnames';
 import AuthLogin from "./components/AuthLogin";
 import AuthRegistration from "./components/AuthRegistration";
 
-import logo from '../../assets/images/auth/logo.svg';
+import logo from '@assets/images/auth/logo.svg';
 
 import './auth.scss';
 
