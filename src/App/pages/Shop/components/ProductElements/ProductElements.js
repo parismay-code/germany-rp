@@ -14,8 +14,8 @@ const ProductElements = ({ item, setItem, store }) => {
                     key={key}
                     item={item}
                     setItem={setItem}
-                    name={el.name}
-                    id={el.id}
+                    itemKey={key}
+                    name={el.Name}
                 />
             })}
         </div>

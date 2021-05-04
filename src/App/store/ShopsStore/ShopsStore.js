@@ -191,46 +191,46 @@ export default class ShopsStore {
 
     shopData = [
         {
-            id: 0,
-            name: 'Donut',
-            price: 123490,
-            count: 100,
-            imageName: 'Donut'
+            ItemId: 0,
+            Name: 'Donut',
+            Price: 123490,
+            Count: 100,
+            Image: 'Donut.svg'
         },
         {
-            id: 1,
-            name: 'Energy Drink',
-            price: 5435,
-            count: 100,
-            imageName: 'EnergyDrink'
+            ItemId: 1,
+            Name: 'Energy Drink',
+            Price: 5435,
+            Count: 100,
+            Image: 'EnergyDrink.svg'
         },
         {
-            id: 2,
-            name: 'Ausweis',
-            price: 123490,
-            count: 100,
-            imageName: 'Ausweis'
+            ItemId: 2,
+            Name: 'Ausweis',
+            Price: 123490,
+            Count: 100,
+            Image: 'Ausweis.svg'
         },
         {
-            id: 3,
-            name: 'Bankkarte',
-            price: 5435,
-            count: 100,
-            imageName: 'Bankkarte'
+            ItemId: 3,
+            Name: 'Bankkarte',
+            Price: 5435,
+            Count: 100,
+            Image: 'Bankkarte.svg'
         },
         {
-            id: 4,
-            name: 'Bargeld',
-            price: 123490,
-            count: 100,
-            imageName: 'Bargeld'
+            ItemId: 4,
+            Name: 'Bargeld',
+            Price: 123490,
+            Count: 100,
+            Image: 'Bargeld.svg'
         },
         {
-            id: 5,
-            name: 'Cola',
-            price: 5435,
-            count: 100,
-            imageName: 'Cola'
+            ItemId: 5,
+            Name: 'Cola',
+            Price: 5435,
+            Count: 100,
+            Image: 'Cola.svg'
         },
     ];
 
@@ -263,7 +263,7 @@ export default class ShopsStore {
     }
 
     changeShopData(id, data) {
-        const index = this.shopData.findIndex(e => e.id === id);
+        const index = this.shopData.findIndex(e => e.ItemId === id);
         this.shopData[index] = data;
     }
 

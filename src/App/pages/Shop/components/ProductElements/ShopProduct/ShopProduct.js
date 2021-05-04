@@ -1,10 +1,10 @@
 import * as React from 'react';
 import cn from 'classnames';
 
-const ShopProduct = ({ item, setItem, id, name }) => {
+const ShopProduct = ({ item, setItem, name, itemKey }) => {
     return <div
-        className={cn('shop-options-content__option', item === id && 'shop-options-content__option_active')}
-        onClick={() => setItem(id)}
+        className={cn('shop-options-content__option', item === itemKey && 'shop-options-content__option_active')}
+        onClick={() => setItem(itemKey)}
     >{name}</div>
 }
 
