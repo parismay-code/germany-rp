@@ -14,13 +14,13 @@ const ShopValue = ({ count, imageName, value, setValue }) => {
                     src={circleArrow}
                     alt='#'
                     onClick={() => {
-                        if (value - 10 < 0) setValue(100);
+                        if (value - 10 < 0) setValue(count);
                         else setValue(value - 10);
                     }}
                 />
                 <input
                     type='range'
-                    min='0'
+                    min='1'
                     max={count}
                     value={value}
                     onChange={(e) => setValue(Number(e.target.value))}
@@ -30,14 +30,14 @@ const ShopValue = ({ count, imageName, value, setValue }) => {
                     src={circleArrow}
                     alt='#'
                     onClick={() => {
-                        if (value + 10 > 100) setValue(0);
+                        if (value + 10 > count) setValue(0);
                         else setValue(value + 10);
                     }}
                 />
             </div>
         </div>
         <div className='shop-value__image'>
-            <img src={`../../publicImages/items/${imageName}.svg`} alt='#'/>
+            <img src={`./publicImages/items/${imageName}`} alt='#'/>
         </div>
     </div>
 }

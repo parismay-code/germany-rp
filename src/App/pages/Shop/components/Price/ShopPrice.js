@@ -4,9 +4,9 @@ import {regExp} from "@utils/regExp";
 
 import './ShopPrice.scss';
 
-const ShopPrice = ({ price }) => {
+const ShopPrice = ({ price, value }) => {
 
-    const _price = React.useMemo(() => `$${String(price).replace(regExp.money, '$1 ')}`, [price]);
+    const _price = React.useMemo(() => `$${String(price * value).replace(regExp.money, '$1 ')}`, [price]);
 
     return <div className='shop-price'>
         Price<br/>{_price}
