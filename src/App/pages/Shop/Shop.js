@@ -43,7 +43,7 @@ const Shop = () => {
     React.useEffect(() => {
         if ('alt' in window) {
             alt.on('cef::shop:setData', json => store.fetchShopData(fetchShopDataEvent(json)));
-            alt.on('cef::shop:setData', (id, data) => store.changeShopData(id, data));
+            alt.on('cef::shop:changeData', (id, data) => store.changeShopData(id, data));
         }
     }, [fetchShopDataEvent, store]);
 
