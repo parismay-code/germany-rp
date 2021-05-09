@@ -17,163 +17,107 @@ export default class ShopsStore {
     carDealerList = [
         {
             id: 0,
-            name: 'Default Car',
-            type: 'default',
-            price: 99999,
-            maxSpeed: 200,
-            acceleration: 10
+            name: 'Adder',
+            categoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 1,
-            name: 'Default Car',
-            type: 'default',
-            price: 99999,
-            maxSpeed: 200,
-            acceleration: 11
+            name: 'Adder',
+            categoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 2,
-            name: 'Default Car',
-            type: 'default',
-            price: 99999,
-            maxSpeed: 200,
-            acceleration: 12
+            name: 'Adder',
+            categoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 3,
-            name: 'Premium Car',
-            type: 'premium',
-            price: 999999,
-            maxSpeed: 280,
-            acceleration: 5
+            name: 'Adder',
+            categoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 4,
-            name: 'Premium Car',
-            type: 'premium',
-            price: 999999,
-            maxSpeed: 280,
-            acceleration: 6
+            name: 'Adder',
+            categoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 5,
-            name: 'Premium Car',
-            type: 'premium',
-            price: 999999,
-            maxSpeed: 280,
-            acceleration: 7
+            name: 'Adder',
+            categoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 6,
-            name: 'Premium Car',
-            type: 'premium',
-            price: 999999,
-            maxSpeed: 280,
-            acceleration: 8
+            name: 'Adder',
+            categoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 7,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 1
+            name: 'Adder',
+            categoryId: 2, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 8,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 2
+            name: 'Adder',
+            categoryId: 2, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 9,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 3
+            name: 'Adder',
+            categoryId: 2, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 10,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 4
+            name: 'Adder',
+            categoryId: 3, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 11,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
+            name: 'Adder',
+            categoryId: 3, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
         {
             id: 12,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
-        },
-        {
-            id: 13,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
-        },
-        {
-            id: 14,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
-        },
-        {
-            id: 15,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
-        },
-        {
-            id: 16,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
-        },
-        {
-            id: 17,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
-        },
-        {
-            id: 18,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
-        },
-        {
-            id: 19,
-            name: 'Luxury Car',
-            type: 'luxury',
-            price: 999999999,
-            maxSpeed: 320,
-            acceleration: 5
+            name: 'Adder',
+            categoryId: 3, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            Price: 99999,
+            Topspeed: 200,
+            Kofferraumgroesse: 10
         },
     ];
 
