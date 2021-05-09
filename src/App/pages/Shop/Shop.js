@@ -19,7 +19,7 @@ const Shop = () => {
     const store = useLocalStore(() => new ShopsStore());
 
     const [item, setItem] = React.useState(0),
-        [value, setValue] = React.useState(0);
+        [value, setValue] = React.useState(1);
 
     const fetchShopDataEvent = React.useCallback((json) => {
         try {
@@ -38,7 +38,7 @@ const Shop = () => {
         }
     }, []);
 
-    React.useEffect(() => setValue(0), [item]);
+    React.useEffect(() => setValue(1), [item]);
 
     React.useEffect(() => {
         if ('alt' in window) {
@@ -51,8 +51,8 @@ const Shop = () => {
         <div className='shop-menu'>
             <div className='shop-menu__header'>Shop</div>
             <ProductElements item={item} setItem={setItem} store={store}/>
-            <ShopValue count={store?.shopData[item]?.Count} imageName={store.shopData[item].Image} value={value} setValue={setValue}/>
-            <ShopPrice price={store.shopData[item].Price} value={value}/>
+            <ShopValue count={store?.shopData[item]?.Count} imageName={store?.shopData[item]?.Image} value={value} setValue={setValue}/>
+            <ShopPrice price={store?.shopData[item]?.Price} value={value}/>
         </div>
         <img
             className='shop__exit'
@@ -69,8 +69,8 @@ const Shop = () => {
                 className='shop-buy-element shop-buy-element_card'
                 onClick={() => {
                     if ('alt' in window) {
-                        alt.emit('client::shop:buy', store.shopData[item].ItemId, value, 0);
-                    } else console.log(store.shopData[item].ItemId, value, 1);
+                        alt.emit('client::shop:buy', store?.shopData[item]?.ItemId, value, 0);
+                    }
                 }}>
                 <span className='shop-buy-element__text'>Mit karte bezahlen</span>
                 <img className='shop-buy-element__image' src={creditCard} alt='#'/>
@@ -79,8 +79,8 @@ const Shop = () => {
                 className='shop-buy-element shop-buy-element_geld'
                 onClick={() => {
                     if ('alt' in window) {
-                        alt.emit('client::shop:buy', store.shopData[item].ItemId, value, 1);
-                    } else console.log(store.shopData[item].ItemId, value, 1);
+                        alt.emit('client::shop:buy', store?.shopData[item]?.ItemId, value, 1);
+                    }
                 }}>
                 <span className='shop-buy-element__text'>Bar bezahlen</span>
                 <img className='shop-buy-element__image' src={geld} alt='#'/>

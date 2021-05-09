@@ -15,8 +15,8 @@ import geld from "@assets/images/geld.svg";
 import './CarDealer.scss';
 
 const CarDealer = ({ store }) => {
-    const [autoClass, setAutoClass] = React.useState('default');
-    const [model, setModel] = React.useState(0);
+    const [autoClass, setAutoClass] = React.useState(store.carDealerList[0].categoryId);
+    const [model, setModel] = React.useState(store.carDealerList[0].id);
     const [color, setColor] = React.useState(0);
 
     const fetchCarsEvent = React.useCallback((json) => {
@@ -40,7 +40,7 @@ const CarDealer = ({ store }) => {
 
     React.useEffect(() => {
         if ('alt' in window) {
-            alt.emit('client::carDealer:preview', JSON.stringify({autoClass, model, color}));
+            alt.emit('client::carDealer:preview', JSON.stringify({model, color}));
         }
     }, [autoClass, model, color]);
 
@@ -68,6 +68,7 @@ const CarDealer = ({ store }) => {
         <div className='car-dealer-menu'>
             <div className='car-dealer-menu__header'>CarDealer</div>
             <CDClasses
+                store={store}
                 autoClass={autoClass}
                 setAutoClass={setAutoClass}
             />
@@ -90,6 +91,13 @@ const CarDealer = ({ store }) => {
                 model={model}
                 carsList={carsList}
             />
+        </div>
+        <div className='car-dealer-rotate'>
+            <input className='car-dealer-rotate__input' type='range' name='n_carDealerRotate' min='0' max='360' onChange={(e) => {
+                if ('alt' in window) {
+                    alt.emit('client::carDealer:rotate', Number(e.target.value));
+                }
+            }}/>
         </div>
         <img className='car-dealer__exit' src={close} alt='#' onClick={() => {
             if ('alt' in window) {

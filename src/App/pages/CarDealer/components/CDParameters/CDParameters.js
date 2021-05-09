@@ -12,16 +12,16 @@ const CDParameters = ({ model, carsList }) => {
         <div className='car-dealer-parameters-element'>
             <div className='car-dealer-parameters-element__title'>
                 <img src={maxSpeed} alt='#'/>
-                <span>{`${carsList[model].maxSpeed} km/h`}</span>
+                <span>{`${carsList[model].Topspeed} km/h`}</span>
             </div>
             <span className='car-dealer-parameters-element__subtitle'>MaxSpeed</span>
         </div>
         <div className='car-dealer-parameters-element'>
             <div className='car-dealer-parameters-element__title'>
                 <img src={acceleration} alt='#'/>
-                <span>{`${carsList[model].acceleration} sec.`}</span>
+                <span>{`${carsList[model].Kofferraumgroesse} kg.`}</span>
             </div>
-            <span className='car-dealer-parameters-element__subtitle'>Acceleration</span>
+            <span className='car-dealer-parameters-element__subtitle'>Kofferraumgroesse</span>
         </div>
     </div>
 }
