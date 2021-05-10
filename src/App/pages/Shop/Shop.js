@@ -49,7 +49,7 @@ const Shop = () => {
 
     return <div className='shop'>
         <div className='shop-menu'>
-            <div className='shop-menu__header'>Shop</div>
+            <div className='shop-menu__header'>Einkaufsladen</div>
             <ProductElements item={item} setItem={setItem} store={store}/>
             <ShopValue count={store?.shopData[item]?.Count} imageName={store?.shopData[item]?.Image} value={value} setValue={setValue}/>
             <ShopPrice price={store?.shopData[item]?.Price} value={value}/>

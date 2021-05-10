@@ -7,7 +7,7 @@ import './ProductElements.scss';
 
 const ProductElements = ({ item, setItem, store }) => {
     return <div className='shop-options'>
-        <div className='shop-options__title'>Select product</div>
+        <div className='shop-options__title'>Wähle ein Produkt</div>
         <div className='shop-options-content'>
             {store.shopData.map((el, key) => {
                 return <ShopProduct

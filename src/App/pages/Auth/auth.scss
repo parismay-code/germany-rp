@@ -4,7 +4,6 @@
   width: 100vw;
   height: 100vh;
 
-  background: url("../../assets/images/auth/bg.png") no-repeat center;
   background-size: cover;
 
   color: $color-white;
@@ -26,7 +25,7 @@
       height: 400px;
       width: 1000px;
 
-      background: radial-gradient(closest-side at 50% 50%, #D8D8D8af 0%, #6C6C6C00 100%);
+      background: radial-gradient(closest-side at 50% 50%, rgba(216, 216, 216, 0.21) 0%, #6C6C6C00 100%);
 
       @media (max-width: 1000px) {
         width: 600px;
@@ -122,7 +121,7 @@
       height: 400px;
       width: 1400px;
 
-      background: radial-gradient(closest-side at 50% 50%, #3498DB 0%, #1A4C6E00 100%);
+      background: radial-gradient(closest-side at 50% 50%, rgba(52, 152, 219, 0.21) 0%, #1A4C6E00 100%);
 
       @media (max-width: 1000px) {
         width: 800px;
