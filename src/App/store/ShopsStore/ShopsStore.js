@@ -214,6 +214,7 @@ export default class ShopsStore {
         this.meta.carDealer = Meta.loading;
 
         const {isError, data} = await event;
+
         if (isError) {
             return this.meta.carDealer = Meta.error;
         }
