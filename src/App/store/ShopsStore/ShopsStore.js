@@ -195,7 +195,6 @@ export default class ShopsStore {
 
     async fetchShopData(event) {
         this.meta.shop = Meta.loading;
-        this.shopData = [];
 
         const {isError, data} = await event;
         if (isError) return this.meta.shop = Meta.error;
@@ -213,7 +212,6 @@ export default class ShopsStore {
 
     async fetchCarDealerList(event) {
         this.meta.carDealer = Meta.loading;
-        this.carDealerList = [];
 
         const {isError, data} = await event;
         if (isError) {
@@ -228,7 +226,6 @@ export default class ShopsStore {
 
     async fetchCarTuning(event) {
         this.meta.tuning = Meta.loading;
-        this.tuning = [];
 
         const {isError, data} = await event;
         if (isError) {
