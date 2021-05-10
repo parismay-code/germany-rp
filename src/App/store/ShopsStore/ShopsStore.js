@@ -18,7 +18,7 @@ export default class ShopsStore {
         {
             id: 0,
             name: 'Adder',
-            CategoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
@@ -26,7 +26,7 @@ export default class ShopsStore {
         {
             id: 1,
             name: 'Adder',
-            CategoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
@@ -34,7 +34,7 @@ export default class ShopsStore {
         {
             id: 2,
             name: 'Adder',
-            CategoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
