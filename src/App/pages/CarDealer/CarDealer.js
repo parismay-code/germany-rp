@@ -15,7 +15,7 @@ import geld from "@assets/images/geld.svg";
 import './CarDealer.scss';
 
 const CarDealer = ({ store }) => {
-    const [autoClass, setAutoClass] = React.useState(store.carDealerList[0].categoryId);
+    const [autoClass, setAutoClass] = React.useState(store.carDealerList[0].CategoryId);
     const [model, setModel] = React.useState(store.carDealerList[0].id);
     const [color, setColor] = React.useState(0);
 
