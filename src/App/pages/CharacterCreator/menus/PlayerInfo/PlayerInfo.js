@@ -23,7 +23,7 @@ const PlayerInfo = ({ store, palette }) => {
             changeParentsMix={store.changeParentsMix}
         />
         <CCColor
-            title='Body Color'
+            title='Hautfarbe'
             palette={palette}
             type='body'
             color={store.creatorData.appearance.color}

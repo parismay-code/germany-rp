@@ -74,7 +74,7 @@ const CharacterCreator = () => {
                 alt.emit('client::component:close');
             }
         }}/>
-        <div className='character-creator__create'>Create</div>
+        <div className='character-creator__create'>Charakter erstellen</div>
     </div>
 }
 

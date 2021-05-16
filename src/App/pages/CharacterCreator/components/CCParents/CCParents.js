@@ -12,17 +12,17 @@ const CCParents = ({ parents, changeParents, changeParentsMix }) => {
         ['Test Mother #1', 'Test Mother #2', 'Test Mother #3', 'Test Mother #4'], []);
 
     return <div className='character-creator-parents'>
-        <div className='character-creator-parents__title'>Parents</div>
+        <div className='character-creator-parents__title'>Eltern</div>
         <div className='character-creator-parents-block'>
             <ParentBlock
-                title='Mother'
+                title='Mutter'
                 type={0}
                 parent={parents.mother}
                 changeParents={changeParents}
                 names={motherNames}
             />
             <ParentBlock
-                title='Father'
+                title='Vater'
                 type={1}
                 parent={parents.father}
                 changeParents={changeParents}

@@ -11,7 +11,7 @@ const CCNavigation = ({ currentPage, setCurrentPage, gender, icon }) => {
                 else setCurrentPage(currentPage => currentPage - 1);
             }}
         >
-            Back
+            Zurück
         </div>
         <div className='character-creator-navigation__icon'>
             <img src={icon} alt='#'/>
@@ -23,7 +23,7 @@ const CCNavigation = ({ currentPage, setCurrentPage, gender, icon }) => {
                 else setCurrentPage(currentPage => currentPage + 1);
             }}
         >
-            Next
+            Nächste
         </div>
     </div>
 }

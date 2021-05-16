@@ -26,28 +26,28 @@ const Hair = ({ store, palette }) => {
             />
         })}
         {currentHair === 0 && <CCColor
-            title='Color'
+            title='Haarfarbe'
             palette={palette}
             type='headHair'
             color={store.creatorData.appearance.color}
             changeColor={store.changeColor}
         />}
         {currentHair === 1 && <CCColor
-            title='Color'
+            title='Augenbrauenfarbe'
             palette={palette}
             type='eyebrows'
             color={store.creatorData.appearance.color}
             changeColor={store.changeColor}
         />}
         {currentHair === 2 && <CCColor
-            title='Color'
+            title='Brusthaarfarbe'
             palette={palette}
             type='chestHair'
             color={store.creatorData.appearance.color}
             changeColor={store.changeColor}
         />}
         {currentHair === 3 && <CCColor
-            title='Color'
+            title='Barthaarfarbe'
             palette={palette}
             type='beard'
             color={store.creatorData.appearance.color}
