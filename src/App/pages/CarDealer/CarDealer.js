@@ -42,7 +42,7 @@ const CarDealer = ({store}) => {
 		if ('alt' in window) {
 			alt.emit('client::carDealer:preview', JSON.stringify({model, color}));
 		}
-	}, [autoClass, model, color]);
+	}, [model, color]);
 	
 	React.useEffect(() => {
 		if ('alt' in window) {
@@ -110,7 +110,7 @@ const CarDealer = ({store}) => {
 				className="car-dealer-buy-element car-dealer-buy-element_card"
 				onClick={() => {
 					if ('alt' in window) {
-						alt.emit('client::carDealer:buy', autoClass, model, color, 0);
+						alt.emit('client::carDealer:buy', model, color, 0);
 					}
 				}}>
 				<span className="car-dealer-buy-element__text">Mit karte bezahlen</span>
@@ -120,7 +120,7 @@ const CarDealer = ({store}) => {
 				className="car-dealer-buy-element car-dealer-buy-element_geld"
 				onClick={() => {
 					if ('alt' in window) {
-						alt.emit('client::carDealer:buy', autoClass, model, color, 1);
+						alt.emit('client::carDealer:buy', model, color, 1);
 					}
 				}}>
 				<span className="car-dealer-buy-element__text">Bar bezahlen</span>
