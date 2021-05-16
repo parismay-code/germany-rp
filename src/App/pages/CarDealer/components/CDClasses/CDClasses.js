@@ -122,10 +122,10 @@ const CDClasses = ({store, autoClass, setAutoClass}) => {
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 17).length > 0 && <CDClass
-			image={tuning}
-			select={17}
-			autoClass={autoClass}
-			setAutoClass={setAutoClass}
+		image={tuning}
+		select={17}
+		autoClass={autoClass}
+		setAutoClass={setAutoClass}
 		/>}
 	</div>;
 };
