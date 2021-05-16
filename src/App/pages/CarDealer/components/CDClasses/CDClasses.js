@@ -27,103 +27,103 @@ const CDClasses = ({store, autoClass, setAutoClass}) => {
 	return <div className="car-dealer-class">
 		{store.carDealerList.filter(el => el.CategoryId === 1).length > 0 && <CDClass
 			image={bicycle}
-			select={0}
+			select={1}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 2).length > 0 && <CDClass
 			image={motorcycle}
-			select={1}
+			select={2}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 3).length > 0 && <CDClass
 			image={lowrider}
-			select={2}
+			select={3}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 4).length > 0 && <CDClass
 			image={offroad}
-			select={3}
+			select={4}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 5).length > 0 && <CDClass
 			image={suv}
-			select={3}
+			select={5}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 6).length > 0 && <CDClass
 			image={standart}
-			select={3}
+			select={6}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 7).length > 0 && <CDClass
 			image={sports}
-			select={3}
+			select={7}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 8).length > 0 && <CDClass
 			image={supersports}
-			select={3}
+			select={8}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 9).length > 0 && <CDClass
 			image={airplane}
-			select={3}
+			select={9}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 10).length > 0 && <CDClass
 			image={helicopter}
-			select={3}
+			select={10}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 11).length > 0 && <CDClass
 			image={boat}
-			select={3}
+			select={11}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 12).length > 0 && <CDClass
 			image={truck}
-			select={3}
+			select={12}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 13).length > 0 && <CDClass
 			image={musclecar}
-			select={3}
+			select={13}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 14).length > 0 && <CDClass
 			image={useful}
-			select={3}
+			select={14}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 15).length > 0 && <CDClass
 			image={transport}
-			select={3}
+			select={15}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 16).length > 0 && <CDClass
 			image={classic}
-			select={3}
+			select={16}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}
 		{store.carDealerList.filter(el => el.CategoryId === 17).length > 0 && <CDClass
 			image={tuning}
-			select={3}
+			select={17}
 			autoClass={autoClass}
 			setAutoClass={setAutoClass}
 		/>}

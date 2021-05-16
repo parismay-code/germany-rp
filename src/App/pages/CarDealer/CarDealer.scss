@@ -87,6 +87,7 @@
       padding: 0 15px;
 
       appearance: none;
+      -webkit-appearance: none;
 
       outline: none;
       border: none;
@@ -98,6 +99,7 @@
 
       &::-webkit-slider-thumb {
         appearance: none;
+        -webkit-appearance: none;
 
         width: 25px;
         height: 25px;

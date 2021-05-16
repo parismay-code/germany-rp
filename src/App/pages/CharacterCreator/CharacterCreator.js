@@ -69,6 +69,14 @@ const CharacterCreator = () => {
                 palette={testPalette}
             />}
         </div>
+        <div className="character-creator-zoom">
+            <input className="character-creator-zoom__input" type="range" name="n_characterCreatorZoom" min="0" max="100"
+                   onChange={(e) => {
+                       if ('alt' in window) {
+                           alt.emit('client::characterCreator:zoom', Number(e.target.value));
+                       }
+                   }}/>
+        </div>
         <img className='character-creator__exit' src={close} alt='#' onClick={() => {
             if ('alt' in window) {
                 alt.emit('client::component:close');
