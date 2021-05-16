@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {observer} from 'mobx-react-lite';
 
 import CDClass from './CDClass';
 
@@ -129,4 +130,4 @@ const CDClasses = ({store, autoClass, setAutoClass}) => {
 	</div>;
 };
 
-export default React.memo(CDClasses);
+export default observer(CDClasses);
