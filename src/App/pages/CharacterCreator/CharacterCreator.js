@@ -70,7 +70,7 @@ const CharacterCreator = () => {
             />}
         </div>
         <div className="character-creator-zoom">
-            <input className="character-creator-zoom__input" type="range" name="n_characterCreatorZoom" min="0" max="100"
+            <input className="character-creator-zoom__input" type="range" name="n_characterCreatorZoom" min="0" max="100" defaultValue='0'
                    onChange={(e) => {
                        if ('alt' in window) {
                            alt.emit('client::characterCreator:zoom', Number(e.target.value));
