@@ -16,105 +16,105 @@ export default class ShopsStore {
 
     carDealerList = [
         {
-            id: 0,
+            Id: 0,
             name: 'Adder',
-            CategoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 0,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 1,
+            Id: 1,
             name: 'Adder',
-            CategoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 0,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 2,
+            Id: 2,
             name: 'Adder',
-            CategoryId: 0, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 0,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 3,
+            Id: 3,
             name: 'Adder',
-            CategoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 1,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 4,
+            Id: 4,
             name: 'Adder',
-            CategoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 1,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 5,
+            Id: 5,
             name: 'Adder',
-            CategoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 1,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 6,
+            Id: 6,
             name: 'Adder',
-            CategoryId: 1, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 1,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 7,
+            Id: 7,
             name: 'Adder',
-            CategoryId: 2, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 2,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 8,
+            Id: 8,
             name: 'Adder',
-            CategoryId: 2, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 2,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 9,
+            Id: 9,
             name: 'Adder',
-            CategoryId: 2, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 2,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 10,
+            Id: 10,
             name: 'Adder',
-            CategoryId: 3, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 3,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 11,
+            Id: 11,
             name: 'Adder',
-            CategoryId: 3, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 3,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
         },
         {
-            id: 12,
+            Id: 12,
             name: 'Adder',
-            CategoryId: 3, // 0 = cars, 1 = motorcycles, 2 = air, 3 = water
+            CategoryId: 3,
             Price: 99999,
             Topspeed: 200,
             Kofferraumgroesse: 10
