@@ -5,7 +5,7 @@ import cn from 'classnames';
 import AuthLogin from "./components/AuthLogin";
 import AuthRegistration from "./components/AuthRegistration";
 
-import logo from '@assets/images/auth/logo.svg';
+import logo from '@assets/images/auth/logo.png';
 
 import './auth.scss';
 
@@ -55,15 +55,7 @@ const Auth = () => {
                                 setComponent('login');
                             }}
                         >
-                            Authorization
-                        </span>
-                        <span
-                            className={cn('auth-content-form-navigation__element', component === 'registration' && 'auth-content-form-navigation__element_active')}
-                            onClick={() => {
-                                setComponent('registration');
-                            }}
-                        >
-                            Registration
+                            Einloggen
                         </span>
                     </div>
                     <span
@@ -76,7 +68,7 @@ const Auth = () => {
                     {component === 'registration' && <AuthRegistration/>}
                 </div>
                 <div className='auth-content-link'>
-                    <span>aroslife.net</span>
+                    <span>aroslife.de</span>
                 </div>
             </div>
         </div>

@@ -28,19 +28,19 @@ export default class CreatorStore {
         appearance: {
             hair: [
                 {
-                    title: 'Hairstyle',
+                    title: 'Haare',
                     value: 0
                 },
                 {
-                    title: 'Eyebrows',
+                    title: 'Augenbrauen',
                     value: 0
                 },
                 {
-                    title: 'Chest hair',
+                    title: 'Brustbehaarung',
                     value: 0
                 },
                 {
-                    title: 'Beard and mustache',
+                    title: 'Bart',
                     value: 0
                 }
             ],
@@ -56,134 +56,134 @@ export default class CreatorStore {
         faceFeatures: [
             {
                 type: 'noseWidth',
-                title: 'Nose width',
+                title: 'Nasenbreite',
                 value: 0
             },
             {
                 type: 'noseHeight',
-                title: 'Nose height',
+                title: 'Nasenhöhe',
                 value: 0
             },
             {
                 type: 'noseLength',
-                title: 'Nose length',
+                title: 'Nasenlänge',
                 value: 0
             },
             {
                 type: 'noseBridge',
-                title: 'Nose bridge',
+                title: 'Nasenrücken',
                 value: 0
             },
             {
                 type: 'noseBridgeShaft',
-                title: 'Nose bridge shaft',
+                title: 'Nasenrückenschaft',
                 value: 0
             },
             {
                 type: 'noseTip',
-                title: 'Nose tip',
+                title: 'Nasenspitze',
                 value: 0
             },
             {
                 type: 'eyebrowsWidth',
-                title: 'Eyebrows width',
+                title: 'Augenbrauenbreite',
                 value: 0
             },
             {
                 type: 'eyebrowsHeight',
-                title: 'Eyebrows height',
+                title: 'Augenbrauenhöhe',
                 value: 0
             },
             {
                 type: 'eyebrowsDeep',
-                title: 'Eyebrows deep',
+                title: 'Augenbrauentiefe',
                 value: 0
             },
             {
                 type: 'cheekboneWidth',
-                title: 'Cheekbone width',
+                title: 'Wangenknochenbreite',
                 value: 0
             },
             {
                 type: 'cheekboneHeight',
-                title: 'Cheekbone height',
+                title: 'Wangenknochenhöhe',
                 value: 0
             },
             {
                 type: 'cheekDeep',
-                title: 'Cheek deep',
+                title: 'Wangentiefe',
                 value: 0
             },
             {
                 type: 'eyesWidth',
-                title: 'Eyes width',
+                title: 'Augenbreite',
                 value: 0
             },
             {
                 type: 'lipsWidth',
-                title: 'Lips width',
+                title: 'Lippenbreite',
                 value: 0
             },
             {
                 type: 'jawWidth',
-                title: 'Jaw width',
+                title: 'Kieferbreite',
                 value: 0
             },
             {
                 type: 'jawHeight',
-                title: 'Jaw height',
+                title: 'Kieferhöhe',
                 value: 0
             },
             {
                 type: 'jawDeep',
-                title: 'Jaw deep',
+                title: 'Kiefertiefe',
                 value: 0
             },
             {
                 type: 'jawIndent',
-                title: 'Jaw indent',
+                title: 'Kiefereinzug',
                 value: 0
             },
             {
                 type: 'chinWidth',
-                title: 'Chin width',
+                title: 'Kinnbreite',
                 value: 0
             },
             {
                 type: 'chinHeight',
-                title: 'Chin height',
+                title: 'Kinnhöhe',
                 value: 0
             },
             {
                 type: 'chinLength',
-                title: 'Chin length',
+                title: 'Kinnlänge',
                 value: 0
             },
             {
                 type: 'chinShape',
-                title: 'Chin shape',
+                title: 'Kinnform',
                 value: 0
             },
             {
                 type: 'neckWidth',
-                title: 'Neck width',
+                title: 'Nackenbreite',
                 value: 0
             }
         ],
         limitations: [
             {
                 type: 'blemishes',
-                title: 'Blemishes',
+                title: 'Schönheitsfehler',
                 value: 0
             },
             {
                 type: 'ageing',
-                title: 'Ageing',
+                title: 'Alterung',
                 value: 0
             },
             {
                 type: 'molesFreckles',
-                title: 'Moles and freckles',
+                title: 'Muttermale und Sommersprossen',
                 value: 0
             }
         ]

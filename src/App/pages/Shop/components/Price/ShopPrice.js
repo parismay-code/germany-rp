@@ -9,7 +9,7 @@ const ShopPrice = ({ price, value }) => {
     const _price = React.useMemo(() => `$${String(price * value).replace(regExp.money, '$1 ')}`, [price, value]);
 
     return <div className='shop-price'>
-        Price<br/>{_price}
+        Preis<br/>{_price}
     </div>
 }
 

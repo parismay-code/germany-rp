@@ -29,6 +29,7 @@ const AuthLogin = () => {
                 name='n_authLogLogin'
                 placeholder='Enter login'
                 className='auth-login__input'
+                autofocus="true"
             />
             <input
                 ref={password}
@@ -50,17 +51,17 @@ const AuthLogin = () => {
                 >
                     <img src={checked} alt='#' />
                 </div>
-                <span>remember me</span>
+                <span>angemeldet bleiben</span>
                 <input
                     type='button'
                     name='n_authLogSubmit'
                     id='id_authLogSubmit'
                     className='auth-login-submit__submit'
-                    value='Log in'
+                    value='EINLOGGEN'
                     onClick={() => handleSubmit()}
                 />
             </div>
-            <span className='auth-login__cant-login'>Can't log in?</span>
+            <span className='auth-login__cant-login'>Du kannst dich nicht einloggen?</span>
         </div>
     )
 }
