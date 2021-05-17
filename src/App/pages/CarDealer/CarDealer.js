@@ -40,7 +40,7 @@ const CarDealer = ({store}) => {
 	
 	React.useEffect(() => {
 		if ('alt' in window) {
-			alt.emit('client::carDealer:preview', JSON.stringify({model, color}));
+			alt.emit('client::carDealer:preview', model, color);
 		}
 	}, [model, color]);
 	
