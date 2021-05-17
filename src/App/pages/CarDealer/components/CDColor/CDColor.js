@@ -15,7 +15,7 @@ const CDColor = ({ palette, color, setColor }) => {
                 setColor={setColor}
             />
         })}
-        <span className='car-dealer-color__title'>Select color car</span>
+        <span className='car-dealer-color__title'>Wählen Sie eine Farbe</span>
     </div>
 }
 

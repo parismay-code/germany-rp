@@ -11,7 +11,7 @@ const CDPrice = ({model, store}) => {
 		`$${String(store.carDealerList.filter(el => el.Id === model)[0]?.Price).replace(regExp.money, '$1 ')}`, [store.carDealerList, model]);
 	
 	return <div className="car-dealer-price">
-		Price<br/>{price}
+		Preis<br/>{price}
 	</div>;
 };
 

@@ -8,20 +8,20 @@ import './CDParameters.scss';
 
 const CDParameters = ({model, store}) => {
 	return <div className="car-dealer-parameters">
-		<div className="car-dealer-parameters__title">Parameters</div>
+		<div className="car-dealer-parameters__title">Technische Daten</div>
 		<div className="car-dealer-parameters-element">
 			<div className="car-dealer-parameters-element__title">
 				<img src={maxSpeed} alt="#"/>
 				<span>{`${store.carDealerList.filter(el => el.Id === model)[0]?.Topspeed} km/h`}</span>
 			</div>
-			<span className="car-dealer-parameters-element__subtitle">MaxSpeed</span>
+			<span className="car-dealer-parameters-element__subtitle">Topspeed</span>
 		</div>
 		<div className="car-dealer-parameters-element">
 			<div className="car-dealer-parameters-element__title">
 				<img src={acceleration} alt="#"/>
 				<span>{`${store.carDealerList.filter(el => el.Id === model)[0]?.Kofferraumgroesse} kg.`}</span>
 			</div>
-			<span className="car-dealer-parameters-element__subtitle">Kofferraumgroesse</span>
+			<span className="car-dealer-parameters-element__subtitle">Kofferraum</span>
 		</div>
 	</div>;
 };

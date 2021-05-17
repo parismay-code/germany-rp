@@ -53,20 +53,20 @@ const CarDealer = ({store}) => {
 	}, [store, fetchCarsEvent]);
 	
 	const testPalette = React.useMemo(() => [
-		'#121212',
-		'#E8E8E8',
+		'#0d1116',
+		'#fffff6',
 		'#E10A0A',
-		'#D3670E',
-		'#D4D309',
+		'#f78616',
+		'#fbe212',
 		'#16C30E',
-		'#1F99C2',
-		'#081BAD',
-		'#A84199',
+		'#0b9cf1',
+		'#3b39e0',
+		'#c21cab',
 	], []);
 	
 	return <div className="car-dealer">
 		<div className="car-dealer-menu">
-			<div className="car-dealer-menu__header">CarDealer</div>
+			<div className="car-dealer-menu__header">Fahrzeughändler</div>
 			<CDClasses
 				store={store}
 				autoClass={autoClass}
@@ -113,7 +113,7 @@ const CarDealer = ({store}) => {
 						alt.emit('client::carDealer:buy', model, color, 0);
 					}
 				}}>
-				<span className="car-dealer-buy-element__text">Mit karte bezahlen</span>
+				<span className="car-dealer-buy-element__text">Mit Karte bezahlen</span>
 				<img className="car-dealer-buy-element__image" src={creditCard} alt="#"/>
 			</div>
 			<div
