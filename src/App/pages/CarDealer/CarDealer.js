@@ -18,7 +18,7 @@ const CarDealer = ({store}) => {
 	const [autoClass, setAutoClass] = React.useState(0);
 	const [model, setModel] = React.useState(0);
 	const [color, setColor] = React.useState(0);
-	
+
 	const fetchCarsEvent = React.useCallback((json) => {
 		try {
 			const carsList = JSON.parse(json);
@@ -93,7 +93,7 @@ const CarDealer = ({store}) => {
 			/>
 		</div>
 		<div className="car-dealer-rotate">
-			<input className="car-dealer-rotate__input" type="range" name="n_carDealerRotate" min="0" max="360"
+			<input className="car-dealer-rotate__input" type="range" name="n_carDealerRotate" min="0" max="3.6" step="0.01"
 			       onChange={(e) => {
 				       if ('alt' in window) {
 					       alt.emit('client::carDealer:rotate', Number(e.target.value));
