@@ -14,7 +14,7 @@ const FuelStation = () => {
     return (
         <div className='fuel-station'>
             <div className='fuel-station-content'>
-                <span className='fuel-station-content__title'>Fuelstation</span>
+                <span className='fuel-station-content__title'>Tankstelle</span>
                 <div className='fuel-station-content-screen'>
                     <input
                         type='number'
@@ -27,22 +27,22 @@ const FuelStation = () => {
                             }
                         }}
                     />
-                    <span>L.</span>
+                    <span>Liter</span>
                 </div>
                 <div className='fuel-station-content-info'>
                     <span>1L. - 6$</span>
                     <div className='fuel-station-content-info-options'>
                         <div className='fuel-station-content-info-options__element'>
                             <img src={couponIcon} alt='#' />
-                            <span>Coupon</span>
+                            <span>Treibstoff</span>
                         </div>
                         <div className='fuel-station-content-info-options__element'>
                             <img src={fullIcon} alt='#' />
-                            <span>Full</span>
+                            <span>Voll</span>
                         </div>
                         <div className='fuel-station-content-info-options__element'>
                             <img src={byLiterIcon} alt='#' />
-                            <span>By liter</span>
+                            <span>Auswahl</span>
                         </div>
                         <div
                             className='fuel-station-content-info-options__element_exit'
@@ -53,7 +53,7 @@ const FuelStation = () => {
                             }}
                         >
                             <img src={exitIcon} alt='#' />
-                            <span>Exit</span>
+                            <span>Scliessen</span>
                         </div>
                     </div>
                 </div>
