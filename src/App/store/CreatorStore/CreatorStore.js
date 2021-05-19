@@ -57,134 +57,212 @@ export default class CreatorStore {
             {
                 type: 'noseWidth',
                 title: 'Nasenbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'noseHeight',
                 title: 'Nasenhöhe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'noseLength',
                 title: 'Nasenlänge',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'noseBridge',
                 title: 'Nasenrücken',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'noseBridgeShaft',
                 title: 'Nasenrückenschaft',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'noseTip',
                 title: 'Nasenspitze',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'eyebrowsWidth',
                 title: 'Augenbrauenbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'eyebrowsHeight',
                 title: 'Augenbrauenhöhe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'eyebrowsDeep',
                 title: 'Augenbrauentiefe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'cheekboneWidth',
                 title: 'Wangenknochenbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'cheekboneHeight',
                 title: 'Wangenknochenhöhe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'cheekDeep',
                 title: 'Wangentiefe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'eyesWidth',
                 title: 'Augenbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'lipsWidth',
                 title: 'Lippenbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'jawWidth',
                 title: 'Kieferbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'jawHeight',
                 title: 'Kieferhöhe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'jawDeep',
                 title: 'Kiefertiefe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'jawIndent',
                 title: 'Kiefereinzug',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'chinWidth',
                 title: 'Kinnbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'chinHeight',
                 title: 'Kinnhöhe',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'chinLength',
                 title: 'Kinnlänge',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'chinShape',
                 title: 'Kinnform',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'neckWidth',
                 title: 'Nackenbreite',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             }
         ],
         limitations: [
             {
                 type: 'blemishes',
                 title: 'Schönheitsfehler',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'ageing',
                 title: 'Alterung',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             },
             {
                 type: 'molesFreckles',
                 title: 'Muttermale und Sommersprossen',
-                value: 0
+                value: 0,
+                min: 0,
+                max: 100,
+                step: 1
             }
         ]
     }

@@ -13,6 +13,9 @@ const FaceFeatures = ({ store }) => {
                     key={key}
                     el={el}
                     changeOption={store.changeFaceFeatures}
+                    min={el.min}
+                    max={el.max}
+                    step={el.step}
                 />
             })}
             {store.creatorData.limitations.map((el, key) => {
@@ -20,6 +23,9 @@ const FaceFeatures = ({ store }) => {
                     key={key}
                     el={el}
                     changeOption={store.changeFaceFeatures}
+                    min={el.min}
+                    max={el.max}
+                    step={el.step}
                 />
             })}
         </div>
