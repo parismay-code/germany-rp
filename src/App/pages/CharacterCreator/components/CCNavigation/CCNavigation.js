@@ -1,3 +1,4 @@
+/* global alt */
 import * as React from 'react';
 
 import './CCNavigation.scss';
@@ -7,8 +8,18 @@ const CCNavigation = ({ currentPage, setCurrentPage, gender, icon }) => {
         <div
             className='character-creator-navigation__button'
             onClick={() => {
-                if (currentPage === 0) setCurrentPage(2);
-                else setCurrentPage(currentPage => currentPage - 1);
+                if (currentPage === 0) {
+                    setCurrentPage(2);
+                    if ('alt' in window) {
+                        alt.emit('client::characterCreator:navigation', 2);
+                    }
+                }
+                else {
+                    setCurrentPage(currentPage => currentPage - 1);
+                    if ('alt' in window) {
+                        alt.emit('client::characterCreator:navigation', currentPage - 1);
+                    }
+                }
             }}
         >
             Zurück
@@ -19,8 +30,18 @@ const CCNavigation = ({ currentPage, setCurrentPage, gender, icon }) => {
         <div
             className='character-creator-navigation__button'
             onClick={() => {
-                if (currentPage === 2) setCurrentPage(0);
-                else setCurrentPage(currentPage => currentPage + 1);
+                if (currentPage === 2) {
+                    setCurrentPage(0);
+                    if ('alt' in window) {
+                        alt.emit('client::characterCreator:navigation', 0);
+                    }
+                }
+                else {
+                    setCurrentPage(currentPage => currentPage + 1);
+                    if ('alt' in window) {
+                        alt.emit('client::characterCreator:navigation', currentPage + 1);
+                    }
+                }
             }}
         >
             Nächste
