@@ -7,9 +7,9 @@ import './CCParents.scss';
 
 const CCParents = ({ parents, changeParents, changeParentsMix }) => {
     const fatherNames = React.useMemo(() =>
-        ['Test Father #1', 'Test Father #2', 'Test Father #3', 'Test Father #4'], []);
+        ['Jens', 'Daniel', 'Elias', 'Noah', 'David', 'Joan', 'Alex', 'Tim', 'Marcel', 'Ethan', 'Vincent', 'Angel', 'Diego', 'Adrian', 'Gabriel', 'Michael', 'Santiago', 'Kevin', 'Louis', 'Samuel', 'Anthony', 'John', 'Niko', 'Claude'], []);
     const motherNames = React.useMemo(() =>
-        ['Test Mother #1', 'Test Mother #2', 'Test Mother #3', 'Test Mother #4'], []);
+        ['Hannah','Audrey','Jamsine','Giselle','Amelia','Isabella','Elias','Karin','Julia','Lea','Sophia','Evelin','Nicole','Ashley','Grace','Brianna','Natalie','Olivia','Elizabeth','Charlotte','Emma','Misty'], []);
 
     return <div className='character-creator-parents'>
         <div className='character-creator-parents__title'>Eltern</div>
