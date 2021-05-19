@@ -11,7 +11,6 @@ import Hair from "./menus/Hair";
 import gendersIcon from '@assets/images/cCreator/gendersIcon.svg';
 import faceFeaturesIcon from '@assets/images/cCreator/faceFeaturesIcon.svg';
 import hairIcon from '@assets/images/cCreator/hairIcon.svg';
-import close from '@assets/images/close.svg';
 
 import CreatorStore from "@store/CreatorStore";
 
@@ -77,11 +76,6 @@ const CharacterCreator = () => {
                        }
                    }}/>
         </div>
-        <img className='character-creator__exit' src={close} alt='#' onClick={() => {
-            if ('alt' in window) {
-                alt.emit('client::component:close');
-            }
-        }}/>
         <div className='character-creator__create'>Charakter erstellen</div>
     </div>
 }
