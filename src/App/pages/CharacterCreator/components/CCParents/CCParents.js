@@ -32,8 +32,9 @@ const CCParents = ({ parents, changeParents, changeParentsMix }) => {
         <input
             className='character-creator-parents__input'
             type='range'
-            min='-100'
-            max='100'
+            min='0'
+            max='1'
+            step='0.01'
             name='n_creatorParentsMix'
             defaultValue={parents.mix}
             onChange={(e) => changeParentsMix(Number(e.target.value))}

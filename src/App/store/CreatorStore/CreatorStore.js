@@ -58,129 +58,129 @@ export default class CreatorStore {
                 type: 'noseWidth',
                 title: 'Nasenbreite',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'noseHeight',
                 title: 'Nasenhöhe',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'noseLength',
                 title: 'Nasenlänge',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'noseBridge',
                 title: 'Nasenrücken',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'noseBridgeShaft',
-                title: 'Nasenrückenschaft',
+                title: 'Nasenrückenschaft', //todo:Nasenverschiebung?
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'noseTip',
                 title: 'Nasenspitze',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'eyebrowsWidth',
                 title: 'Augenbrauenbreite',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'eyebrowsHeight',
                 title: 'Augenbrauenhöhe',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'eyebrowsDeep',
                 title: 'Augenbrauentiefe',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'cheekboneWidth',
                 title: 'Wangenknochenbreite',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'cheekboneHeight',
                 title: 'Wangenknochenhöhe',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'cheekDeep',
-                title: 'Wangentiefe',
+                title: 'Wangentiefe', //todo: Was das?
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'eyesWidth',
-                title: 'Augenbreite',
+                title: 'Augenbreite',//todo: Was das?
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'lipsWidth',
-                title: 'Lippenbreite',
+                title: 'Lippenbreite',//todo: Was das?
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'jawWidth',
                 title: 'Kieferbreite',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'jawHeight',
                 title: 'Kieferhöhe',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'jawDeep',
@@ -192,76 +192,76 @@ export default class CreatorStore {
             },
             {
                 type: 'jawIndent',
-                title: 'Kiefereinzug',
+                title: 'Kiefereinzug', //todo:Was das?
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'chinWidth',
                 title: 'Kinnbreite',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'chinHeight',
-                title: 'Kinnhöhe',
+                title: 'Kinnhöhe', //todo:Was das?
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'chinLength',
                 title: 'Kinnlänge',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'chinShape',
                 title: 'Kinnform',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             },
             {
                 type: 'neckWidth',
                 title: 'Nackenbreite',
                 value: 0,
-                min: 0,
-                max: 100,
-                step: 1
+                min: -1,
+                max: 1,
+                step: 0.01
             }
         ],
         limitations: [
             {
                 type: 'blemishes',
                 title: 'Schönheitsfehler',
-                value: 0,
+                value: 1,
                 min: 0,
-                max: 100,
+                max: 24,
                 step: 1
             },
             {
                 type: 'ageing',
                 title: 'Alterung',
-                value: 0,
+                value: 1,
                 min: 0,
-                max: 100,
+                max: 15,
                 step: 1
             },
             {
                 type: 'molesFreckles',
                 title: 'Muttermale und Sommersprossen',
-                value: 0,
+                value: 1,
                 min: 0,
-                max: 100,
+                max: 18,
                 step: 1
             }
         ]
