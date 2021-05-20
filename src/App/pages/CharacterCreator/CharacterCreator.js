@@ -76,7 +76,11 @@ const CharacterCreator = () => {
                        }
                    }}/>
         </div>
-        <div className='character-creator__create'>Charakter erstellen</div>
+        <div className='character-creator__create' onClick={(e) => {
+            if ('alt' in window) {
+                alt.emit('client::characterCreator:create');
+            }
+        }}>Charakter erstellen</div>
     </div>
 }
 
