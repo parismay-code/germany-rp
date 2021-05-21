@@ -9,7 +9,7 @@ const CCParents = ({ parents, changeParents, changeParentsMix }) => {
     const fatherNames = React.useMemo(() =>
         ['Jens', 'Daniel', 'Elias', 'Noah', 'David', 'Joan', 'Alex', 'Tim', 'Marcel', 'Ethan', 'Vincent', 'Angel', 'Diego', 'Adrian', 'Gabriel', 'Michael', 'Santiago', 'Kevin', 'Louis', 'Samuel', 'Anthony', 'John', 'Niko', 'Claude'], []);
     const motherNames = React.useMemo(() =>
-        ['Hannah','Audrey','Jamsine','Giselle','Amelia','Isabella','Elias','Karin','Julia','Lea','Sophia','Evelin','Nicole','Ashley','Grace','Brianna','Natalie','Olivia','Elizabeth','Charlotte','Emma','Misty'], []);
+        ['Nicole','Audrey','Jamsine','Giselle','Amelia','Isabella','Elisa','Karin','Julia','Lea','Sophia','Evelin','Hannah','Ashley','Grace','Brianna','Natalie','Olivia','Elizabeth','Charlotte','Emma','Misty'], []);
 
     return <div className='character-creator-parents'>
         <div className='character-creator-parents__title'>Eltern</div>
@@ -36,7 +36,7 @@ const CCParents = ({ parents, changeParents, changeParentsMix }) => {
             max='1'
             step='0.01'
             name='n_creatorParentsMix'
-            defaultValue={parents.mix}
+            defaultValue='0.5'
             onChange={(e) => changeParentsMix(Number(e.target.value))}
         />
     </div>
