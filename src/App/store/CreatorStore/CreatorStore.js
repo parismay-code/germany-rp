@@ -45,13 +45,20 @@ export default class CreatorStore {
                 }
             ],
             color: {
-                body: 0,
+                body: 0.5,
                 headHair: 0,
                 eyebrows: 0,
                 chestHair: 0,
                 beard: 0,
                 eyes: 0,
             }
+        },
+        faceFeature: {
+            'noseWidth': 0,
+            'noseHeight' : 0,
+            'noseLength' : 0,
+            'noseBridge' : 0,
+            'noseDisplacement' : 0,
         },
         faceFeatures: [
             {
@@ -88,7 +95,7 @@ export default class CreatorStore {
             },
             {
                 type: 'noseDisplacement',
-                title: 'Nasenverschiebung', //todo:Nasenverschiebung?
+                title: 'Nasenverschiebung',
                 value: 0,
                 min: -1,
                 max: 1,
@@ -113,14 +120,6 @@ export default class CreatorStore {
             {
                 type: 'eyebrowsHeight',
                 title: 'Augenbrauenhöhe',
-                value: 0,
-                min: -1,
-                max: 1,
-                step: 0.01
-            },
-            {
-                type: 'eyebrowsDeep',
-                title: 'Augenbrauentiefe',
                 value: 0,
                 min: -1,
                 max: 1,
@@ -183,22 +182,6 @@ export default class CreatorStore {
                 step: 0.01
             },
             {
-                type: 'jawDeep',
-                title: 'Kiefertiefe',
-                value: 0,
-                min: 0,
-                max: 100,
-                step: 1
-            },
-            {
-                type: 'jawIndent',
-                title: 'Kiefereinzug', //todo:Was das?
-                value: 0,
-                min: -1,
-                max: 1,
-                step: 0.01
-            },
-            {
                 type: 'chinWidth',
                 title: 'Kinnbreite',
                 value: 0,
@@ -237,33 +220,9 @@ export default class CreatorStore {
                 min: -1,
                 max: 1,
                 step: 0.01
-            },
-            {
-                type: 'test',
-                title: 'Tester',
-                value: 0,
-                min: -1,
-                max: 1,
-                step: 0.01
-            },
-            {
-                type: 'cheekWidth',
-                title: '',
-                value: 0,
-                min: -1,
-                max: 1,
-                step: 0.01
-            },
+            }
         ],
         limitations: [
-            {
-                type: 'blemishes',
-                title: 'Schönheitsfehler',
-                value: 1,
-                min: 0,
-                max: 24,
-                step: 1
-            },
             {
                 type: 'ageing',
                 title: 'Alterung',
@@ -274,11 +233,27 @@ export default class CreatorStore {
             },
             {
                 type: 'molesFreckles',
-                title: 'Muttermale und Sommersprossen',
+                title: 'Muttermale',
                 value: 1,
                 min: 0,
                 max: 18,
                 step: 1
+            },
+            {
+                type: 'cheekBlush',
+                title: 'Wangenröte',
+                value: 1,
+                min: 0,
+                max: 4,
+                step: 1
+            },
+            {
+                type: 'cheekBlushTransparency',
+                title: 'Wangenröte Sichtbarkeit ',
+                value: 0,
+                min: 0,
+                max: 1,
+                step: 0.5
             }
         ]
     }
@@ -371,90 +346,8 @@ export default class CreatorStore {
     }
 
     changeFaceFeatures(type, value) {
-        switch (type) {
-            case 'noseWidth':
-                this.creatorData.faceFeatures[0].value = value;
-                break;
-            case 'noseHeight':
-                this.creatorData.faceFeatures[1].value = value;
-                break;
-            case 'noseLength':
-                this.creatorData.faceFeatures[2].value = value;
-                break;
-            case 'noseBridge':
-                this.creatorData.faceFeatures[3].value = value;
-                break;
-            case 'noseDisplacement':
-                this.creatorData.faceFeatures[4].value = value;
-                break;
-            case 'noseTip':
-                this.creatorData.faceFeatures[5].value = value;
-                break;
-            case 'eyebrowsWidth':
-                this.creatorData.faceFeatures[6].value = value;
-                break;
-            case 'eyebrowsHeight':
-                this.creatorData.faceFeatures[7].value = value;
-                break;
-            case 'eyebrowsDeep':
-                this.creatorData.faceFeatures[8].value = value;
-                break;
-            case 'cheekboneWidth':
-                this.creatorData.faceFeatures[9].value = value;
-                break;
-            case 'cheekboneHeight':
-                this.creatorData.faceFeatures[10].value = value;
-                break;
-            case 'cheekDeep':
-                this.creatorData.faceFeatures[11].value = value;
-                break;
-            case 'eyesWidth':
-                this.creatorData.faceFeatures[12].value = value;
-                break;
-            case 'lipsWidth':
-                this.creatorData.faceFeatures[13].value = value;
-                break;
-            case 'jawWidth':
-                this.creatorData.faceFeatures[14].value = value;
-                break;
-            case 'jawHeight':
-                this.creatorData.faceFeatures[15].value = value;
-                break;
-            case 'jawDeep':
-                this.creatorData.faceFeatures[16].value = value;
-                break;
-            case 'jawIndent':
-                this.creatorData.faceFeatures[17].value = value;
-                break;
-            case 'chinWidth':
-                this.creatorData.faceFeatures[18].value = value;
-                break;
-            case 'chinHeight':
-                this.creatorData.faceFeatures[19].value = value;
-                break;
-            case 'chinLength':
-                this.creatorData.faceFeatures[20].value = value;
-                break;
-            case 'chinShape':
-                this.creatorData.faceFeatures[21].value = value;
-                break;
-            case 'neckWidth':
-                this.creatorData.faceFeatures[22].value = value;
-                break;
-            case 'test':
-                this.creatorData.faceFeatures[23].value = value;
-                break;
-            case 'blemishes':
-                this.creatorData.limitations[0].value = value;
-                break;
-            case 'ageing':
-                this.creatorData.limitations[1].value = value;
-                break;
-            case 'molesFreckles':
-                this.creatorData.limitations[2].value = value;
-                break;
-            default: break;
-        }
+
+        this.creatorData.faceFeature[type] = value
 
         if ('alt' in window) {
             alt.emit('client::characterCreator:preview', this.creatorData);
