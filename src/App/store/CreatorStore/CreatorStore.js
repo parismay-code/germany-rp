@@ -87,8 +87,8 @@ export default class CreatorStore {
                 step: 0.01
             },
             {
-                type: 'noseBridgeShaft',
-                title: 'Nasenrückenschaft', //todo:Nasenverschiebung?
+                type: 'noseDisplacement',
+                title: 'Nasenverschiebung', //todo:Nasenverschiebung?
                 value: 0,
                 min: -1,
                 max: 1,
@@ -144,7 +144,7 @@ export default class CreatorStore {
             },
             {
                 type: 'cheekDeep',
-                title: 'Wangentiefe', //todo: Was das?
+                title: 'Wangenbreite',
                 value: 0,
                 min: -1,
                 max: 1,
@@ -152,7 +152,7 @@ export default class CreatorStore {
             },
             {
                 type: 'eyesWidth',
-                title: 'Augenbreite',//todo: Was das?
+                title: 'Augengröße',
                 value: 0,
                 min: -1,
                 max: 1,
@@ -160,7 +160,7 @@ export default class CreatorStore {
             },
             {
                 type: 'lipsWidth',
-                title: 'Lippenbreite',//todo: Was das?
+                title: 'Lippenfülle',
                 value: 0,
                 min: -1,
                 max: 1,
@@ -208,7 +208,7 @@ export default class CreatorStore {
             },
             {
                 type: 'chinHeight',
-                title: 'Kinnhöhe', //todo:Was das?
+                title: 'Kinnhöhe',
                 value: 0,
                 min: -1,
                 max: 1,
@@ -216,7 +216,7 @@ export default class CreatorStore {
             },
             {
                 type: 'chinLength',
-                title: 'Kinnlänge',
+                title: 'Kinnposition',
                 value: 0,
                 min: -1,
                 max: 1,
@@ -237,7 +237,23 @@ export default class CreatorStore {
                 min: -1,
                 max: 1,
                 step: 0.01
-            }
+            },
+            {
+                type: 'test',
+                title: 'Tester',
+                value: 0,
+                min: -1,
+                max: 1,
+                step: 0.01
+            },
+            {
+                type: 'cheekWidth',
+                title: '',
+                value: 0,
+                min: -1,
+                max: 1,
+                step: 0.01
+            },
         ],
         limitations: [
             {
@@ -278,6 +294,7 @@ export default class CreatorStore {
             changeParents: action.bound,
             changeParentsMix: action.bound,
             changeColor: action.bound,
+            changeSkinColor: action.bound,
             changeFaceFeatures: action.bound,
             changeHair: action.bound
         })
@@ -313,6 +330,13 @@ export default class CreatorStore {
     changeParentsMix(value) {
         this.creatorData.parents.mix = value;
 
+        if ('alt' in window) {
+            alt.emit('client::characterCreator:preview', this.creatorData);
+        }
+    }
+
+    changeSkinColor(value) {
+        this.creatorData.appearance.color.body = value;
         if ('alt' in window) {
             alt.emit('client::characterCreator:preview', this.creatorData);
         }
@@ -360,7 +384,7 @@ export default class CreatorStore {
             case 'noseBridge':
                 this.creatorData.faceFeatures[3].value = value;
                 break;
-            case 'noseBridgeShaft':
+            case 'noseDisplacement':
                 this.creatorData.faceFeatures[4].value = value;
                 break;
             case 'noseTip':
@@ -416,6 +440,9 @@ export default class CreatorStore {
                 break;
             case 'neckWidth':
                 this.creatorData.faceFeatures[22].value = value;
+                break;
+            case 'test':
+                this.creatorData.faceFeatures[23].value = value;
                 break;
             case 'blemishes':
                 this.creatorData.limitations[0].value = value;
