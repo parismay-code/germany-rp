@@ -27,6 +27,7 @@ const CCOption = ({ el, changeOption, min, max, step }) => {
                 step={step}
                 onChange={(e) => {
                     changeOption(el.type, Number(e.target.value));
+                    el.value = e.target.value;
                 }}
             />
             <img
