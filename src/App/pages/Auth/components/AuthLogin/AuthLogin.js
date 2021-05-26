@@ -22,6 +22,12 @@ const AuthLogin = () => {
         }
     }, [login, password])
 
+    if('alt' in window) {
+        alt.on('client::auth:setLoginData', (username) => {
+            login.current.value = username;
+            password.current.focus();
+        })
+    }
     return (
         <div className='auth-login'>
             <input
@@ -45,7 +51,7 @@ const AuthLogin = () => {
                     onClick={() => {
                         setRemember(!remember);
 
-                        if ('ait' in window) {
+                        if ('alt' in window) {
                             alt.emit('cef::auth:remember', (!remember))
                         }
                     }}
