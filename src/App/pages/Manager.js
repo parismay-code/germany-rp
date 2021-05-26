@@ -11,6 +11,7 @@ import Tuning from "./Tuning";
 import Shop from "./Shop";
 
 import ShopsStore from "@store/ShopsStore";
+import Dealer from "@pages/Dealer/Dealer";
 
 const Manager = () => {
     const shopStore = useLocalStore(() => new ShopsStore())
@@ -30,6 +31,7 @@ const Manager = () => {
         {currentPage === 'hud' && <HUD/>}
         {currentPage === 'tuning' && <Tuning store={shopStore}/>}
         {currentPage === 'shop' && <Shop store={shopStore}/>}
+        {currentPage === 'dealer' && <Dealer store={shopStore}/>}
     </>
 }
 

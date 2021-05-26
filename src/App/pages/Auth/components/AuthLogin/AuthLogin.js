@@ -5,6 +5,7 @@ import cn from 'classnames';
 import checked from '@assets/images/auth/checked.svg';
 
 import './authLogin.scss';
+import {Link} from "react-router-dom";
 
 const AuthLogin = () => {
     const [remember, setRemember] = React.useState(false);
@@ -51,7 +52,7 @@ const AuthLogin = () => {
                 >
                     <img src={checked} alt='#' />
                 </div>
-                <span>angemeldet bleiben</span>
+                <span className='auth-login-submit__stay-signed'>angemeldet bleiben</span>
                 <input
                     type='button'
                     name='n_authLogSubmit'
@@ -61,7 +62,7 @@ const AuthLogin = () => {
                     onClick={() => handleSubmit()}
                 />
             </div>
-            <span className='auth-login__cant-login'>Du kannst dich nicht einloggen?</span>
+            <a className='auth-login__cant-login' href='https://forum.aroslife.de/forum/index.php?thread/114-fehlercodes/' target='_blank'>Du kannst dich nicht einloggen?</a>
         </div>
     )
 }

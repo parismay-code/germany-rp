@@ -12,6 +12,7 @@ export default class ShopsStore {
         shop: Meta.initial,
         carDealer: Meta.initial,
         tuning: Meta.initial,
+        dealer: Meta.initial,
     };
 
     carDealerList = [];
@@ -73,6 +74,23 @@ export default class ShopsStore {
         },
     ];
 
+    dealerData = [
+        {
+            ItemId: 0,
+            Name: 'Donut',
+            Price: 123490,
+            Count: 100,
+            Image: 'Donut.svg'
+        },
+        {
+            ItemId: 1,
+            Name: 'Energy Drink',
+            Price: 5435,
+            Count: 100,
+            Image: 'EnergyDrink.svg'
+        },
+    ];
+
     constructor() {
         makeObservable(this, {
             meta: observable,
@@ -80,9 +98,12 @@ export default class ShopsStore {
             carDealerList: observable,
             tuning: observable,
             shopData: observable,
+            dealerData: observable,
 
             fetchShopData: action.bound,
             changeShopData: action.bound,
+            fetchDealerData: action.bound,
+            changeDealerData: action.bound,
             fetchCarDealerList: action.bound,
             fetchCarTuning: action.bound,
         })
@@ -104,6 +125,24 @@ export default class ShopsStore {
     changeShopData(id, data) {
         const index = this.shopData.findIndex(e => e.ItemId === id);
         this.shopData[index] = data;
+    }
+
+    async fetchDealerData(event) {
+        this.meta.dealer = Meta.loading;
+        this.dealerData = [];
+
+        const {isError, data} = await event;
+        if (isError) return this.meta.dealer = Meta.error;
+
+        runInAction(() => {
+            this.dealerData = data;
+            this.meta.dealer = Meta.success;
+        })
+    }
+
+    changeDealerData(id, data) {
+        const index = this.dealerData.findIndex(e => e.ItemId === id);
+        this.dealerData[index] = data;
     }
 
     async fetchCarDealerList(event) {
