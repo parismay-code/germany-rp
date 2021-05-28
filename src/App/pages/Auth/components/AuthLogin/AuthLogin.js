@@ -28,6 +28,7 @@ const AuthLogin = () => {
             password.current.focus();
         })
     }
+
     return (
         <div className='auth-login'>
             <input
@@ -37,6 +38,7 @@ const AuthLogin = () => {
                 placeholder='Enter login'
                 className='auth-login__input'
                 autofocus="true"
+                spellcheck="false"
             />
             <input
                 ref={password}
@@ -44,6 +46,7 @@ const AuthLogin = () => {
                 name='n_authLogPassword'
                 placeholder='Enter password'
                 className='auth-login__input'
+                spellcheck="false"
             />
             <div className='auth-login-submit'>
                 <div
