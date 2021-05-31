@@ -10,7 +10,7 @@
   font-family: 'TTNorms-MediumItalic', sans-serif;
   font-style: italic;
 
-  @include backgroundVignette;
+  //@include backgroundVignette;
 
   &-menu {
     position: relative;
@@ -20,6 +20,7 @@
     flex-direction: column;
     align-items: center;
 
+    background: radial-gradient(closest-side at 50% 50%, #FFFFFF20 -1%, #001B2Dd0 1%);
     border-right: 1px solid $color-gray;
 
     overflow: auto;
