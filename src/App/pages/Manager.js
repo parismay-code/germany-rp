@@ -15,6 +15,7 @@ import Dealer from "@pages/Dealer/Dealer";
 
 const Manager = () => {
     const shopStore = useLocalStore(() => new ShopsStore())
+    const store = useLocalStore(() => new ShopsStore());
 
     const [currentPage, setCurrentPage] = React.useState(null);
 

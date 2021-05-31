@@ -15,8 +15,7 @@ import geld from "@assets/images/geld.svg";
 
 import './Dealer.scss';
 
-const Dealer = () => {
-    const store = useLocalStore(() => new ShopsStore());
+const Dealer = ({store}) => {
 
     const [item, setItem] = React.useState(0),
         [value, setValue] = React.useState(1);
@@ -69,7 +68,7 @@ const Dealer = () => {
                 className='dealer-buy-element dealer-buy-element_geld'
                 onClick={() => {
                     if ('alt' in window) {
-                        alt.emit('client::dealer:sell', store?.shopData[item]?.ItemId, value, 1);
+                        alt.emit('client::dealer:sell', store?.dealerData[item]?.ItemId, value, 1);
                     }
                 }}>
                 <span className='dealer-buy-element__text'>Verkaufen</span>
