@@ -27,6 +27,65 @@ export default class HUDStore {
     hotelData = {
         id: 87,
         price: 999999999,
+        guests: [
+            {
+                roomId: 1,
+                name: 'Paris May',
+                isLocked: false,
+            },
+            {
+                roomId: 2,
+                name: 'Paris May',
+                isLocked: false,
+            },
+            {
+                roomId: 3,
+                name: 'Paris May',
+                isLocked: false,
+            },
+            {
+                roomId: 4,
+                name: 'Paris May',
+                isLocked: false,
+            },
+            {
+                roomId: 5,
+                name: 'Paris May',
+                isLocked: false,
+            },
+        ],
+        rooms: [
+            {
+                id: 1,
+                class: 'Premium',
+                isLocked: true,
+                price: 68
+            },
+            {
+                id: 2,
+                class: 'Platinum',
+                isLocked: true,
+                price: 131
+            },
+            {
+                id: 3,
+                class: 'Standard',
+                isLocked: true,
+                price: 39
+            },
+            {
+                id: 4,
+                class: 'Premium',
+                isLocked: true,
+                price: 51
+            },
+            {
+                id: 5,
+                class: 'Standard',
+                isLocked: true,
+                price: 70
+            },
+        ]
     };
 
     constructor() {

@@ -16,7 +16,6 @@ import geld from "@assets/images/geld.svg";
 import './Shop.scss';
 
 const Shop = ({store}) => {
-
     const [item, setItem] = React.useState(0),
         [value, setValue] = React.useState(1);
 

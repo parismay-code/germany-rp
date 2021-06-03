@@ -11,7 +11,7 @@
 
   color: $color-white;
 
-  font-family: 'TTNorms-Bold', sans-serif;
+  font-family: 'TT Norms Bold', sans-serif;
   font-weight: 700;
 
   &-content {
@@ -39,7 +39,7 @@
       top: 5px;
       transform: translateX(-50%);
 
-      font-family: 'TTNorms-Black', sans-serif;
+      font-family: 'TT Norms Black', sans-serif;
       color: $color-black-opacity;
 
       @media (max-width: 800px) {
@@ -95,7 +95,7 @@
       }
 
       & span {
-        font-family: 'TTNorms-Regular', sans-serif;
+        font-family: 'TT Norms Regular', sans-serif;
         font-weight: 500;
 
         margin-top: 5px;
@@ -120,7 +120,7 @@
       }
 
       & span {
-        font-family: 'TTNorms-ExtraLight', sans-serif;
+        font-family: 'TT Norms ExtraLight', sans-serif;
         font-weight: 100;
         font-size: .8rem;
       }

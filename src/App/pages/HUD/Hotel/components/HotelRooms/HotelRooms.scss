@@ -1,0 +1,119 @@
+@import '../../../../../styles/vars';
+
+.hotel-rooms {
+  position: relative;
+  
+  width: 250px;
+  height: 450px;
+  margin-left: 5px;
+  
+  overflow: auto;
+  
+  background-color: rgba(0, 0, 0, .8);
+  
+  @media (max-width: 800px) {
+	width: 125px;
+	height: 225px;
+ 
+	margin-left: 3px;
+  }
+  
+  &-element {
+	&__title {
+	  height: 45px;
+	  padding: 15px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: flex-start;
+	  
+	  font-family: "TT Norms Bold", sans-serif;
+	  
+	  background: linear-gradient(to right, rgba(149, 149, 149, .5), $color-blank);
+	  
+	  @media (max-width: 800px) {
+		padding: 7px;
+		height: 22.5px;
+	  }
+	}
+	
+	&-content {
+	  padding: 5px 10px;
+	  
+	  @media (max-width: 800px) {
+		padding: 2.5px 5px;
+	  }
+	  
+	  &-info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		
+		@media (max-width: 800px) {
+		  margin-bottom: 5px;
+		}
+		
+		&__price {
+		  font-family: 'TT Norms Light', sans-serif;
+		  
+		  word-spacing: 5px;
+		  letter-spacing: 1px;
+		  
+		  @media (max-width: 800px) {
+			word-spacing: 2.5px;
+		  }
+		}
+		
+		&__cancel {
+		  width: 35%;
+		  height: 30px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  
+		  font-size: .8rem;
+		  text-transform: uppercase;
+		  
+		  background: linear-gradient(45deg, #DB3434, #6E1A1A);
+		  
+		  cursor: pointer;
+		  
+		  @media (max-width: 800px) {
+			height: 15px;
+		  }
+		}
+	  }
+	  
+	  &-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		&__lock,
+		&__enter {
+		  width: calc(50% - 5px);
+		  height: 40px;
+		  
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  
+		  text-transform: uppercase;
+		  
+		  background: linear-gradient(270deg, #527532, #4c734a);
+		  
+		  cursor: pointer;
+		  
+		  @media (max-width: 800px) {
+			width: calc(50% - 2.5px);
+			height: 20px;
+		  }
+		  
+		  &:hover {
+			background: linear-gradient(270deg, #1A4C6E, #3498DB);
+		  }
+		}
+	  }
+	}
+  }
+}
