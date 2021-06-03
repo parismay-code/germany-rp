@@ -57,31 +57,31 @@ export default class HUDStore {
         rooms: [
             {
                 id: 1,
-                class: 'Premium',
+                category: 'Premium',
                 isLocked: true,
                 price: 68
             },
             {
                 id: 2,
-                class: 'Platinum',
+                category: 'Platinum',
                 isLocked: true,
                 price: 131
             },
             {
                 id: 3,
-                class: 'Standard',
+                category: 'Standard',
                 isLocked: true,
                 price: 39
             },
             {
                 id: 4,
-                class: 'Premium',
+                category: 'Premium',
                 isLocked: true,
                 price: 51
             },
             {
                 id: 5,
-                class: 'Standard',
+                category: 'Standard',
                 isLocked: true,
                 price: 70
             },

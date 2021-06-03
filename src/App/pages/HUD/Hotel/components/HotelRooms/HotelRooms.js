@@ -8,7 +8,7 @@ const HotelRooms = ({store}) => {
 	return <div className='hotel-rooms'>
 		{store.hotelData.rooms.map((el, key) => {
 			return <div key={key} className='hotel-rooms-element'>
-				<div className='hotel-rooms-element__title'>{el.class} room</div>
+				<div className='hotel-rooms-element__title'>{el.category} room</div>
 				<div className='hotel-rooms-element-content'>
 					<div className='hotel-rooms-element-content-info'>
 						<div className='hotel-rooms-element-content-info__price'>{el.price}$ / Hour</div>
