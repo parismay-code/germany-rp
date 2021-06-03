@@ -61,7 +61,7 @@ const AuthLogin = () => {
                 >
                     <img src={checked} alt='#' />
                 </div>
-                <span className='auth-login-submit__stay-signed'>angemeldet bleiben</span>
+                <span className='auth-login-submit__stay-signed'>Nutzernamen speichern</span>
                 <input
                     type='button'
                     name='n_authLogSubmit'

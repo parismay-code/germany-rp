@@ -134,6 +134,44 @@
     font-style: normal;
     text-transform: uppercase;
 
+    &-garage {
+      &__checkbox {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color-white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 10px;
+
+        cursor: pointer;
+
+        @media (max-width: 1000px) {
+          width: 12px;
+          height: 12px;
+        }
+
+        & img {
+          opacity: 0;
+          width: 90%;
+        }
+
+        &_checked {
+          & img {
+            opacity: 1;
+          }
+        }
+      }
+      &__sendGarage{
+        color: white !important;
+        opacity: .8;
+        font-size: .85rem;
+        font-weight: 500;
+      }
+    }
+
     &-element {
       position: relative;
       width: 250px;

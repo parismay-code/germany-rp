@@ -13,11 +13,14 @@ import creditCard from '@assets/images/creditCard.svg';
 import geld       from '@assets/images/geld.svg';
 
 import './CarDealer.scss';
+import cn from "classnames";
+import checked from "@assets/images/auth/checked.svg";
 
 const CarDealer = ({store}) => {
 	const [autoClass, setAutoClass] = React.useState(0);
 	const [model, setModel] = React.useState(0);
 	const [color, setColor] = React.useState(0);
+	const [garage, setGarage] = React.useState(false);
 
 	const fetchCarsEvent = React.useCallback((json) => {
 		try {
@@ -105,7 +108,21 @@ const CarDealer = ({store}) => {
 				alt.emit('client::component:close');
 			}
 		}}/>
+
 		<div className="car-dealer-buy">
+			<div
+				className={cn('car-dealer-buy-garage__checkbox', garage && 'car-dealer-buy-garage__checkbox_checked')}
+				onClick={() => {
+					setGarage(!garage);
+
+					if ('alt' in window) {
+						alt.emit('cef::carDealer:sendGarage', (!garage))
+					}
+				}}
+			>
+				<img src={checked} alt='#' />
+			</div>
+			<span className='car-dealer-buy-garage__sendGarage'>In Garage liefern</span>
 			<div
 				className="car-dealer-buy-element car-dealer-buy-element_card"
 				onClick={() => {
@@ -116,6 +133,7 @@ const CarDealer = ({store}) => {
 				<span className="car-dealer-buy-element__text">Mit Karte bezahlen</span>
 				<img className="car-dealer-buy-element__image" src={creditCard} alt="#"/>
 			</div>
+
 			<div
 				className="car-dealer-buy-element car-dealer-buy-element_geld"
 				onClick={() => {
