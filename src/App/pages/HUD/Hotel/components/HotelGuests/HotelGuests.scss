@@ -1,0 +1,57 @@
+@import '../../../../../styles/vars';
+
+.hotel-guests {
+  position: relative;
+
+  width: 250px;
+  height: 450px;
+  margin-right: 5px;
+  
+  font-family: "TT Norms Bold", sans-serif;
+  
+  overflow: auto;
+
+  background-color: rgba(0, 0, 0, .8);
+
+  @media (max-width: 800px) {
+    width: 125px;
+    height: 225px;
+
+    margin-right: 3px;
+  }
+  
+  &-element {
+    height: 10%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 800px) {
+      padding: 7px;
+    }
+    
+    &__request {
+      width: 35%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      font-size: .8rem;
+      text-transform: uppercase;
+  
+      background: linear-gradient(270deg, #527532, #4c734a);
+  
+      cursor: pointer;
+  
+      &:hover {
+        background: linear-gradient(270deg, #1A4C6E, #3498DB);
+      }
+  
+      @media (max-width: 800px) {
+        height: 15px;
+      }
+    }
+  }
+}

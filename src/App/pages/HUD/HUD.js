@@ -13,7 +13,24 @@ import HUDStore from '@store/HUDStore';
 const HUD = () => {
 	const store = useLocalStore(() => new HUDStore());
 	
-	const [currentComponent, setCurrentComponent] = React.useState('inventory');
+	const [currentComponent, setCurrentComponent] = React.useState(null);
+	
+	const fetchHotelDataEvent = React.useCallback((json) => {
+		try {
+			const hotelData = JSON.parse(json);
+			
+			return {
+				isError: false,
+				data: hotelData
+			}
+		} catch (e) {
+			console.log(e);
+			return {
+				isError: true,
+				data: null
+			}
+		}
+	}, []);
 	
 	React.useEffect(() => {
 		if ('alt' in window) {
@@ -33,8 +50,10 @@ const HUD = () => {
 						return setCurrentComponent(null);
 				}
 			});
+			
+			alt.on('cef::hotel:setData', json => store.fetchHotelData(fetchHotelDataEvent(json)))
 		}
-	}, []);
+	}, [fetchHotelDataEvent, store]);
 	
 	return (
 		<div className="hud">

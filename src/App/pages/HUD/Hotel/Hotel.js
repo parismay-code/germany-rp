@@ -2,7 +2,8 @@
 import * as React from 'react';
 import {observer} from "mobx-react-lite";
 
-import HotelInfo from "./components/HotelInfo";
+import HotelGuests from "./components/HotelGuests";
+import HotelRooms from "./components/HotelRooms";
 import HotelHeader from "./components/HotelHeader";
 import HotelOption from "./components/HotelOption";
 import HotelBuy from "./components/HotelBuy";
@@ -23,7 +24,7 @@ const Hotel = ({ store }) => {
     const hotelPrice = React.useMemo(() => `$${String(store.hotelData.price).replace(regExp.money, '$1 ')}`, [store.hotelData.price]);
 
     return <div className='hotel'>
-        <HotelInfo />
+        <HotelGuests store={store}/>
         <div className='hotel__main'>
             <HotelHeader id={store.hotelData.id}/>
             <HotelOption
@@ -46,6 +47,7 @@ const Hotel = ({ store }) => {
                 event={() => rentRoom()}
             />
         </div>
+        <HotelRooms store={store}/>
     </div>
 }
 
