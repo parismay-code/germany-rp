@@ -9,9 +9,9 @@ import CharacterCreator from "./CharacterCreator";
 import CarDealer from "./CarDealer";
 import Tuning from "./Tuning";
 import Shop from "./Shop";
+import Dealer from "./Dealer";
 
 import ShopsStore from "@store/ShopsStore";
-import Dealer from "@pages/Dealer/Dealer";
 
 const Manager = () => {
     const shopStore = useLocalStore(() => new ShopsStore())

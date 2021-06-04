@@ -109,7 +109,6 @@ export default class HUDStore {
 
     async fetchHouseData(event) {
         this.meta.house = Meta.loading;
-        this.houseData = {};
 
         const {isError, data} = await event;
         if (isError) {
@@ -124,7 +123,6 @@ export default class HUDStore {
 
     async fetchHotelData(event) {
         this.meta.hotel = Meta.loading;
-        this.hotelData = {};
 
         const {isError, data} = await event;
         if (isError) {

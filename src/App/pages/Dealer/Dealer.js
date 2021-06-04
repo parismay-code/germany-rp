@@ -1,13 +1,11 @@
 /* global alt */
 import * as React from 'react';
-import {useLocalStore} from "@utils/hooks/useLocal";
 import {observer} from "mobx-react-lite";
 
 import ProductElements from "./components/ProductElements";
 import ShopValue from "./components/ShopValue";
 import ShopPrice from "./components/Price";
 
-import ShopsStore from "@store/ShopsStore";
 
 import close from "@assets/images/close.svg";
 import creditCard from "@assets/images/creditCard.svg";
