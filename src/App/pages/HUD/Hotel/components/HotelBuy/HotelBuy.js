@@ -7,7 +7,7 @@ const HotelBuy = ({price, event}) => {
         <div className='hotel-buy__price'>
             Price<br/>{price}
         </div>
-        <div className='hotel-buy__button' onClick={event}>Rent</div>
+        <div className='hotel-buy__button' onClick={event}>Mieten</div>
     </div>
 }
 

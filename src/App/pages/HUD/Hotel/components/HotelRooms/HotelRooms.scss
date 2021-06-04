@@ -65,7 +65,7 @@
 		}
 		
 		&__cancel {
-		  width: 35%;
+		  width: 40%;
 		  height: 30px;
 		  display: flex;
 		  align-items: center;
@@ -81,6 +81,10 @@
 		  @media (max-width: 800px) {
 			height: 15px;
 		  }
+
+			&:hover {
+				background: linear-gradient(45deg, #a51e1e, #4c0d0d);
+			}
 		}
 	  }
 	  

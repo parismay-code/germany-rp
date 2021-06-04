@@ -20,7 +20,7 @@ const HotelGuests = ({store}) => {
                             alt.emit('client::hotel:requestPlayerRoom', el.roomId);
                         }
                     }}
-                >Request</div>}
+                >Betreten</div>}
             </div>
         })}
     </div>

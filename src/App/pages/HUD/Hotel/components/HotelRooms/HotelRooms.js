@@ -8,11 +8,18 @@ const HotelRooms = ({store}) => {
 	return <div className='hotel-rooms'>
 		{store.hotelData.rooms.map((el, key) => {
 			return <div key={key} className='hotel-rooms-element'>
-				<div className='hotel-rooms-element__title'>{el.category} room</div>
+				<div className='hotel-rooms-element__title'>{el.category} Zimmer</div>
 				<div className='hotel-rooms-element-content'>
 					<div className='hotel-rooms-element-content-info'>
-						<div className='hotel-rooms-element-content-info__price'>{el.price}$ / Hour</div>
-						<div className='hotel-rooms-element-content-info__cancel'>Cancel</div>
+						<div className='hotel-rooms-element-content-info__price'>{el.price}$ / Stunde</div>
+						<div
+							className='hotel-rooms-element-content-info__cancel'
+							 onClick={() => {
+								 if ('alt' in window) {
+									 alt.emit('client::hotel:cancelroom', el.id);
+								 }
+							 }}
+						>Auschecken</div>
 					</div>
 					<div className='hotel-rooms-element-content-buttons'>
 						<div
@@ -23,7 +30,7 @@ const HotelRooms = ({store}) => {
 								}
 								el.isLocked = !el.isLocked;
 							}}
-						>{el.isLocked ? 'Lock' : 'Open'}</div>
+						>{el.isLocked ? 'verriegelt' : 'geöffnet'}</div>
 						<div
 							className='hotel-rooms-element-content-buttons__enter'
 							onClick={() => {
@@ -31,7 +38,7 @@ const HotelRooms = ({store}) => {
 									alt.emit('client::hotel:enterRoom', el.id);
 								}
 							}}
-						>Enter</div>
+						>Betreten</div>
 					</div>
 				</div>
 			</div>

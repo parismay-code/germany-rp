@@ -4,11 +4,11 @@ import cn from 'classnames';
 import './HotelOption.scss';
 
 const HotelOption = ({currentOption, type, event}) => {
-    const types = React.useMemo(() => ['standard', 'premium', 'platinum'], []);
+    const types = React.useMemo(() => ['Standard', 'Premium', 'Platinum'], []);
 
     return <div className={cn('hotel-option', currentOption === type && 'hotel-option_active')} onClick={event}>
         <span className='hotel-option__text'>
-            {`Rent ${types[type]} room`}
+            {`${types[type]} Zimmer mieten`}
         </span>
     </div>
 }
