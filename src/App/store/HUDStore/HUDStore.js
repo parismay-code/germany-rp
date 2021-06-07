@@ -26,7 +26,9 @@ export default class HUDStore {
 
     hotelData = {
         id: 87,
-        price: 999999999,
+        price1: 1,
+        price2: 2,
+        price3: 3,
         guests: [
             {
                 roomId: 1,

@@ -5,7 +5,7 @@ import './HotelBuy.scss';
 const HotelBuy = ({price, event}) => {
     return <div className='hotel-buy'>
         <div className='hotel-buy__price'>
-            Price<br/>{price}
+            Preis<br/>{price}
         </div>
         <div className='hotel-buy__button' onClick={event}>Mieten</div>
     </div>
