@@ -21,7 +21,8 @@ const Hotel = ({ store }) => {
         }
     }, [store.hotelData.id, roomType]);
 
-    const hotelPrice = React.useMemo(() => `$${String(store.hotelData.price).replace(regExp.money, '$1 ')}`, [store.hotelData.price]);
+    const hotelPrice = React.useMemo(() => `$${String(roomType === 0 ? store.hotelData.standardPrice : roomType === 1 ?
+        store.hotelData.premiumPrice : store.hotelData.platinumPrice).replace(regExp.money, '$1 ')}`, [roomType, store.hotelData.platinumPrice, store.hotelData.premiumPrice, store.hotelData.standardPrice]);
 
     return <div className='hotel'>
         <HotelGuests store={store}/>
