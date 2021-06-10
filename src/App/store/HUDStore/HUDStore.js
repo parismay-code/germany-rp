@@ -26,9 +26,9 @@ export default class HUDStore {
 
     hotelData = {
         id: 87,
-        price1: 1,
-        price2: 2,
-        price3: 3,
+        standardPrice: 1,
+        premiumPrice: 2,
+        platinumPrice: 3,
         guests: [
             {
                 roomId: 1,
@@ -61,31 +61,26 @@ export default class HUDStore {
                 id: 1,
                 category: 'Premium',
                 isLocked: true,
-                price: 68
             },
             {
                 id: 2,
                 category: 'Platinum',
                 isLocked: true,
-                price: 131
             },
             {
                 id: 3,
                 category: 'Standard',
                 isLocked: true,
-                price: 39
             },
             {
                 id: 4,
                 category: 'Premium',
                 isLocked: true,
-                price: 51
             },
             {
                 id: 5,
                 category: 'Standard',
                 isLocked: true,
-                price: 70
             },
         ]
     };

@@ -7,11 +7,14 @@ import './HotelRooms.scss';
 const HotelRooms = ({store}) => {
 	return <div className='hotel-rooms'>
 		{store.hotelData.rooms.map((el, key) => {
+			const price = el.category === 'Standard' ? store.hotelData.standardPrice : el.category === 'Premium' ?
+				store.hotelData.premiumPrice : store.hotelData.platinumPrice;
+			
 			return <div key={key} className='hotel-rooms-element'>
 				<div className='hotel-rooms-element__title'>{el.category} Zimmer</div>
 				<div className='hotel-rooms-element-content'>
 					<div className='hotel-rooms-element-content-info'>
-						<div className='hotel-rooms-element-content-info__price'>{el.price}$ / Stunde</div>
+						<div className='hotel-rooms-element-content-info__price'>{price}$ / Stunde</div>
 						<div
 							className='hotel-rooms-element-content-info__cancel'
 							 onClick={() => {

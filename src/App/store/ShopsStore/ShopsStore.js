@@ -8,11 +8,32 @@ import {
 import {Meta} from '@utils/meta';
 
 export default class ShopsStore {
+    constructor() {
+        makeObservable(this, {
+            meta: observable,
+            
+            carDealerList: observable,
+            tuning: observable,
+            shopData: observable,
+            dealerData: observable,
+            clothesShopData: observable,
+            
+            fetchShopData: action.bound,
+            changeShopData: action.bound,
+            fetchDealerData: action.bound,
+            changeDealerData: action.bound,
+            fetchCarDealerList: action.bound,
+            fetchCarTuning: action.bound,
+            fetchClothesShopData: action.bound,
+        })
+    }
+    
     meta = {
         shop: Meta.initial,
         carDealer: Meta.initial,
         tuning: Meta.initial,
         dealer: Meta.initial,
+        clothesShop: Meta.initial,
     };
 
     carDealerList = [];
@@ -29,85 +50,11 @@ export default class ShopsStore {
         sound: 0
     }
 
-    shopData = [
-        {
-            ItemId: 0,
-            Name: 'Donut',
-            Price: 123490,
-            Count: 100,
-            Image: 'Donut.svg'
-        },
-        {
-            ItemId: 1,
-            Name: 'Energy Drink',
-            Price: 5435,
-            Count: 100,
-            Image: 'EnergyDrink.svg'
-        },
-        {
-            ItemId: 2,
-            Name: 'Ausweis',
-            Price: 123490,
-            Count: 100,
-            Image: 'Ausweis.svg'
-        },
-        {
-            ItemId: 3,
-            Name: 'Bankkarte',
-            Price: 5435,
-            Count: 100,
-            Image: 'Bankkarte.svg'
-        },
-        {
-            ItemId: 4,
-            Name: 'Bargeld',
-            Price: 123490,
-            Count: 100,
-            Image: 'Bargeld.svg'
-        },
-        {
-            ItemId: 5,
-            Name: 'Cola',
-            Price: 5435,
-            Count: 100,
-            Image: 'Cola.svg'
-        },
-    ];
+    shopData = [];
 
-    dealerData = [
-        {
-            ItemId: 0,
-            Name: 'Donut',
-            Price: 123490,
-            Count: 100,
-            Image: 'Donut.svg'
-        },
-        {
-            ItemId: 1,
-            Name: 'Energy Drink',
-            Price: 5435,
-            Count: 100,
-            Image: 'EnergyDrink.svg'
-        },
-    ];
-
-    constructor() {
-        makeObservable(this, {
-            meta: observable,
-
-            carDealerList: observable,
-            tuning: observable,
-            shopData: observable,
-            dealerData: observable,
-
-            fetchShopData: action.bound,
-            changeShopData: action.bound,
-            fetchDealerData: action.bound,
-            changeDealerData: action.bound,
-            fetchCarDealerList: action.bound,
-            fetchCarTuning: action.bound,
-        })
-    }
+    dealerData = [];
+    
+    clothesShopData = [];
 
     async fetchShopData(event) {
         this.meta.shop = Meta.loading;
@@ -174,7 +121,23 @@ export default class ShopsStore {
             this.meta.tuning = Meta.success;
         })
     }
-
+    
+    async fetchClothesShopData(event) {
+        this.meta.clothesShop = Meta.loading;
+        this.clothesShopData = [];
+        
+        const {isError, data} = await event;
+        if (isError) {
+            return this.meta.clothesShop = Meta.error;
+        }
+        
+        runInAction(() => {
+            this.clothesShopData = data;
+            this.meta.clothesShop = Meta.success;
+        })
+    }
+    
+    
     destroy() {
     }
 }

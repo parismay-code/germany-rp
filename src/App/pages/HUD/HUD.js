@@ -7,6 +7,7 @@ import ATM         from './ATM';
 import FuelStation from './FuelStation';
 import House       from './House';
 import Hotel       from './Hotel';
+import Main        from './Main';
 
 import HUDStore from '@store/HUDStore';
 
@@ -21,14 +22,14 @@ const HUD = () => {
 			
 			return {
 				isError: false,
-				data: hotelData
-			}
+				data: hotelData,
+			};
 		} catch (e) {
 			console.log(e);
 			return {
 				isError: true,
-				data: null
-			}
+				data: null,
+			};
 		}
 	}, []);
 	
@@ -51,12 +52,13 @@ const HUD = () => {
 				}
 			});
 			
-			alt.on('cef::hotel:setData', json => store.fetchHotelData(fetchHotelDataEvent(json)))
+			alt.on('cef::hotel:setData', json => store.fetchHotelData(fetchHotelDataEvent(json)));
 		}
 	}, [fetchHotelDataEvent, store]);
 	
 	return (
 		<div className="hud">
+			<Main />
 			{currentComponent === 'inventory' && <Inventory/>}
 			{currentComponent === 'atm' && <ATM/>}
 			{currentComponent === 'fuelStation' && <FuelStation/>}

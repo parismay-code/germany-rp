@@ -63,13 +63,23 @@ const Dealer = ({store}) => {
         />
         <div className='dealer-buy'>
             <div
-                className='dealer-buy-element dealer-buy-element_geld'
+                className='dealer-buy-element shop-buy-element_card'
                 onClick={() => {
                     if ('alt' in window) {
-                        alt.emit('client::dealer:sell', store?.dealerData[item]?.ItemId, value, 1);
+                        alt.emit('client::shop:buy', store?.shopData[item]?.ItemId, value, 0);
                     }
                 }}>
-                <span className='dealer-buy-element__text'>Verkaufen</span>
+                <span className='dealer-buy-element__text'>Mit karte bezahlen</span>
+                <img className='dealer-buy-element__image' src={creditCard} alt='#'/>
+            </div>
+            <div
+                className='dealer-buy-element shop-buy-element_geld'
+                onClick={() => {
+                    if ('alt' in window) {
+                        alt.emit('client::shop:buy', store?.shopData[item]?.ItemId, value, 1);
+                    }
+                }}>
+                <span className='dealer-buy-element__text'>Bar bezahlen</span>
                 <img className='dealer-buy-element__image' src={geld} alt='#'/>
             </div>
         </div>
