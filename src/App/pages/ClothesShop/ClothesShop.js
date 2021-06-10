@@ -38,9 +38,9 @@ const ClothesShop = ({store}) => {
 	React.useEffect(() => {
 		if ('alt' in window) {
 			alt.emit('client::clothesShop:preview', {
-				component: store.clothesShopData.filter(el => el.category === currentComponent)[item].component,
-				drawable: store.clothesShopData.filter(el => el.category === currentComponent)[item].drawable,
-				texture: store.clothesShopData.filter(el => el.category === currentComponent)[item].textures[texture]
+				component: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.component,
+				drawable: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.drawable,
+				texture: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.textures[texture]
 			});
 		}
 	}, [item, texture, currentComponent, store.clothesShopData]);
@@ -89,9 +89,9 @@ const ClothesShop = ({store}) => {
 				onClick={() => {
 					if ('alt' in window) {
 						alt.emit('client::clothesShop:buy', {
-							component: store.clothesShopData.filter(el => el.category === currentComponent)[item].component,
-							drawable: store.clothesShopData.filter(el => el.category === currentComponent)[item].drawable,
-							texture: store.clothesShopData.filter(el => el.category === currentComponent)[item].textures[texture]
+							component: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.component,
+							drawable: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.drawable,
+							texture: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.textures[texture]
 						}, 0);
 					}
 				}}>
@@ -103,9 +103,9 @@ const ClothesShop = ({store}) => {
 				onClick={() => {
 					if ('alt' in window) {
 						alt.emit('client::clothesShop:buy', {
-							component: store.clothesShopData.filter(el => el.category === currentComponent)[item].component,
-							drawable: store.clothesShopData.filter(el => el.category === currentComponent)[item].drawable,
-							texture: store.clothesShopData.filter(el => el.category === currentComponent)[item].textures[texture]
+							component: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.component,
+							drawable: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.drawable,
+							texture: store.clothesShopData.filter(el => el.category === currentComponent)[item]?.textures[texture]
 						}, 1);
 					}
 				}}>
