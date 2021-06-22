@@ -35,7 +35,7 @@ const AuthLogin = () => {
                 ref={login}
                 type='text'
                 name='n_authLogLogin'
-                placeholder='Enter login'
+                placeholder='Nutzernamen eingeben'
                 className='auth-login__input'
                 autofocus="true"
                 spellcheck="false"
@@ -44,7 +44,7 @@ const AuthLogin = () => {
                 ref={password}
                 type='password'
                 name='n_authLogPassword'
-                placeholder='Enter password'
+                placeholder='Passwort eingeben'
                 className='auth-login__input'
                 spellcheck="false"
             />

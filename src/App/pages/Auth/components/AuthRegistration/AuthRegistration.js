@@ -41,7 +41,7 @@ const AuthRegistration = () => {
                 ref={password}
                 type='password'
                 name='n_authRegPassword'
-                placeholder='Enter password'
+                placeholder='Passwort eingeben'
                 className='auth-login__input'
             />
             <input
