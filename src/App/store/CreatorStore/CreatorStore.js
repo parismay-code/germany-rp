@@ -226,23 +226,71 @@ export default class CreatorStore {
             {
                 type: 'ageing',
                 title: 'Alterung',
-                value: 1,
+                value: 0,
                 min: 0,
                 max: 15,
                 step: 1
             },
             {
+                type: 'ageingTransparency',
+                title: 'Alterung Sichtbarkeit',
+                value: 0.5,
+                min: 0,
+                max: 1,
+                step: 0.05
+            },
+            {
                 type: 'molesFreckles',
                 title: 'Muttermale',
-                value: 1,
+                value: 0,
                 min: 0,
                 max: 18,
                 step: 1
             },
             {
+                type: 'molesFrecklesTransparency',
+                title: 'Muttermale Sichtbarkeit',
+                value: 0.5,
+                min: 0,
+                max: 1,
+                step: 0.05
+            },
+            {
+                type: 'dirt',
+                title: 'Flecken',
+                value: 0,
+                min: 0,
+                max: 24,
+                step: 1
+            },
+            {
+                type: 'dirtTransparency',
+                title: 'Flecken Sichtbarkeit',
+                value: 0.5,
+                min: 0,
+                max: 1,
+                step: 0.05
+            },
+            {
+                type: 'sunburn',
+                title: 'Sonnenschaden',
+                value: 0,
+                min: 0,
+                max: 11,
+                step: 1
+            },
+            {
+                type: 'sunburnTransparency',
+                title: 'Sonnenschaden Sichtbarkeit',
+                value: 0.5,
+                min: 0,
+                max: 1,
+                step: 0.05
+            },
+            {
                 type: 'cheekBlush',
                 title: 'Wangenröte',
-                value: 1,
+                value: 0,
                 min: 0,
                 max: 4,
                 step: 1
@@ -250,10 +298,34 @@ export default class CreatorStore {
             {
                 type: 'cheekBlushTransparency',
                 title: 'Wangenröte Sichtbarkeit ',
-                value: 0,
+                value: 0.5,
                 min: 0,
                 max: 1,
-                step: 0.5
+                step: 0.05
+            },
+            {
+                type: 'teint',
+                title: 'Teint',
+                value: 0,
+                min: 0,
+                max: 12,
+                step: 1
+            },
+            {
+                type: 'teintTransparency',
+                title: 'Teint Sichtbarkeit ',
+                value: 0.5,
+                min: 0,
+                max: 1,
+                step: 0.05
+            },
+            {
+                type: 'lipstick',
+                title: 'Lippenstift',
+                value: 0,
+                min: 0,
+                max: 10,
+                step: 1
             }
         ]
     }

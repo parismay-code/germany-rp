@@ -73,6 +73,14 @@ const ClothesShop = ({store}) => {
 			/>
 			<ShopPrice price={store.clothesShopData.filter(el => el.category === currentComponent)[item]?.price}/>
 		</div>
+		<div className="clothes-shop-rotate">
+			<input className="clothes-shop-rotate__input" type="range" name="n_clothesShopRotate" min="0" max="3.6" step="0.01"
+				   onChange={(e) => {
+					   if ('alt' in window) {
+						   alt.emit('client::clothesShop:rotate', Number(e.target.value));
+					   }
+				   }}/>
+		</div>
 		<img
 			className="clothes-shop__exit"
 			src={close}
