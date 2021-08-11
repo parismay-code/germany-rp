@@ -83,4 +83,12 @@
 
     background: linear-gradient(to right, #959595, $color-blank);
   }
+
+  &__error{
+    margin-bottom: 25px;
+    padding: 0 25px;
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }

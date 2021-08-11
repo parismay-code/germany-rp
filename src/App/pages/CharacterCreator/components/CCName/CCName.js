@@ -35,6 +35,10 @@ const CCName = ({ player, changeNickname, changeBirthInfo }) => {
                 placeholder='Geburtsort'
                 onChange={(e) => changeBirthInfo(1, e.target.value)}/>
         </div>
+        //ToDo: Notifications
+        <div className='character-creator-name__error'>
+            Test
+        </div>
     </div>
 }
 

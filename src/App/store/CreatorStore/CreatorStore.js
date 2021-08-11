@@ -23,7 +23,7 @@ export default class CreatorStore {
         parents: {
             father: 0,
             mother: 0,
-            mix: 0,
+            mix: 0.5,
         },
         appearance: {
             hair: [
